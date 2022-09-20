@@ -1,0 +1,223 @@
+body{
+    margin-top:20px;
+    background:#F5F5F5;
+}
+/* cube List */
+.cube-list {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #eeeeee;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .cube-list:hover {
+    -webkit-box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+            box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    position: relative;
+    z-index: 99; }
+    .cube-list:hover a.cube-list-favourite {
+      color: #e74c3c;
+      -webkit-box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+              box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1); }
+
+.cube-list .cube-list-image {
+  margin-right: 25px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+          flex: 0 0 80px;
+  border: none; }
+  .cube-list .cube-list-image img {
+    width: 80px;
+    height: 80px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.cube-list-title {
+  margin-bottom: 5px; }
+
+.cube-list-details ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 0px; }
+  .cube-list-details ul li {
+    margin: 5px 10px 5px 0px;
+    font-size: 13px; }
+
+.cube-list .cube-list-favourite-time {
+  margin-left: auto;
+  text-align: center;
+  font-size: 13px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 90px;
+          flex: 0 0 90px; }
+  .cube-list .cube-list-favourite-time span {
+    display: block;
+    margin: 0 auto; }
+  .cube-list .cube-list-favourite-time .cube-list-favourite {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border: 1px solid #eeeeee;
+    border-radius: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #646f79;
+    }
+    .cube-list .cube-list-favourite-time .cube-list-favourite:hover {
+      background: #ffffff;
+      color: #e74c3c; }
+
+.cube-banner .cube-list:hover {
+  position: inherit;
+  -webkit-box-shadow: inherit;
+          box-shadow: inherit;
+  z-index: inherit; }
+
+
+/* cube Grid */
+.cube-list.cube-grid {
+    padding: 0px;
+    display: block;
+    border-bottom: none;
+}
+
+.cube-grid .cube-list-image {
+    text-align: center;
+    margin-right: 0px;
+}
+.cube-grid .cube-list-image img {
+    height: 336px;
+    width: 100%;
+}
+
+.cube-grid .cube-list-details {
+    text-align: center;
+    padding: 20px 20px 0px 20px;
+    border: 1px solid #eeeeee;
+    border-top: none;
+}
+.cube-grid .cube-list-details ul {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.cube-grid .cube-list-details ul li {
+    margin: 2px 5px;
+}
+
+.cube-grid .cube-list-favourite-time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-top: 1px solid #eeeeee;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+.cube-grid .cube-list-favourite-time a {
+    margin-bottom: 0;
+    margin-left: auto;
+}
+.cube-grid .cube-list-favourite-time span {
+    display: inline-block;
+    margin: 0;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.cube-list.cube-grid .cube-list-favourite-time .cube-list-favourite {
+    margin-bottom: 0px;
+    color: #e74c3c; /* Custom, not definded by default */
+}
+
+.owl-carousel .cube-list.cube-grid {
+    margin-bottom: 20px;
+}
+
+
+/* Widget */
+.widget .widget-title {
+    margin-bottom: 20px;
+}
+.widget .widget-title h6 {
+    margin-bottom: 0;
+}
+.widget .widget-title a {
+    color: #212529;
+}
+
+.widget .widget-collapse {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+/* checkbox */
+.widget .widget-content {
+    margin-top: 10px;
+}
+.widget .widget-content .custom-checkbox {
+    margin-bottom: 8px;
+}
+.widget .widget-content .custom-checkbox:last-child {
+    margin-bottom: 0px;
+}
+
+.widget ul {
+    margin: 0;
+}
+.widget ul li a:hover {
+    color: #21c87a;
+}
+
+.widget .widget-box {
+    padding: 20px 15px;
+}
+
+.sidebar .widget {
+    border: 1px solid #eeeeee;
+    margin-bottom: 30px;
+}
+.sidebar .widget .widget-title {
+    border-bottom: 1px solid #eeeeee;
+    padding: 14px 20px;
+}
+
+.sidebar .widget .widget-content {
+    padding: 14px 20px;
+}
+.widget .widget-content {
+    margin-top: 10px;
+}
+
+/* Custom */
+
+/* Used by filter*/
+.is-hidden {
+    display: none;
+}
+
+/* Used by badges*/
+.increase-size {
+    font-size: 12px;
+}
+
+.badges-list {
+    min-height: 60px;
+}

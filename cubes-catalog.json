@@ -1,0 +1,381 @@
+{
+  "cubes": [
+    {
+      "Name": "Impossible",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "14 May, 2022"
+    },
+    {
+      "Name": "Blocks",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "5 Apr, 2021"
+    },
+    {
+      "Name": "Sudoku",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Color": "White",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "3 Sep, 2022"
+    },
+    {
+      "Name": "Crazy Yileng",
+      "Brand": "Moyu",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "3 Sep, 2022"
+    },
+    {
+      "Name": "Void",
+      "Brand": "LanLan",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "3 Sep, 2022"
+    },
+    {
+      "Name": "Octahedron",
+      "Brand": "DaYan",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "diamond",
+      "Date": "28 Mar, 2022"
+    },
+    {
+      "Name": "Lego",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Bricks",
+      "FaForm": "cube",
+      "Date": "21 Nov, 2021"
+    },
+    {
+      "Name": "Lemon",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Color": "Yellow",
+      "Tags": [
+        "Series fruit"
+      ],
+      "FaForm": "circle",
+      "Date": "4 Apr, 2021"
+    },
+    {
+      "Name": "Pear",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Color": "Green",
+      "Tags": [
+        "Series fruit"
+      ],
+      "FaForm": "circle",
+      "Date": "4 Apr, 2021"
+    },
+    {
+      "Name": "Apple",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Color": "Red",
+      "Tags": [
+        "Series fruit"
+      ],
+      "FaForm": "circle",
+      "Date": "4 Apr, 2021"
+    },
+    {
+      "Name": "Banana",
+      "Brand": "FanXin",
+      "Group": "2x2x3",
+      "Color": "Yellow",
+      "Tags": [
+        "Series fruit"
+      ],
+      "FaForm": "draw-polygon",
+      "Date": "4 Apr, 2021"
+    },
+    {
+      "Name": "Peach",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Color": "Peach",
+      "Tags": [
+        "Series fruit"
+      ],
+      "FaForm": "circle",
+      "Date": "4 Apr, 2021"
+    },
+    {
+      "Name": "Orange",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Color": "Orange",
+      "Tags": [
+        "Series fruit"
+      ],
+      "FaForm": "circle",
+      "Date": "4 Abr, 2021"
+    },
+    {
+      "Name": "ShangGu",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "21 Nov, 2021"
+    },
+    {
+      "Name": "Octahedron Diamond",
+      "Brand": "LanLan",
+      "Group": "8-axis",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "diamond",
+      "Date": "21 Nov, 2021"
+    },
+    {
+      "Name": "Tangram",
+      "Brand": "DaYan",
+      "Group": "5-axis",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "21 Nov, 2021"
+    },
+    {
+      "Name": "Blade",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "draw-polygon",
+      "Date": "12 Sep, 2021"
+    },
+    {
+      "Name": "Shield",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "draw-polygon",
+      "Date": "4 Apr, 2021"
+    },
+    {
+      "Name": "Quadrangular",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "12 Sep, 2021"
+    },
+    {
+      "Name": "Diamond",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "gem",
+      "Date": "1 Dec, 2020"
+    },
+    {
+      "Name": "6 Corner",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "gem",
+      "Date": "1 Dec, 2020"
+    },
+    {
+      "Name": "Ufo",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "gem",
+      "Date": "1 Dec, 2020"
+    },
+    {
+      "Name": "Dodecahedron Diamond",
+      "Brand": "LanLan",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "gem",
+      "Date": "28 Jul, 2021"
+    },
+    {
+      "Name": "Pandora",
+      "Brand": "MoFang JiaoShi",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "1 Nov 2020"
+    },
+    {
+      "Name": "Dice",
+      "Brand": "MoFang JiaoShi",
+      "Group": "3x3x3",
+      "Color": "White",
+      "Stickerless": "Yes",
+      "FaForm": "cube",
+      "Date": "22 Aug, 2022"
+    },
+    {
+      "Name": "Mirror",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Color": "Black",
+      "Borders": "White",
+      "Stickers": "Carbon Fiber",
+      "FaForm": "cube",
+      "Date": "13 Oct, 2020"
+    },
+    {
+      "Name": "Windmill",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "1 Mar, 2020"
+    },
+    {
+      "Name": "Fisher",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "1 Mar, 2020"
+    },
+    {
+      "Name": "Axis",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "1 Mar, 2020"
+    },
+    {
+      "Name": "Penrose",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Color": "Blue Red White",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "27 Sep, 2020"
+    },
+    {
+      "Name": "GoCube",
+      "Brand": "Edge",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Transparent",
+      "Tags": [
+        "Smart"
+      ],
+      "FaForm": "cube",
+      "Date": "12 Jul, 2022" 
+    },
+    {
+      "Name": "2x2x2",
+      "Brand": "Qiyi",
+      "Group": "2x2x2",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "24 Dec, 2020"
+    },
+    {
+      "Name": "3x3x3",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "24 Dec, 2020"
+    },
+    {
+      "Name": "4x4x4",
+      "Brand": "ZCube",
+      "Group": "4x4x4",
+      "Color": "Black",
+      "Borders": "Western Schema",
+      "Stickers": "Carbon Fiber",
+      "FaForm": "cube",
+      "Date": "1 Mar, 2020"
+    },
+    {
+      "Name": "5x5x5",
+      "Brand": "ZCube",
+      "Group": "5x5x5",
+      "Color": "Black",
+      "Borders": "Western Schema",
+      "Stickers": "Carbon Fiber",
+      "FaForm": "cube",
+      "Date": "26 Nov, 2020"
+    },
+    {
+      "Name": "Ghost",
+      "Brand": "Mefferts",
+      "Group": "3x3x3",
+      "Color": "White",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "cube",
+      "Date": "6 Jan, 2021"
+    },
+    {
+      "Name": "Pyraminx",
+      "Brand": "Qiyi",
+      "Group": "Pyraminx",
+      "Color": "Western Schema",
+      "Borders": "Black",
+      "Stickers": "Yes",
+      "FaForm": "caret-up",
+      "Date": "24 Dec, 2020"
+    }
+  ]
+}
