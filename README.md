@@ -6,5 +6,5 @@
 
 ## Try on
 
-- [western colors cheme](https://westerncolorscheme.onrender.com/) on onrender.com
-- [western colors cheme](https://tinyurl.com/37cubes) via tinyurl.com
+- [Western Color Scheme](https://westerncolorscheme.onrender.com/) on onrender.com
+- [Western Color Scheme](https://tinyurl.com/37cubes) via tinyurl.com
