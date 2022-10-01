@@ -7,7 +7,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
+      "View360": "Yes",
       "Date": "14 May, 2022"
     },
     {
@@ -17,7 +17,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "5 Apr, 2021"
     },
     {
@@ -27,7 +26,6 @@
       "Color": "White",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "3 Sep, 2022"
     },
     {
@@ -37,7 +35,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "3 Sep, 2022"
     },
     {
@@ -47,7 +44,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "3 Sep, 2022"
     },
     {
@@ -57,7 +53,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "diamond",
       "Date": "28 Mar, 2022"
     },
     {
@@ -67,7 +62,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Bricks",
-      "FaForm": "cube",
       "Date": "21 Nov, 2021"
     },
     {
@@ -78,7 +72,6 @@
       "Tags": [
         "Series fruit"
       ],
-      "FaForm": "circle",
       "Date": "4 Apr, 2021"
     },
     {
@@ -89,7 +82,6 @@
       "Tags": [
         "Series fruit"
       ],
-      "FaForm": "circle",
       "Date": "4 Apr, 2021"
     },
     {
@@ -100,7 +92,6 @@
       "Tags": [
         "Series fruit"
       ],
-      "FaForm": "circle",
       "Date": "4 Apr, 2021"
     },
     {
@@ -111,7 +102,6 @@
       "Tags": [
         "Series fruit"
       ],
-      "FaForm": "draw-polygon",
       "Date": "4 Apr, 2021"
     },
     {
@@ -122,7 +112,6 @@
       "Tags": [
         "Series fruit"
       ],
-      "FaForm": "circle",
       "Date": "4 Apr, 2021"
     },
     {
@@ -133,7 +122,6 @@
       "Tags": [
         "Series fruit"
       ],
-      "FaForm": "circle",
       "Date": "4 Abr, 2021"
     },
     {
@@ -143,7 +131,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "21 Nov, 2021"
     },
     {
@@ -153,7 +140,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "diamond",
       "Date": "21 Nov, 2021"
     },
     {
@@ -163,7 +149,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "21 Nov, 2021"
     },
     {
@@ -173,7 +158,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "draw-polygon",
       "Date": "12 Sep, 2021"
     },
     {
@@ -183,7 +167,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "draw-polygon",
       "Date": "4 Apr, 2021"
     },
     {
@@ -193,7 +176,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "12 Sep, 2021"
     },
     {
@@ -203,7 +185,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "gem",
+      "View360": "Yes",
       "Date": "1 Dec, 2020"
     },
     {
@@ -213,7 +195,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "gem",
       "Date": "1 Dec, 2020"
     },
     {
@@ -223,7 +204,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "gem",
       "Date": "1 Dec, 2020"
     },
     {
@@ -233,7 +213,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "gem",
       "Date": "28 Jul, 2021"
     },
     {
@@ -243,7 +222,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "1 Nov 2020"
     },
     {
@@ -252,7 +230,6 @@
       "Group": "3x3x3",
       "Color": "White",
       "Stickerless": "Yes",
-      "FaForm": "cube",
       "Date": "22 Aug, 2022"
     },
     {
@@ -262,7 +239,6 @@
       "Color": "Black",
       "Borders": "White",
       "Stickers": "Carbon Fiber",
-      "FaForm": "cube",
       "Date": "13 Oct, 2020"
     },
     {
@@ -272,7 +248,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "1 Mar, 2020"
     },
     {
@@ -282,7 +257,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "1 Mar, 2020"
     },
     {
@@ -292,7 +266,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "1 Mar, 2020"
     },
     {
@@ -302,7 +275,6 @@
       "Color": "Blue Red White",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "27 Sep, 2020"
     },
     {
@@ -314,7 +286,6 @@
       "Tags": [
         "Smart"
       ],
-      "FaForm": "cube",
       "Date": "12 Jul, 2022" 
     },
     {
@@ -324,7 +295,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
       "Date": "24 Dec, 2020"
     },
     {
@@ -334,7 +304,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
+      "View360": "Yes",
       "Date": "24 Dec, 2020"
     },
     {
@@ -344,7 +314,6 @@
       "Color": "Black",
       "Borders": "Western Schema",
       "Stickers": "Carbon Fiber",
-      "FaForm": "cube",
       "Date": "1 Mar, 2020"
     },
     {
@@ -354,7 +323,6 @@
       "Color": "Black",
       "Borders": "Western Schema",
       "Stickers": "Carbon Fiber",
-      "FaForm": "cube",
       "Date": "26 Nov, 2020"
     },
     {
@@ -364,7 +332,7 @@
       "Color": "White",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "cube",
+      "View360": "Yes",
       "Date": "6 Jan, 2021"
     },
     {
@@ -374,7 +342,6 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
-      "FaForm": "caret-up",
       "Date": "24 Dec, 2020"
     }
   ]

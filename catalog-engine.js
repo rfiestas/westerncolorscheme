@@ -18,6 +18,11 @@ const filterData = {
     },
     "Stickers": {
         "Icon": "fa-sticky-note",
+        "Color": "sticker",
+        "Default": "No"
+    },
+    "View360": {
+        "Icon": "fa-cube",
         "Color": "danger",
         "Default": "No"
     },
@@ -30,13 +35,12 @@ const filterData = {
 $(document).ready(function () {
     // Get catalog
     $.getJSON('cubes-catalog.json', function (catalog) {
-
         // Sort Cubes catalog
         catalog.cubes = catalog.cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
 
         // Add all filter checkbox
         // Get unique Brands, create and print
-        ["Brand","Group","Color","Borders","Stickers"].forEach(category => {
+        ["Brand","Group","Color","Borders","Stickers","View360"].forEach(category => {
             generateFilter(catalog.cubes, category);
         });
 
@@ -87,6 +91,12 @@ $(document).ready(function () {
             });
         });
     });
+    document.getElementById('view360').addEventListener('hidden.bs.modal', function (event) {
+        window.CI360.destroy();
+    })
+    document.getElementById('view360').addEventListener('shown.bs.modal', function (event) {
+        window.CI360.init();
+    })
 });
 
 // generate filters view
@@ -95,11 +105,17 @@ function generateFilter(catalog, key){
     document.getElementById("filters").innerHTML += FilterTemplate(key, category.sort());
 }
 
-// get 
+// get filteter data
 function getfilterDataKey(category, key) {
     return filterData[category][key] || filterData.Default[key];
 }
 
+function openView360(brand, name){
+    let folder = `images/cubes/view-360/${brand}-${name}/`;
+    document.getElementById('view-label').innerHTML = `${brand} ${name}`;
+    document.getElementById('cube-360').setAttribute('data-folder', folder);
+    $('#view360').modal('show');
+}
 
 function FilterTemplate(key, items) {
     var filterItems = "";
@@ -136,10 +152,10 @@ ${filterItems}
 
 function cubeTemplate(cube) {
     return `
-<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}">
+<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
-            <img class="img-fluid" src="images/cubes/square-336/${cube.Brand}-${cube.Name}.png" alt="">
+            <img class="img-fluid" src="images/cubes/square-336/${cube.Brand}-${cube.Name}.png" alt="${cube.Brand}-${cube.Name}">
         </div>
         <div class="cube-list-details">
             <div class="cube-list-info">
@@ -156,7 +172,7 @@ function cubeTemplate(cube) {
                 </div>
             </div>
             <div class="cube-list-favourite-time">
-                <a class="cube-list-favourite order-2" href="#"><i class="fas fa-${cube.FaForm}"></i></a>
+                ${View360Template(cube.View360, cube.Brand, cube.Name)}
                 <span class="cube-list-time order-1"><i class="far fa-clock pr-1"></i> ${cube.Date}</span>
             </div>
         </div>
@@ -172,4 +188,12 @@ function cubeBadgesTemplate(key, value) {
     
     if (val == "No" || val == "Error") { return "" }; // Avoid print badge when value is No or Error
     return `<li title="${key}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
+}
+
+function View360Template(print, brand, name){
+    let classes = getfilterDataKey("View360", "Icon") + " text-" + getfilterDataKey("View360", "Color");
+    if ( print ){
+        return `<a class="cube-list-favourite order-2" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
+    }
+    return ``;
 }

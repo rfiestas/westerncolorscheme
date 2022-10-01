@@ -22,6 +22,7 @@ body{
     z-index: 99; }
     .cube-list:hover a.cube-list-favourite {
       color: #e74c3c;
+      cursor: pointer; /* Custom, not definded by default */
       -webkit-box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
               box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1); }
 
@@ -139,7 +140,6 @@ body{
 
 .cube-list.cube-grid .cube-list-favourite-time .cube-list-favourite {
     margin-bottom: 0px;
-    color: #e74c3c; /* Custom, not definded by default */
 }
 
 .owl-carousel .cube-list.cube-grid {
@@ -220,4 +220,18 @@ body{
 
 .badges-list {
     min-height: 60px;
+}
+
+/* Used by sticker key */
+.text-sticker {
+    color: #0a58ca;
+}
+
+/* Used by 360-magnifier */
+.cloudimage-360-magnifier-icon {
+	background: url(images/magnifier_icon.svg) 50% 50% / cover no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-right: 20px;
 }
