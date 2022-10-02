@@ -91,6 +91,8 @@ $(document).ready(function () {
             });
         });
     });
+    
+    // Configure view 360 modal listeners
     document.getElementById('view360').addEventListener('hidden.bs.modal', function (event) {
         window.CI360.destroy();
     })
@@ -105,11 +107,12 @@ function generateFilter(catalog, key){
     document.getElementById("filters").innerHTML += FilterTemplate(key, category.sort());
 }
 
-// get filteter data
+// get filtered key
 function getfilterDataKey(category, key) {
     return filterData[category][key] || filterData.Default[key];
 }
 
+// Open view 360 modal
 function openView360(brand, name){
     let folder = `images/cubes/view-360/${brand}-${name}/`;
     document.getElementById('view-label').innerHTML = `${brand} ${name}`;
@@ -187,13 +190,13 @@ function cubeBadgesTemplate(key, value) {
     let val = value || getfilterDataKey(key, "Default") || 'Error';
     
     if (val == "No" || val == "Error") { return "" }; // Avoid print badge when value is No or Error
-    return `<li title="${key}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
+    return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
 }
 
 function View360Template(print, brand, name){
     let classes = getfilterDataKey("View360", "Icon") + " text-" + getfilterDataKey("View360", "Color");
     if ( print ){
-        return `<a class="cube-list-favourite order-2" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
+        return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
     }
     return ``;
 }
