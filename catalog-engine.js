@@ -158,7 +158,7 @@ function cubeTemplate(cube) {
 <div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
-            <img class="img-fluid" src="images/cubes/square-336/${cube.Brand}-${cube.Name}.png" alt="${cube.Brand}-${cube.Name}">
+            ${imageTemplate(cube.View360, cube.Brand, cube.Name)}
         </div>
         <div class="cube-list-details">
             <div class="cube-list-info">
@@ -175,7 +175,7 @@ function cubeTemplate(cube) {
                 </div>
             </div>
             <div class="cube-list-favourite-time">
-                ${View360Template(cube.View360, cube.Brand, cube.Name)}
+                ${view360Template(cube.View360, cube.Brand, cube.Name)}
                 <span class="cube-list-time order-1"><i class="far fa-clock pr-1"></i> ${cube.Date}</span>
             </div>
         </div>
@@ -193,10 +193,18 @@ function cubeBadgesTemplate(key, value) {
     return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
 }
 
-function View360Template(print, brand, name){
+function imageTemplate(print, brand, name){
+    let image = `<img class="img-fluid" src="images/cubes/square-336/${brand}-${name}.png" alt="${brand}-${name}">`
+    if (print){
+        return `<a href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')">${image}</a>`
+    }
+    return image;
+}
+
+function view360Template(print, brand, name){
     let classes = getfilterDataKey("View360", "Icon") + " text-" + getfilterDataKey("View360", "Color");
-    if ( print ){
-        return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
+    if (print){
+        return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
     }
     return ``;
 }
