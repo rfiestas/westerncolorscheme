@@ -141,7 +141,7 @@ function FilterTemplate(key, items) {
     content = `
 <div class="widget-title widget-collapse">
     <h6><i class="fas ${categoryClass} pr-1"></i>&nbsp;&nbsp;${key}</h6>&nbsp; 
-    <a class="ml-auto" data-toggle="collapse" href="#${key}" role="button" aria-expanded="false" aria-controls="${key}"><i class="fas fa-chevron-down"></i></a>
+    <a class="ml-auto" data-bs-toggle="collapse" href="#${key}" role="button" aria-expanded="false" aria-controls="${key}"><i class="fas fa-chevron-down"></i></a>
 </div>
 <div class="collapse" id="${key}">
     <div class="widget-content">
