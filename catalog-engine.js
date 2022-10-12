@@ -1,50 +1,23 @@
-const filterData = {
-    "Brand": {
-        "Icon": "fa-flag",
-        "Color": "primary",
-    },
-    "Group": {
-        "Icon": "fa-shapes",
-        "Color": "success",
-    },
-    "Color": {
-        "Icon": "fa-palette",
-        "Color": "warning",
-    },
-    "Borders": {
-        "Icon": "fa-border-all",
-        "Color": "info",
-        "Default": "No"
-    },
-    "Stickers": {
-        "Icon": "fa-sticky-note",
-        "Color": "danger",
-        "Default": "No"
-    },
-    "Default": {
-        "Icon": "fa-backspace",
-        "Color": "muted",
-    }
-};
-
+var filtersData = {};
 $(document).ready(function () {
     // Get catalog
     $.getJSON('cubes-catalog.json', function (catalog) {
-
+        
+        filtersData = catalog.Filters
         // Sort Cubes catalog
-        catalog.cubes = catalog.cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
+        catalog.Cubes = catalog.Cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
 
         // Add all filter checkbox
         // Get unique Brands, create and print
-        ["Brand","Group","Color","Borders","Stickers"].forEach(category => {
-            generateFilter(catalog.cubes, category);
+        ["Brand","Group","Color","Borders","Stickers","View360"].forEach(category => {
+            generateFilter(catalog.Cubes, category);
         });
 
         // Show cubes catalog
         document.getElementById("catalog").innerHTML = `
-            <h2 class="app-title">Cube (${catalog.cubes.length} results) </h2>
-            ${catalog.cubes.map(cubeTemplate).join("")}
-            <p class="footer">These ${catalog.cubes.length} cubes were added recently. Check back soon for updates</p>
+            <h2 class="app-title">Cube (${catalog.Cubes.length} results) </h2>
+            ${catalog.Cubes.map(cubeTemplate).join("")}
+            <p class="footer">These ${catalog.Cubes.length} cubes were added recently. Check back soon for updates</p>
         `;
 
         const $filtersCkb = $(".custom-control-input");
@@ -55,7 +28,7 @@ $(document).ready(function () {
             // Create an list of checked filters
             const checkedFilter = $filtersCkb.filter(":checked").get().map(el => el.value);
             // Show all and exit if no filter is active
-            if (!checkedFilter.length) return $items.removeClass("is-hidden");
+            if (!checkedFilter.length) return $items.removeClass("visually-hidden");
 
             // Create a Dictionary of list with the filters, to apply this rules:
             // OR for filters with the same category
@@ -80,13 +53,21 @@ $(document).ready(function () {
                     }
                 }
                 if (match == Object.keys(filters).length) {
-                    $(this).removeClass("is-hidden"); // March all filters, then show
+                    $(this).removeClass("visually-hidden"); // March all filters, then show
                 } else {
-                    $(this).addClass("is-hidden"); // Hide
+                    $(this).addClass("visually-hidden"); // Hide
                 }
             });
         });
     });
+    
+    // Configure view 360 modal listeners
+    document.getElementById('view360').addEventListener('hidden.bs.modal', function (event) {
+        window.CI360.destroy();
+    })
+    document.getElementById('view360').addEventListener('shown.bs.modal', function (event) {
+        window.CI360.init();
+    })
 });
 
 // generate filters view
@@ -95,11 +76,18 @@ function generateFilter(catalog, key){
     document.getElementById("filters").innerHTML += FilterTemplate(key, category.sort());
 }
 
-// get 
+// get filtered key defaults
 function getfilterDataKey(category, key) {
-    return filterData[category][key] || filterData.Default[key];
+    return filtersData[category][key] || filtersData.Default[key];
 }
 
+// Open view 360 modal
+function openView360(brand, name){
+    let folder = `images/cubes/view-360/${brand}-${name}/`;
+    document.getElementById('view-label').innerHTML = `${brand} ${name}`;
+    document.getElementById('cube-360').setAttribute('data-folder', folder);
+    $('#view360').modal('show');
+}
 
 function FilterTemplate(key, items) {
     var filterItems = "";
@@ -122,9 +110,9 @@ function FilterTemplate(key, items) {
     content = `
 <div class="widget-title widget-collapse">
     <h6><i class="fas ${categoryClass} pr-1"></i>&nbsp;&nbsp;${key}</h6>&nbsp; 
-    <a class="ml-auto" data-toggle="collapse" href="#${key}" role="button" aria-expanded="false" aria-controls="${key}"><i class="fas fa-chevron-down"></i></a>
+    <a class="ml-auto" data-bs-toggle="collapse" href="#${key}" role="button" aria-expanded="false" aria-controls="${key}"><i class="fas fa-chevron-down"></i></a>
 </div>
-<div class="collapse show" id="${key}">
+<div class="collapse" id="${key}">
     <div class="widget-content">
 ${filterItems}
     </div>
@@ -136,10 +124,10 @@ ${filterItems}
 
 function cubeTemplate(cube) {
     return `
-<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}">
+<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
-            <img class="img-fluid" src="images/cubes/square-336/${cube.Brand}-${cube.Name}.png" alt="">
+            ${imageTemplate(cube.View360, cube.Brand, cube.Name)}
         </div>
         <div class="cube-list-details">
             <div class="cube-list-info">
@@ -156,7 +144,7 @@ function cubeTemplate(cube) {
                 </div>
             </div>
             <div class="cube-list-favourite-time">
-                <a class="cube-list-favourite order-2" href="#"><i class="fas fa-${cube.FaForm}"></i></a>
+                ${view360Template(cube.View360, cube.Brand, cube.Name)}
                 <span class="cube-list-time order-1"><i class="far fa-clock pr-1"></i> ${cube.Date}</span>
             </div>
         </div>
@@ -171,5 +159,21 @@ function cubeBadgesTemplate(key, value) {
     let val = value || getfilterDataKey(key, "Default") || 'Error';
     
     if (val == "No" || val == "Error") { return "" }; // Avoid print badge when value is No or Error
-    return `<li title="${key}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
+    return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
+}
+
+function imageTemplate(print, brand, name){
+    let image = `<img class="img-fluid" src="images/cubes/square-336/${brand}-${name}.png" alt="${brand}-${name}">`
+    if (print){
+        return `<a href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')">${image}</a>`
+    }
+    return image;
+}
+
+function view360Template(print, brand, name){
+    let classes = getfilterDataKey("View360", "Icon") + " text-" + getfilterDataKey("View360", "Color");
+    if (print){
+        return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
+    }
+    return ``;
 }
