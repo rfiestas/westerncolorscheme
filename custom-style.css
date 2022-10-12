@@ -208,11 +208,6 @@ body{
 
 /* Custom */
 
-/* Used by filter*/
-.is-hidden {
-    display: none;
-}
-
 /* Used by badges*/
 .increase-size {
     font-size: 12px;

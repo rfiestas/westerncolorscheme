@@ -59,7 +59,7 @@ $(document).ready(function () {
             // Create an list of checked filters
             const checkedFilter = $filtersCkb.filter(":checked").get().map(el => el.value);
             // Show all and exit if no filter is active
-            if (!checkedFilter.length) return $items.removeClass("is-hidden");
+            if (!checkedFilter.length) return $items.removeClass("visually-hidden");
 
             // Create a Dictionary of list with the filters, to apply this rules:
             // OR for filters with the same category
@@ -84,9 +84,9 @@ $(document).ready(function () {
                     }
                 }
                 if (match == Object.keys(filters).length) {
-                    $(this).removeClass("is-hidden"); // March all filters, then show
+                    $(this).removeClass("visually-hidden"); // March all filters, then show
                 } else {
-                    $(this).addClass("is-hidden"); // Hide
+                    $(this).addClass("visually-hidden"); // Hide
                 }
             });
         });
