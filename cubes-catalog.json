@@ -1,5 +1,5 @@
 {
-  "cubes": [
+  "Cubes": [
     {
       "Name": "Impossible",
       "Brand": "Rubik",
@@ -346,5 +346,38 @@
       "Stickers": "Yes",
       "Date": "24 Dec, 2020"
     }
-  ]
+  ],
+  "Filters" : {
+    "Brand": {
+      "Icon": "fa-flag",
+      "Color": "primary"
+    },
+    "Group": {
+      "Icon": "fa-shapes",
+      "Color": "success"
+    },
+    "Color": {
+      "Icon": "fa-palette",
+      "Color": "warning"
+    },
+    "Borders": {
+      "Icon": "fa-border-all",
+      "Color": "info",
+      "Default": "No"
+    },
+    "Stickers": {
+      "Icon": "fa-sticky-note",
+      "Color": "sticker",
+      "Default": "No"
+    },
+    "View360": {
+      "Icon": "fa-cube",
+      "Color": "danger",
+      "Default": "No"
+    },
+    "Default": {
+      "Icon": "fa-backspace",
+      "Color": "muted"
+    }
+  }
 }

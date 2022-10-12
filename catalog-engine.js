@@ -1,54 +1,23 @@
-const filterData = {
-    "Brand": {
-        "Icon": "fa-flag",
-        "Color": "primary",
-    },
-    "Group": {
-        "Icon": "fa-shapes",
-        "Color": "success",
-    },
-    "Color": {
-        "Icon": "fa-palette",
-        "Color": "warning",
-    },
-    "Borders": {
-        "Icon": "fa-border-all",
-        "Color": "info",
-        "Default": "No"
-    },
-    "Stickers": {
-        "Icon": "fa-sticky-note",
-        "Color": "sticker",
-        "Default": "No"
-    },
-    "View360": {
-        "Icon": "fa-cube",
-        "Color": "danger",
-        "Default": "No"
-    },
-    "Default": {
-        "Icon": "fa-backspace",
-        "Color": "muted",
-    }
-};
-
+var filtersData = {};
 $(document).ready(function () {
     // Get catalog
     $.getJSON('cubes-catalog.json', function (catalog) {
+        
+        filtersData = catalog.Filters
         // Sort Cubes catalog
-        catalog.cubes = catalog.cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
+        catalog.Cubes = catalog.Cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
 
         // Add all filter checkbox
         // Get unique Brands, create and print
         ["Brand","Group","Color","Borders","Stickers","View360"].forEach(category => {
-            generateFilter(catalog.cubes, category);
+            generateFilter(catalog.Cubes, category);
         });
 
         // Show cubes catalog
         document.getElementById("catalog").innerHTML = `
-            <h2 class="app-title">Cube (${catalog.cubes.length} results) </h2>
-            ${catalog.cubes.map(cubeTemplate).join("")}
-            <p class="footer">These ${catalog.cubes.length} cubes were added recently. Check back soon for updates</p>
+            <h2 class="app-title">Cube (${catalog.Cubes.length} results) </h2>
+            ${catalog.Cubes.map(cubeTemplate).join("")}
+            <p class="footer">These ${catalog.Cubes.length} cubes were added recently. Check back soon for updates</p>
         `;
 
         const $filtersCkb = $(".custom-control-input");
@@ -107,9 +76,9 @@ function generateFilter(catalog, key){
     document.getElementById("filters").innerHTML += FilterTemplate(key, category.sort());
 }
 
-// get filtered key
+// get filtered key defaults
 function getfilterDataKey(category, key) {
-    return filterData[category][key] || filterData.Default[key];
+    return filtersData[category][key] || filtersData.Default[key];
 }
 
 // Open view 360 modal
