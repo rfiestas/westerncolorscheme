@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         // Add all filter checkbox
         // Get unique Brands, create and print
-        ["Brand","Group","Color","Borders","Stickers","View360"].forEach(category => {
+        ["Brand","Group","Color","Borders","Stickers","View360","Tags"].forEach(category => {
             generateFilter(catalog.Cubes, category);
         });
 
@@ -48,8 +48,16 @@ $(document).ready(function () {
                 var match = 0;
                 for (var key in filters) {
                     const itemValue = $(this).data(key.toLowerCase()); //Data in lowercase
-                    if (filters[key].includes(itemValue)) {
-                        match += 1;
+                    if (itemValue.includes(",")){ // Used on tags or when a key contains a list.
+                        var removedDuplicates = (new Set([].concat(filters[key],itemValue.split(","))));
+                        var duplicates = [].concat(filters[key],itemValue.split(","));
+                        if (removedDuplicates.size < duplicates.length) {
+                            match += 1;
+                        }
+                    }else{ // Used on keys that use a string
+                        if (filters[key].includes(itemValue)) {
+                            match += 1;
+                        }
                     }
                 }
                 if (match == Object.keys(filters).length) {
@@ -72,12 +80,20 @@ $(document).ready(function () {
 
 // generate filters view
 function generateFilter(catalog, key){
-    let category = [...new Set(catalog.map(item => item[key]))];
+    let category = ""
+    if (key == "Tags") {
+        category = [...new Set([].concat(...catalog.map(item => item[key] || [])))];
+    }else{
+        category = [...new Set(catalog.map(item => item[key]))];
+    }
     document.getElementById("filters").innerHTML += FilterTemplate(key, category.sort());
 }
 
 // get filtered key defaults
 function getfilterDataKey(category, key) {
+    if (typeof(filtersData[category]) == 'undefined') {
+        return filtersData.Default[key];
+    }
     return filtersData[category][key] || filtersData.Default[key];
 }
 
@@ -124,7 +140,7 @@ ${filterItems}
 
 function cubeTemplate(cube) {
     return `
-<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}">
+<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
             ${imageTemplate(cube.View360, cube.Brand, cube.Name)}

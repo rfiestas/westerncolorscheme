@@ -71,8 +71,9 @@
       "Group": "3x3x3",
       "Color": "Yellow",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Apr, 2021"
     },
     {
@@ -81,7 +82,7 @@
       "Group": "3x3x3",
       "Color": "Green",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
       "View360": "Yes",
       "Date": "4 Apr, 2021"
@@ -92,7 +93,7 @@
       "Group": "3x3x3",
       "Color": "Red",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
       "View360": "Yes",
       "Date": "4 Apr, 2021"
@@ -103,7 +104,7 @@
       "Group": "2x2x3",
       "Color": "Yellow",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
       "View360": "Yes",
       "Date": "4 Apr, 2021"
@@ -114,8 +115,9 @@
       "Group": "3x3x3",
       "Color": "Peach",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Apr, 2021"
     },
     {
@@ -124,7 +126,7 @@
       "Group": "3x3x3",
       "Color": "Orange",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
       "View360": "Yes",
       "Date": "4 Abr, 2021"
@@ -383,9 +385,15 @@
       "Color": "danger",
       "Default": "No"
     },
+    "Tags": {
+      "Icon": "fa-tags",
+      "Color": "tags",
+      "Default": ""
+    },
     "Default": {
       "Icon": "fa-backspace",
-      "Color": "muted"
+      "Color": "muted",
+      "Default": "No"
     }
   }
 }
