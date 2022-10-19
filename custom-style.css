@@ -221,6 +221,15 @@ body{
 .text-sticker {
     color: #0a58ca;
 }
+/* Used by tags key */
+.text-tags {
+    color: #606060;
+}
+
+.bg-tags {
+    --bs-bg-opacity: 1;
+    background-color: #606060 !important;
+}
 
 /* Used by 360-magnifier */
 .cloudimage-360-magnifier-icon {

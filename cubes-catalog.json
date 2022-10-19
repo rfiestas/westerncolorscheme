@@ -53,6 +53,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
+      "View360": "Yes",
       "Date": "28 Mar, 2022"
     },
     {
@@ -60,7 +61,7 @@
       "Brand": "FanXin",
       "Group": "3x3x3",
       "Color": "Western Schema",
-      "Borders": "Black",
+      "Borders": "White",
       "Stickers": "Bricks",
       "Date": "21 Nov, 2021"
     },
@@ -70,8 +71,9 @@
       "Group": "3x3x3",
       "Color": "Yellow",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Apr, 2021"
     },
     {
@@ -80,8 +82,9 @@
       "Group": "3x3x3",
       "Color": "Green",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Apr, 2021"
     },
     {
@@ -90,8 +93,9 @@
       "Group": "3x3x3",
       "Color": "Red",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Apr, 2021"
     },
     {
@@ -100,7 +104,7 @@
       "Group": "2x2x3",
       "Color": "Yellow",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
       "View360": "Yes",
       "Date": "4 Apr, 2021"
@@ -111,8 +115,9 @@
       "Group": "3x3x3",
       "Color": "Peach",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Apr, 2021"
     },
     {
@@ -121,8 +126,9 @@
       "Group": "3x3x3",
       "Color": "Orange",
       "Tags": [
-        "Series fruit"
+        "Fruit series"
       ],
+      "View360": "Yes",
       "Date": "4 Abr, 2021"
     },
     {
@@ -180,6 +186,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
+      "View360": "Yes",
       "Date": "12 Sep, 2021"
     },
     {
@@ -199,6 +206,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
+      "View360": "Yes",
       "Date": "1 Dec, 2020"
     },
     {
@@ -208,6 +216,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
+      "View360": "Yes",
       "Date": "1 Dec, 2020"
     },
     {
@@ -217,6 +226,7 @@
       "Color": "Western Schema",
       "Borders": "Black",
       "Stickers": "Yes",
+      "View360": "Yes",
       "Date": "28 Jul, 2021"
     },
     {
@@ -286,7 +296,6 @@
       "Brand": "Edge",
       "Group": "3x3x3",
       "Color": "Western Schema",
-      "Borders": "Transparent",
       "Tags": [
         "Smart"
       ],
@@ -375,9 +384,15 @@
       "Color": "danger",
       "Default": "No"
     },
+    "Tags": {
+      "Icon": "fa-tags",
+      "Color": "tags",
+      "Default": ""
+    },
     "Default": {
       "Icon": "fa-backspace",
-      "Color": "muted"
+      "Color": "muted",
+      "Default": "No"
     }
   }
 }
