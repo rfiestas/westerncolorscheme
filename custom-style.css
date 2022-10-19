@@ -223,7 +223,12 @@ body{
 }
 /* Used by tags key */
 .text-tags {
-    color: #0ee935;
+    color: #606060;
+}
+
+.bg-tags {
+    --bs-bg-opacity: 1;
+    background-color: #606060 !important;
 }
 
 /* Used by 360-magnifier */
