@@ -15,9 +15,9 @@ $(document).ready(function () {
 
         // Show cubes catalog
         document.getElementById("catalog").innerHTML = `
-            <h2 class="app-title">Cube (${catalog.Cubes.length} results) </h2>
+            <h2 class="app-title">${catalog.Cubes.length} Cubes <small id="cubes-filtered" class="text-muted"></small></h2>
             ${catalog.Cubes.map(cubeTemplate).join("")}
-            <p class="footer">These ${catalog.Cubes.length} cubes were added recently. Check back soon for updates</p>
+            <p class="footer"></p>
         `;
 
         const $filtersCkb = $(".custom-control-input");
@@ -28,8 +28,10 @@ $(document).ready(function () {
             // Create an list of checked filters
             const checkedFilter = $filtersCkb.filter(":checked").get().map(el => el.value);
             // Show all and exit if no filter is active
-            if (!checkedFilter.length) return $items.removeClass("visually-hidden");
-
+            if (!checkedFilter.length) {
+                document.getElementById('cubes-filtered').innerHTML=``;
+                return $items.removeClass("visually-hidden");
+            }
             // Create a Dictionary of list with the filters, to apply this rules:
             // OR for filters with the same category
             // AND for filters with different category
@@ -43,6 +45,7 @@ $(document).ready(function () {
                 }
             });
 
+            let cubesFiltered=0;
             // Iterate the catalog items to show or hide based on the filters.
             $items.each(function () {
                 var match = 0;
@@ -62,13 +65,15 @@ $(document).ready(function () {
                 }
                 if (match == Object.keys(filters).length) {
                     $(this).removeClass("visually-hidden"); // March all filters, then show
+                    cubesFiltered ++;
                 } else {
                     $(this).addClass("visually-hidden"); // Hide
                 }
             });
+            document.getElementById('cubes-filtered').innerHTML= resultsTemplate(cubesFiltered);
         });
     });
-    
+        
     // Configure view 360 modal listeners
     document.getElementById('view360').addEventListener('hidden.bs.modal', function (event) {
         window.CI360.destroy();
@@ -156,6 +161,7 @@ function cubeTemplate(cube) {
                         ${cubeBadgesTemplate("Group", cube.Group)}
                         ${cubeBadgesTemplate("Color", cube.Color)}
                         ${cubeBadgesTemplate("Borders", cube.Borders)}
+                        ${cubeBadgesTemplate("Tags", cube.Tags)}
                     </ul>
                 </div>
             </div>
@@ -170,12 +176,25 @@ function cubeTemplate(cube) {
 }
 
 function cubeBadgesTemplate(key, value) {
+    if (Array.isArray(value)){
+        let badges="";
+        value.forEach(element => {
+            badges += cubeBadgesTemplate(key, element)
+        })
+        return badges
+    }
+    let val = value || getfilterDataKey(key, "Default") || 'Error';
     let badgeClass = "badge bg-" + getfilterDataKey(key, "Color") + " increase-size";
     let badgeIcon = "fas " + getfilterDataKey(key, "Icon") + " pr-1";
-    let val = value || getfilterDataKey(key, "Default") || 'Error';
     
     if (val == "No" || val == "Error") { return "" }; // Avoid print badge when value is No or Error
     return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
+}
+
+function resultsTemplate(results){
+    let plural="s";
+    if (results == 1) {plural=""}
+    return `(${results} result${plural})`
 }
 
 function imageTemplate(print, brand, name){
