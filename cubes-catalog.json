@@ -576,6 +576,36 @@
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "6 Jan, 2023"
+    },
+    {
+      "Name": "1x2x2",
+      "Brand": "ZCube",
+      "Group": "1x2x2",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Jan, 2023"
+    },
+    {
+      "Name": "Fisher Twist",
+      "Brand": "Calvin's",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "16 Jan, 2023"
+    },
+    {
+      "Name": "Twist Cube",
+      "Brand": "Calvin's",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "16 Jan, 2023"
     }
   ],
   "Filters": {
