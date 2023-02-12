@@ -1,7 +1,7 @@
 var filtersData = {};
 $(document).ready(function () {
     // Get catalog
-    $.getJSON('cubes-catalog.json', function (catalog) {
+    $.getJSON('catalog-cubes.json', function (catalog) {
         
         filtersData = catalog.Filters
         // Sort Cubes catalog
@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         // Add all filter checkbox
         // Get unique Brands, create and print
-        ["Brand","Group","Color","Borders","Stickers","View360","Tags"].forEach(category => {
+        ["Brand","Group","Color","Base","Stickers","View360","Tags"].forEach(category => {
             generateFilter(catalog.Cubes, category);
         });
 
@@ -145,7 +145,7 @@ ${filterItems}
 
 function cubeTemplate(cube) {
     return `
-<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-borders="${cube.Borders || getfilterDataKey("Borders", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
+<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-base="${cube.Base || getfilterDataKey("Base", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
             ${imageTemplate(cube.View360, cube.Brand, cube.Name)}
@@ -160,7 +160,7 @@ function cubeTemplate(cube) {
                         ${cubeBadgesTemplate("Brand", cube.Brand)}
                         ${cubeBadgesTemplate("Group", cube.Group)}
                         ${cubeBadgesTemplate("Color", cube.Color)}
-                        ${cubeBadgesTemplate("Borders", cube.Borders)}
+                        ${cubeBadgesTemplate("Base", cube.Base)}
                         ${cubeBadgesTemplate("Tags", cube.Tags)}
                     </ul>
                 </div>
