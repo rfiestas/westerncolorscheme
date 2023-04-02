@@ -149,6 +149,7 @@ function cubeTemplate(cube) {
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
             ${imageTemplate(cube.View360, cube.Brand, cube.Name)}
+            ${view360Template(cube.View360, cube.Brand, cube.Name)}
         </div>
         <div class="cube-list-details">
             <div class="cube-list-info">
@@ -208,7 +209,7 @@ function imageTemplate(print, brand, name){
 function view360Template(print, brand, name){
     let classes = getfilterDataKey("View360", "Icon") + " text-" + getfilterDataKey("View360", "Color");
     if (print){
-        return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
+        return `<div style="position: absolute;top: 8px;right: 8px;"><div class="cube-list-favourite order-2" title="${brand}-${name} 360 view"><i class="fas ${classes}"></i></div></div>`;
     }
     return ``;
 }
