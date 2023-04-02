@@ -606,6 +606,32 @@
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "16 Jan, 2023"
+    },
+    {
+      "Name": "Maze",
+      "Brand": "VCube",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "White",
+      "Base": "Black",
+      "Stickers": "No",
+      "Date": "14 Mar, 2023"
+    },
+    {
+      "Name": "Mastermorphix",
+      "Brand": "LanLan",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Schema": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "14 Mar, 2023"
     }
   ],
   "Filters": {
