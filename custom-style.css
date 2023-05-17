@@ -1,6 +1,6 @@
 body{
-    margin-top:20px;
     background:#F5F5F5;
+    padding-top:20px;
 }
 /* cube List */
 .cube-list {
@@ -221,11 +221,11 @@ body{
 .text-sticker {
     color: #0a58ca;
 }
+
 /* Used by tags key */
 .text-tags {
     color: #606060;
 }
-
 .bg-tags {
     --bs-bg-opacity: 1;
     background-color: #606060 !important;
@@ -242,4 +242,81 @@ body{
 
 .cube-list-favourite-time {
     min-height: 60px;
+}
+
+/* Used by buttons */
+.btn.btn-transparent {
+    border-width: 3px;
+    border-color: #000;
+    color: #000;
+}
+
+/*Used on the body and the filter modal form*/
+.background {
+    background-image:url("images/background.png");
+}
+
+/* Used on title and summary*/
+.shadows {
+    text-shadow: -15px 5px 20px #000000;
+}
+
+/* Badges */
+.bg-white {
+    --bs-bg-opacity: 1;
+    background-color: #FFFFFF !important;
+}
+.bg-yellow{
+    --bs-bg-opacity: 1;
+    background-color: rgb(255, 213, 0) !important;
+}
+.bg-green{
+    --bs-bg-opacity: 1;
+    background-color: rgb(0, 155, 72) !important;
+}
+.bg-blue{
+    --bs-bg-opacity: 1;
+    background-color: rgb(0, 70, 173) !important;
+}
+.bg-orange{
+    --bs-bg-opacity: 1;
+    background-color: rgb(255, 88, 0) !important;
+}
+.bg-red{
+    --bs-bg-opacity: 1;
+    background-color: rgb(183, 18, 52) !important;
+}
+.bg-black{
+    --bs-bg-opacity: 1;
+    background-color: #000 !important;
+}
+.bg-grey{
+    --bs-bg-opacity: 1;
+    background-color: rgb(152, 151, 145) !important;
+}
+
+/* Text color, used on fiters */
+.text-white{
+    color: #FFF;
+}
+.text-yellow{
+    color: rgb(255, 213, 0);
+}
+.text-green{
+    color: rgb(0, 155, 72);
+}
+.text-blue{
+    color: rgb(0, 70, 173);
+}
+.text-orange{
+    color: rgb(255, 88, 0);
+}
+.text-red{
+    color: rgb(183, 18, 52);
+}
+.text-black{
+    color: #000;
+}
+.text-grey{
+    color: rgb(152, 151, 145);
 }
