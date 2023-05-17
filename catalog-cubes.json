@@ -365,6 +365,7 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema",
+      "Base": "White",
       "Stickerless": "Yes",
       "Date": "22 Aug, 2022"
     },
@@ -636,34 +637,34 @@
   "Filters": {
     "Brand": {
       "Icon": "fa-flag",
-      "Color": "primary"
+      "Color": "blue"
     },
     "Group": {
       "Icon": "fa-shapes",
-      "Color": "success"
+      "Color": "green"
     },
     "Color": {
       "Icon": "fa-palette",
-      "Color": "warning"
+      "Color": "yellow"
     },
     "Base": {
       "Icon": "fa-border-all",
-      "Color": "info",
-      "Default": "No"
+      "Color": "orange",
+      "Default": "Same as color"
     },
     "Stickers": {
       "Icon": "fa-sticky-note",
-      "Color": "sticker",
-      "Default": "No"
+      "Color": "black",
+      "Default": "None"
     },
     "View360": {
       "Icon": "fa-cube",
-      "Color": "danger",
+      "Color": "red",
       "Default": "No"
     },
     "Tags": {
       "Icon": "fa-tags",
-      "Color": "tags",
+      "Color": "grey",
       "Default": ""
     },
     "Default": {
