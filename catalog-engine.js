@@ -9,17 +9,32 @@ $(document).ready(function () {
 
         // Add all filter checkbox
         // Get unique Brands, create and print
-        ["Brand","Group","Color","Base","Stickers","View360","Tags"].forEach(category => {
-            generateFilter(catalog.Cubes, category);
-        });
+        for (let category of Object.keys(filtersData)) {
+            if (category == "Default") continue;
+            filtersData[category].html = generateFilter(catalog.Cubes, category);
+        };
+        document.getElementById("filters").innerHTML = `
+<div class="row">
+    <div class="col-sm-12 col-md">${getfilterDataKey("Brand","html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Group","html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Color","html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Base","html")}</br>${getfilterDataKey("Stickers","html")} </div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("View360","html")}</br>${getfilterDataKey("Tags","html")}</div>
+</div>
+        `
 
-        // Show cubes catalog
-        document.getElementById("catalog").innerHTML = `
-            <h2 class="app-title">${catalog.Cubes.length} Cubes <small id="cubes-filtered" class="text-muted"></small></h2>
-            ${catalog.Cubes.map(cubeTemplate).join("")}
-            <p class="footer"></p>
-        `;
+        // Show cubes catalog and total catalog
+        document.getElementById("catalog").innerHTML = `${catalog.Cubes.map(cubeTemplate).join("")}`;
+        document.getElementById("cube-total").innerHTML = `${catalog.Cubes.length} Cubes `;
+        document.getElementById("modal-cube-total").innerHTML = `${catalog.Cubes.length} Cubes `;
+        
+        /* Filter reset button */
+        const $resetBtn = $("#reset");
+        $resetBtn.on("click", function () {
+            $(".custom-control-input").prop('checked', false).trigger("change");
+        })
 
+        /* Filter checkbox*/
         const $filtersCkb = $(".custom-control-input");
         $filtersCkb.on("change", function () {
             key = $(this).val().split('#')[0]; // Get category
@@ -29,7 +44,8 @@ $(document).ready(function () {
             const checkedFilter = $filtersCkb.filter(":checked").get().map(el => el.value);
             // Show all and exit if no filter is active
             if (!checkedFilter.length) {
-                document.getElementById('cubes-filtered').innerHTML=``;
+                document.getElementById('cube-summary').innerHTML=``;
+                document.getElementById('modal-cube-summary').innerHTML=``;
                 return $items.removeClass("visually-hidden");
             }
             // Create a Dictionary of list with the filters, to apply this rules:
@@ -70,7 +86,10 @@ $(document).ready(function () {
                     $(this).addClass("visually-hidden"); // Hide
                 }
             });
-            document.getElementById('cubes-filtered').innerHTML= resultsTemplate(cubesFiltered);
+
+            let summary=" ("+resultsTemplate(Object.keys(filters).length,"Filter")+', '+resultsTemplate(cubesFiltered,"Result")+")";
+            document.getElementById('cube-summary').innerHTML= summary;
+            document.getElementById('modal-cube-summary').innerHTML= summary;
         });
     });
         
@@ -81,6 +100,7 @@ $(document).ready(function () {
     document.getElementById('view360').addEventListener('shown.bs.modal', function (event) {
         window.CI360.init();
     })
+
 });
 
 // generate filters view
@@ -91,7 +111,7 @@ function generateFilter(catalog, key){
     }else{
         category = [...new Set(catalog.map(item => item[key]))];
     }
-    document.getElementById("filters").innerHTML += FilterTemplate(key, category.sort());
+    return FilterTemplate(key, category.sort());
 }
 
 // get filtered key defaults
@@ -118,26 +138,20 @@ function FilterTemplate(key, items) {
     for (const item of items) {
         val = item || getfilterDataKey(key, "Default")
         filterItems += `
-<div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="${key}#${val}" value="${key}#${val}">
-    <label class="custom-control-label" for="${key}#${val}">${val}</label>
+<div class="custom-control custom-checkbox inputPreview">
+    <input type="checkbox" class="custom-control-input css-checkbox" id="${key}#${val}" value="${key}#${val}">
+    <label class="custom-control-label label" for="${key}#${val}">${val}
+  </label>
 </div>
 `;
         i++;
     }
 
-    // Print filters view
+    // Return filter html view
     let categoryClass = getfilterDataKey(key, "Icon") + " text-" + getfilterDataKey(key, "Color");
     content = `
-<div class="widget-title widget-collapse">
-    <h6><i class="fas ${categoryClass} pr-1"></i>&nbsp;&nbsp;${key}</h6>&nbsp; 
-    <a class="ml-auto" data-bs-toggle="collapse" href="#${key}" role="button" aria-expanded="false" aria-controls="${key}"><i class="fas fa-chevron-down"></i></a>
-</div>
-<div class="collapse" id="${key}">
-    <div class="widget-content">
+<h6 class="border-bottom pb-1"><i class="fas ${categoryClass} pr-1"></i>&nbsp;&nbsp;${key}</h6>
 ${filterItems}
-    </div>
-</div>
 `;
 
     return content;
@@ -145,7 +159,7 @@ ${filterItems}
 
 function cubeTemplate(cube) {
     return `
-<div class="col-sm-6 col-lg-4 mb-4" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-base="${cube.Base || getfilterDataKey("Base", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
+<div class="col-sm-6 col-lg-3 mb-3" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-base="${cube.Base || getfilterDataKey("Base", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
             ${imageTemplate(cube.View360, cube.Brand, cube.Name)}
@@ -191,10 +205,10 @@ function cubeBadgesTemplate(key, value) {
     return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
 }
 
-function resultsTemplate(results){
+function resultsTemplate(results,title){
     let plural="s";
     if (results == 1) {plural=""}
-    return `(${results} result${plural})`
+    return `${results} ${title}${plural}`
 }
 
 function imageTemplate(print, brand, name){
