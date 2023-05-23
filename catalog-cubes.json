@@ -60,7 +60,7 @@
       "Brand": "DaYan",
       "Group": "3x3x3",
       "Shape": "Octahedron",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -82,7 +82,7 @@
       "Brand": "FanXin",
       "Group": "3x3x3",
       "Shape": "Cube",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -183,9 +183,9 @@
     {
       "Name": "Octahedron Diamond",
       "Brand": "LanLan",
-      "Group": "8-axis",
+      "Group": "Skewb",
       "Shape": "Octahedron",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -214,8 +214,8 @@
       "Name": "Blade",
       "Brand": "DianSheng",
       "Group": "3x3x3",
-      "Shape": "Parallelogram Prism",
-      "Color": "Western Schema",
+      "Shape": "Cuboid",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Green",
         "Red",
@@ -234,7 +234,7 @@
       "Brand": "DianSheng",
       "Group": "3x3x3",
       "Shape": "Hexagonal Prism",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -255,7 +255,7 @@
       "Brand": "DianSheng",
       "Group": "3x3x3",
       "Shape": "Gem",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -274,7 +274,7 @@
       "Brand": "DianSheng",
       "Group": "3x3x3",
       "Shape": "Gem",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -294,7 +294,7 @@
       "Brand": "DianSheng",
       "Group": "3x3x3",
       "Shape": "Gem",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -313,7 +313,7 @@
       "Brand": "DianSheng",
       "Group": "3x3x3",
       "Shape": "Gem",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -334,7 +334,7 @@
       "Brand": "LanLan",
       "Group": "3x3x3",
       "Shape": "Dodecahedron",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Orange",
         "Green",
@@ -364,7 +364,15 @@
       "Brand": "MoFang JiaoShi",
       "Group": "3x3x3",
       "Shape": "Cube",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "Black",
+        "Yellow"
+      ],
       "Base": "White",
       "Stickerless": "Yes",
       "Date": "22 Aug, 2022"
@@ -414,7 +422,8 @@
       "Brand": "ZCube",
       "Group": "3x3x3",
       "Shape": "Cube",
-      "Color": "Blue Red White",
+      "Color": "Western Schema Mod",
+      "Schema": ["Red","Blue","White"],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "27 Sep, 2020"
@@ -486,8 +495,8 @@
       "Name": "Pyraminx",
       "Brand": "Qiyi",
       "Group": "Pyraminx",
-      "Shape": "Square Pyramid",
-      "Color": "Western Schema",
+      "Shape": "Tetrahedron",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Green",
         "Red",
@@ -504,6 +513,14 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema",
+      "Schema": [
+        "Phantom Orange",
+        "Phantom Green",
+        "Phantom Red",
+        "Phantom Blue",
+        "Phantom White",
+        "Phantom Yellow"
+      ],
       "Base": "Black",
       "Stickers": "Heat Sensitive",
       "Date": "14 Dec, 2022"
@@ -526,7 +543,7 @@
       "Brand": "DianSheng",
       "Group": "3x3x3",
       "Shape": "Cylinder",
-      "Color": "Western Schema",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Green",
         "Red",
@@ -571,7 +588,7 @@
     {
       "Name": "Master Skewb",
       "Brand": "LanLan",
-      "Group": "8-axis",
+      "Group": "Skewb",
       "Shape": "Cube",
       "Color": "Western Schema",
       "Base": "Black",
@@ -582,7 +599,7 @@
       "Name": "1x2x2",
       "Brand": "ZCube",
       "Group": "1x2x2",
-      "Shape": "Cube",
+      "Shape": "Cuboid",
       "Color": "Western Schema",
       "Base": "Black",
       "Stickers": "Yes",
@@ -613,16 +630,17 @@
       "Brand": "VCube",
       "Group": "3x3x3",
       "Shape": "Cube",
-      "Color": "White",
-      "Base": "Black",
+      "Color": "Black",
+      "Schema": ["Maze"],
+      "Base": "White",
       "Date": "14 Mar, 2023"
     },
     {
       "Name": "Mastermorphix",
       "Brand": "LanLan",
       "Group": "3x3x3",
-      "Shape": "Cube",
-      "Color": "Western Schema",
+      "Shape": "Gem",
+      "Color": "Western Schema Mod",
       "Schema": [
         "Green",
         "Red",
@@ -632,6 +650,24 @@
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "14 Mar, 2023"
+    },
+    {
+      "Name": "Midori no Tanuki",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Udon",
+      "Date": "01 May, 2023",
+      "Description":"https://enuchi.com/11071/midorinotanuki-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
+    },
+    {
+      "Name": "Akai Kitsune",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Udon",
+      "Date": "01 May, 2023",
+      "Description": "https://enuchi.com/11799/akaikitsuneudon-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
     }
   ],
   "Filters": {
@@ -662,10 +698,14 @@
       "Color": "red",
       "Default": "No"
     },
+    "Shape":{
+      "Icon": "fa-object-ungroup",
+      "Color": "purple"
+    },
     "Tags": {
       "Icon": "fa-tags",
       "Color": "grey",
-      "Default": ""
+      "Default": "Nil"
     },
     "Default": {
       "Icon": "fa-backspace",
@@ -681,11 +721,6 @@
       "Blue",
       "White",
       "Yellow"
-    ],
-    "Blue Red White": [
-      "Blue",
-      "Red",
-      "White"
     ]
   }
 }
