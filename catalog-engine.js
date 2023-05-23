@@ -1,9 +1,13 @@
 var filtersData = {};
+var colorSchemaData = {};
+
 $(document).ready(function () {
     // Get catalog
     $.getJSON('catalog-cubes.json', function (catalog) {
         
         filtersData = catalog.Filters
+        colorSchemaData = catalog.ColorSchema;
+
         // Sort Cubes catalog
         catalog.Cubes = catalog.Cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
 
@@ -18,10 +22,9 @@ $(document).ready(function () {
     <div class="col-sm-12 col-md">${getfilterDataKey("Brand","html")}</div>
     <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Group","html")}</div>
     <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Color","html")}</div>
-    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Base","html")}</br>${getfilterDataKey("Stickers","html")} </div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Base","html")}</br>${getfilterDataKey("Stickers","html")}</div>
     <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("View360","html")}</br>${getfilterDataKey("Tags","html")}</div>
-</div>
-        `
+</div>`
 
         // Show cubes catalog and total catalog
         document.getElementById("catalog").innerHTML = `${catalog.Cubes.map(cubeTemplate).join("")}`;
@@ -169,12 +172,17 @@ function cubeTemplate(cube) {
                 <div class="cube-list-title">
                     <h5>${cube.Brand} ${cube.Name}</h5>
                 </div>
-                <div class="cube-list-option badges-list">
+                <div class="d-flex flex-row justify-content-center cube-area">
+                    ${cubeColorsTemplate(cube.Schema, cube.Color, cube.Base,cube.Stickers)}
+                </div>
+                <div class="cube-list-option badges-list pt-2">
                     <ul class="list-unstyled">
                         ${cubeBadgesTemplate("Brand", cube.Brand)}
                         ${cubeBadgesTemplate("Group", cube.Group)}
                         ${cubeBadgesTemplate("Color", cube.Color)}
                         ${cubeBadgesTemplate("Base", cube.Base)}
+                        ${cubeBadgesTemplate("Stickers", cube.Stickers)}
+                        ${cubeBadgesTemplate("Shape", cube.Shape)}
                         ${cubeBadgesTemplate("Tags", cube.Tags)}
                     </ul>
                 </div>
@@ -198,10 +206,10 @@ function cubeBadgesTemplate(key, value) {
         return badges
     }
     let val = value || getfilterDataKey(key, "Default") || 'Error';
-    let badgeClass = "badge bg-" + getfilterDataKey(key, "Color") + " increase-size";
-    let badgeIcon = "fas " + getfilterDataKey(key, "Icon") + " pr-1";
+    let badgeClass = "";
+    let badgeIcon = "fas " + getfilterDataKey(key, "Icon") + " pr-1 text-" + getfilterDataKey(key, "Color");
     
-    if (val == "No" || val == "Error") { return "" }; // Avoid print badge when value is No or Error
+    if (val == "Nil" || val == "Error") { return "" }; // Avoid print badge when value is Nil or Error
     return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
 }
 
@@ -225,4 +233,67 @@ function view360Template(print, brand, name){
         return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
     }
     return ``;
+}
+
+function cubeColorsTemplate(schema, color, base, stickers){
+    let colorSchema = [];
+    let cubeSpecs = "";
+    let pieceClass="";
+    let stickerClass=""
+    let pieceTitle="";
+    let stickerTitle=""
+
+    //colorSchema = schema || ColorSchema || color
+    if (schema != undefined ){
+        colorSchema = schema
+    } else if (colorSchemaData[color] != undefined ){
+        colorSchema = colorSchemaData[color];
+    } else {
+        colorSchema.push(color);
+    }
+
+    //stickers = stickers || Stickers Default
+    stickers = stickers || getfilterDataKey("Stickers", "Default");
+    stickersCss = stickers.replace(/ /g,'').toLocaleLowerCase();
+
+    //base = base || Base Default
+    base = base || getfilterDataKey("Base", "Default")
+    baseCss = base.replace(/ /g,'').toLocaleLowerCase();
+
+    for (var idx in colorSchema) {
+        // Set Color
+        colorize = colorSchema[idx]
+        colorizeCss = colorize.toLocaleLowerCase().replace(/\s+/g, '-');
+       
+        if (stickers == "Yes"){                   // Normal Stickers
+            pieceClass=`piece-with-stickers color-${baseCss}`;
+            pieceTitle=`Base color: ${base}.`;
+            stickerClass=`sticker color-${colorizeCss}`;
+            stickerTitle=`${colorize} sticker.`;
+        } else if (stickers == "None"){             // No Stickers
+            pieceClass=`piece color-${colorizeCss}`;
+            pieceTitle=`${colorize} color without stikers.`;
+        }else{                                    // Special stickers
+            if (base != 'Same as color') {                 // With Base
+                pieceClass=`piece-with-stickers color-${baseCss}`;
+                stickerClass=`sticker color-${colorizeCss} pattern-${stickersCss}`;
+                pieceTitle=`Base color: ${base}.`;
+                stickerTitle=`${colorize} ${stickers}.`;
+            }else{                                // Without Base
+                pieceClass=`piece-with-stickers color-${colorizeCss}`;
+                stickerClass=`sticker pattern-${stickersCss}`;
+                pieceTitle=`Base color: ${colorize}.`;
+                stickerTitle=`${stickers} sticker.`;
+            }
+        }
+
+        cubeSpecs += `
+<div class="${pieceClass}" title="${pieceTitle}">
+<div class="${stickerClass}" title="${stickerTitle}">
+    <span class=""></span>
+</div>
+</div>
+`;
+}
+return cubeSpecs;
 }
