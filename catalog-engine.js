@@ -10,6 +10,7 @@ $(document).ready(function () {
 
         // Sort Cubes catalog
         catalog.Cubes = catalog.Cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
+        catalog.Cubes = getNonDecommissioned(catalog.Cubes); // Remove decommissioned cubes
 
         // Add all filter checkbox
         // Get unique Brands, create and print
@@ -296,4 +297,12 @@ function cubeColorsTemplate(schema, color, base, stickers){
 `;
 }
 return cubeSpecs;
+}
+
+function getNonDecommissioned(array) {
+    return array.filter(function(e) {
+        if (e['Decommissioned'] != true) {
+            return true;
+        } 
+    });
 }
