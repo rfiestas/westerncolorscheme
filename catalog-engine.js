@@ -4,12 +4,12 @@ var colorSchemaData = {};
 $(document).ready(function () {
     // Get catalog
     $.getJSON('catalog-cubes.json', function (catalog) {
-        
+
         filtersData = catalog.Filters
         colorSchemaData = catalog.ColorSchema;
 
         // Sort Cubes catalog
-        catalog.Cubes = catalog.Cubes.sort((a, b) => (a.Name > b.Name) ? 1 : ((b.Name > a.Name) ? -1 : 0));
+        catalog.Cubes = catalog.Cubes.sort((a, b) => (a.Group+a.Brand > b.Group+b.Brand) ? 1 : ((b.Group+b.Brand > a.Group+a.Brand) ? -1 : 0));
         catalog.Cubes = getNonDecommissioned(catalog.Cubes); // Remove decommissioned cubes
 
         // Add all filter checkbox
@@ -17,21 +17,21 @@ $(document).ready(function () {
         for (let category of Object.keys(filtersData)) {
             if (category == "Default") continue;
             filtersData[category].html = generateFilter(catalog.Cubes, category);
-        };
+        }
         document.getElementById("filters").innerHTML = `
 <div class="row">
-    <div class="col-sm-12 col-md">${getfilterDataKey("Brand","html")}</div>
-    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Group","html")}</div>
-    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Color","html")}</div>
-    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Base","html")}</br>${getfilterDataKey("Stickers","html")}</div>
-    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("View360","html")}</br>${getfilterDataKey("Tags","html")}</div>
+    <div class="col-sm-12 col-md">${getfilterDataKey("Brand", "html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Group", "html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Color", "html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("Base", "html")}</br>${getfilterDataKey("Stickers", "html")}</br>${getfilterDataKey("Texture", "html")}</div>
+    <div class="col-sm-12 col-md"><br class="d-md-none">${getfilterDataKey("View360", "html")}</br>${getfilterDataKey("Tags", "html")}</div>
 </div>`
 
         // Show cubes catalog and total catalog
         document.getElementById("catalog").innerHTML = `${catalog.Cubes.map(cubeTemplate).join("")}`;
         document.getElementById("cube-total").innerHTML = `${catalog.Cubes.length} Cubes `;
         document.getElementById("modal-cube-total").innerHTML = `${catalog.Cubes.length} Cubes `;
-        
+
         /* Filter reset button */
         const $resetBtn = $("#reset");
         $resetBtn.on("click", function () {
@@ -43,13 +43,13 @@ $(document).ready(function () {
         $filtersCkb.on("change", function () {
             key = $(this).val().split('#')[0]; // Get category
             const $items = $(`[data-${key}]`); // Get items with the same category
-        
+
             // Create an list of checked filters
             const checkedFilter = $filtersCkb.filter(":checked").get().map(el => el.value);
             // Show all and exit if no filter is active
             if (!checkedFilter.length) {
-                document.getElementById('cube-summary').innerHTML=``;
-                document.getElementById('modal-cube-summary').innerHTML=``;
+                document.getElementById('cube-summary').innerHTML = ``;
+                document.getElementById('modal-cube-summary').innerHTML = ``;
                 return $items.removeClass("visually-hidden");
             }
             // Create a Dictionary of list with the filters, to apply this rules:
@@ -65,54 +65,54 @@ $(document).ready(function () {
                 }
             });
 
-            let cubesFiltered=0;
+            let cubesFiltered = 0;
             // Iterate the catalog items to show or hide based on the filters.
             $items.each(function () {
                 var match = 0;
                 for (var key in filters) {
                     const itemValue = $(this).data(key.toLowerCase()); //Data in lowercase
-                    if (itemValue.includes(",")){ // Used on tags or when a key contains a list.
-                        var removedDuplicates = (new Set([].concat(filters[key],itemValue.split(","))));
-                        var duplicates = [].concat(filters[key],itemValue.split(","));
+                    if (itemValue.includes(",")) { // Used on tags or when a key contains a list.
+                        var removedDuplicates = (new Set([].concat(filters[key], itemValue.split(","))));
+                        var duplicates = [].concat(filters[key], itemValue.split(","));
                         if (removedDuplicates.size < duplicates.length) {
                             match += 1;
                         }
-                    }else{ // Used on keys that use a string
+                    } else { // Used on keys that use a string
                         if (filters[key].includes(itemValue)) {
                             match += 1;
                         }
                     }
                 }
                 if (match == Object.keys(filters).length) {
-                    $(this).removeClass("visually-hidden"); // March all filters, then show
-                    cubesFiltered ++;
+                    $(this).removeClass("visually-hidden"); // Match all filters, then show
+                    cubesFiltered++;
                 } else {
                     $(this).addClass("visually-hidden"); // Hide
                 }
             });
 
-            let summary=" ("+resultsTemplate(Object.keys(filters).length,"Filter")+', '+resultsTemplate(cubesFiltered,"Result")+")";
-            document.getElementById('cube-summary').innerHTML= summary;
-            document.getElementById('modal-cube-summary').innerHTML= summary;
+            let summary = " (" + resultsTemplate(Object.keys(filters).length, "Filter") + ', ' + resultsTemplate(cubesFiltered, "Result") + ")";
+            document.getElementById('cube-summary').innerHTML = summary;
+            document.getElementById('modal-cube-summary').innerHTML = summary;
         });
     });
-        
+
     // Configure view 360 modal listeners
-    document.getElementById('view360').addEventListener('hidden.bs.modal', function (event) {
+    document.getElementById('view360').addEventListener('hidden.bs.modal', function () {
         window.CI360.destroy();
     })
-    document.getElementById('view360').addEventListener('shown.bs.modal', function (event) {
+    document.getElementById('view360').addEventListener('shown.bs.modal', function () {
         window.CI360.init();
     })
 
 });
 
 // generate filters view
-function generateFilter(catalog, key){
+function generateFilter(catalog, key) {
     let category = ""
     if (key == "Tags") {
         category = [...new Set([].concat(...catalog.map(item => item[key] || [])))];
-    }else{
+    } else {
         category = [...new Set(catalog.map(item => item[key]))];
     }
     return FilterTemplate(key, category.sort());
@@ -120,14 +120,14 @@ function generateFilter(catalog, key){
 
 // get filtered key defaults
 function getfilterDataKey(category, key) {
-    if (typeof(filtersData[category]) == 'undefined') {
+    if (typeof (filtersData[category]) == 'undefined') {
         return filtersData.Default[key];
     }
     return filtersData[category][key] || filtersData.Default[key];
 }
 
 // Open view 360 modal
-function openView360(brand, name){
+function openView360(brand, name) {
     let folder = `images/cubes/view-360/${brand}-${name}/`;
     document.getElementById('view-label').innerHTML = `${brand} ${name}`;
     document.getElementById('cube-360').setAttribute('data-folder', folder);
@@ -136,7 +136,6 @@ function openView360(brand, name){
 
 function FilterTemplate(key, items) {
     var filterItems = "";
-    var i = 0;
 
     // Prepare filters view
     for (const item of items) {
@@ -148,7 +147,6 @@ function FilterTemplate(key, items) {
   </label>
 </div>
 `;
-        i++;
     }
 
     // Return filter html view
@@ -163,7 +161,7 @@ ${filterItems}
 
 function cubeTemplate(cube) {
     return `
-<div class="col-sm-6 col-lg-3 mb-3" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-base="${cube.Base || getfilterDataKey("Base", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
+<div class="col-sm-6 col-lg-3 mb-3" data-brand="${cube.Brand}" data-group="${cube.Group}" data-color="${cube.Color}" data-base="${cube.Base || getfilterDataKey("Base", "Default")}" data-stickers="${cube.Stickers || getfilterDataKey("Stickers", "Default")}" data-texture="${cube.Texture|| getfilterDataKey("Texture", "Default")}" data-view360="${cube.View360 || getfilterDataKey("View360", "Default")}" data-tags="${(cube.Tags || getfilterDataKey("Tags", "Default"))}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
             ${imageTemplate(cube.View360, cube.Brand, cube.Name)}
@@ -171,10 +169,10 @@ function cubeTemplate(cube) {
         <div class="cube-list-details">
             <div class="cube-list-info">
                 <div class="cube-list-title">
-                    <h5>${cube.Brand} ${cube.Name}</h5>
+                    <h5>${(cube.Brand !="Unknown") && cube.Brand || ""} ${cube.Name}</h5>
                 </div>
                 <div class="d-flex flex-row justify-content-center cube-area">
-                    ${cubeColorsTemplate(cube.Schema, cube.Color, cube.Base,cube.Stickers)}
+                    ${cubeColorsTemplate(cube.Schema, cube.Color, cube.Base, cube.Stickers, cube.Texture)}
                 </div>
                 <div class="cube-list-option badges-list pt-2">
                     <ul class="list-unstyled">
@@ -183,8 +181,9 @@ function cubeTemplate(cube) {
                         ${cubeBadgesTemplate("Color", cube.Color)}
                         ${cubeBadgesTemplate("Base", cube.Base)}
                         ${cubeBadgesTemplate("Stickers", cube.Stickers)}
+                        ${cubeBadgesTemplate("Texture", cube.Texture,"No")}
                         ${cubeBadgesTemplate("Shape", cube.Shape)}
-                        ${cubeBadgesTemplate("Tags", cube.Tags)}
+                        ${cubeBadgesTemplate("Tags", cube.Tags,"Nil")}
                     </ul>
                 </div>
             </div>
@@ -198,9 +197,9 @@ function cubeTemplate(cube) {
 `;
 }
 
-function cubeBadgesTemplate(key, value) {
-    if (Array.isArray(value)){
-        let badges="";
+function cubeBadgesTemplate(key, value, avoid) {
+    if (Array.isArray(value)) {
+        let badges = "";
         value.forEach(element => {
             badges += cubeBadgesTemplate(key, element)
         })
@@ -209,45 +208,45 @@ function cubeBadgesTemplate(key, value) {
     let val = value || getfilterDataKey(key, "Default") || 'Error';
     let badgeClass = "";
     let badgeIcon = "fas " + getfilterDataKey(key, "Icon") + " pr-1 text-" + getfilterDataKey(key, "Color");
-    
-    if (val == "Nil" || val == "Error") { return "" }; // Avoid print badge when value is Nil or Error
+
+    if (val == avoid || val == "Error") { return "" }; // Avoid print badge when value is Nil or Error
     return `<li title="${key}: ${val}"><span class="${badgeClass}"><i class="${badgeIcon}"></i> ${val}</span></li>`;
 }
 
-function resultsTemplate(results,title){
-    let plural="s";
-    if (results == 1) {plural=""}
+function resultsTemplate(results, title) {
+    let plural = "s";
+    if (results == 1) { plural = "" }
     return `${results} ${title}${plural}`
 }
 
-function imageTemplate(print, brand, name){
-    let image = `<img class="img-fluid" src="images/cubes/square-336/${brand}-${name}.png" alt="${brand}-${name}">`
-    if (print){
+function imageTemplate(print, brand, name) {
+    let image = `<img onerror="this.src='images/cubes/square-336/not-found.png';this.onerror='';" class="img-fluid" src="images/cubes/square-336/${brand}-${name}.png" alt="${brand}-${name}">`
+    if (print) {
         return `<a href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')">${image}</a>`
     }
     return image;
 }
 
-function view360Template(print, brand, name){
+function view360Template(print, brand, name) {
     let classes = getfilterDataKey("View360", "Icon") + " text-" + getfilterDataKey("View360", "Color");
-    if (print){
+    if (print) {
         return `<a class="cube-list-favourite order-2" href="#View360/${brand}-${name}" title="${brand}-${name} 360 view" onclick="openView360('${brand}', '${name}')"><i class="fas ${classes}"></i></a>`;
     }
     return ``;
 }
 
-function cubeColorsTemplate(schema, color, base, stickers){
+function cubeColorsTemplate(schema, color, base, stickers, texture) {
     let colorSchema = [];
     let cubeSpecs = "";
-    let pieceClass="";
-    let stickerClass=""
-    let pieceTitle="";
-    let stickerTitle=""
+    let pieceClass = "";
+    let stickerClass = ""
+    let pieceTitle = "";
+    let stickerTitle = ""
 
     //colorSchema = schema || ColorSchema || color
-    if (schema != undefined ){
+    if (schema != undefined) {
         colorSchema = schema
-    } else if (colorSchemaData[color] != undefined ){
+    } else if (colorSchemaData[color] != undefined) {
         colorSchema = colorSchemaData[color];
     } else {
         colorSchema.push(color);
@@ -255,36 +254,52 @@ function cubeColorsTemplate(schema, color, base, stickers){
 
     //stickers = stickers || Stickers Default
     stickers = stickers || getfilterDataKey("Stickers", "Default");
-    stickersCss = stickers.replace(/ /g,'').toLocaleLowerCase();
+    stickersCss = stickers.replace(/ /g, '').toLocaleLowerCase();
+
+    //texture = texture || Texture Default
+    texture = texture || getfilterDataKey("Texture", "Default");
+    textureCss = texture.replace(/ /g, '').toLocaleLowerCase();
 
     //base = base || Base Default
     base = base || getfilterDataKey("Base", "Default")
-    baseCss = base.replace(/ /g,'').toLocaleLowerCase();
+    baseCss = base.replace(/ /g, '').toLocaleLowerCase();
 
     for (var idx in colorSchema) {
         // Set Color
         colorize = colorSchema[idx]
         colorizeCss = colorize.toLocaleLowerCase().replace(/\s+/g, '-');
-       
-        if (stickers == "Yes"){                   // Normal Stickers
-            pieceClass=`piece-with-stickers color-${baseCss}`;
-            pieceTitle=`Base color: ${base}.`;
-            stickerClass=`sticker color-${colorizeCss}`;
-            stickerTitle=`${colorize} sticker.`;
-        } else if (stickers == "None"){             // No Stickers
-            pieceClass=`piece color-${colorizeCss}`;
-            pieceTitle=`${colorize} color without stikers.`;
-        }else{                                    // Special stickers
+
+        if (stickers == "Yes") {                   // Normal Stickers
+            pieceClass = `piece-with-stickers color-${baseCss}`;
+            pieceTitle = `Base color: ${base}.`;
+            stickerClass = `sticker color-${colorizeCss}`;
+            stickerTitle = `${colorize} sticker.`;
+        } else if (stickers == "No") {             // No Stickers
+            if (texture == "No") {                 // No Texture
+                stickerClass = `sticker color-${colorizeCss}`;
+                pieceClass = `piece-with-stickers color-${baseCss}`;
+                pieceTitle = `${colorize} color without stikers.`;
+            } else { // Texture
+                stickerClass = `sticker pattern-${textureCss} color-${colorizeCss}`;
+                pieceClass = `piece-with-stickers color-${baseCss}`;
+                pieceTitle = `Base color: ${base}.`;
+                if (colorize == texture){
+                    stickerTitle = `Texture: ${texture}`;
+                } else {
+                    stickerTitle = `Texture: ${texture} in ${colorize} color.`;
+                }
+            }
+        } else {                                    // Special stickers
             if (base != 'Same as color') {                 // With Base
-                pieceClass=`piece-with-stickers color-${baseCss}`;
-                stickerClass=`sticker color-${colorizeCss} pattern-${stickersCss}`;
-                pieceTitle=`Base color: ${base}.`;
-                stickerTitle=`${colorize} ${stickers}.`;
-            }else{                                // Without Base
-                pieceClass=`piece-with-stickers color-${colorizeCss}`;
-                stickerClass=`sticker pattern-${stickersCss}`;
-                pieceTitle=`Base color: ${colorize}.`;
-                stickerTitle=`${stickers} sticker.`;
+                pieceClass = `piece-with-stickers color-${baseCss}`;
+                stickerClass = `sticker color-${colorizeCss} pattern-${stickersCss}`;
+                pieceTitle = `Base color: ${base}.`;
+                stickerTitle = `${colorize} ${stickers}.`;
+            } else {                                // Without Base
+                pieceClass = `piece-with-stickers color-${colorizeCss}`;
+                stickerClass = `sticker pattern-${stickersCss}`;
+                pieceTitle = `Base color: ${colorize}.`;
+                stickerTitle = `${stickers} sticker.`;
             }
         }
 
@@ -295,14 +310,14 @@ function cubeColorsTemplate(schema, color, base, stickers){
 </div>
 </div>
 `;
-}
-return cubeSpecs;
+    }
+    return cubeSpecs;
 }
 
 function getNonDecommissioned(array) {
-    return array.filter(function(e) {
+    return array.filter(function (e) {
         if (e['Decommissioned'] != true) {
             return true;
-        } 
+        }
     });
 }
