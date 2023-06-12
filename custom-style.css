@@ -253,7 +253,7 @@ body{
 
 /*Used on the body and the filter modal form*/
 .background {
-    background-image:url("images/background.png");
+    background-image:url("images/backgroundV2.png");
 }
 
 /* Used on title and summary*/
@@ -322,4 +322,7 @@ body{
 }
 .text-purple {
     color:rgb(109, 38, 101);
+}
+.text-peach {
+    color:rgb(249, 139, 136);
 }
