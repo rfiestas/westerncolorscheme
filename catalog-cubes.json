@@ -25,14 +25,14 @@
     },
     {
       "Name": "Sudoku",
-      "Brand": "ZCube",
+      "Brand": "Yong Jun",
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "White",
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "3 Sep, 2022",
-      "Description": "This <b>ZCube Sudoku</b> is a combination of the idea of a Rubik’s cube and Sudoku,  Is a 3x3x3 cube with white faces with numbers from 1 to 9. There are six faces of a cube and 9 numbers on each face."
+      "Description": "This <b>Yong Jun Sudoku</b> is a combination of the idea of a Rubik’s cube and Sudoku,  Is a 3x3x3 cube with white faces with numbers from 1 to 9. There are six faces of a cube and 9 numbers on each face."
     },
     {
       "Name": "Crazy Yileng",
@@ -92,7 +92,7 @@
         "Yellow"
       ],
       "Base": "White",
-      "Stickers": "Bricks",
+      "Texture": "Bricks",
       "Date": "21 Nov, 2021",
       "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks."
     },
@@ -361,7 +361,7 @@
     },
     {
       "Name": "Dice",
-      "Brand": "MoFang JiaoShi",
+      "Brand": "Unknown",
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema Mod",
@@ -374,7 +374,7 @@
         "Yellow"
       ],
       "Base": "White",
-      "Stickerless": "Yes",
+      "Stickers": "Yes",
       "Date": "22 Aug, 2022"
     },
     {
@@ -419,7 +419,7 @@
     },
     {
       "Name": "Penrose",
-      "Brand": "ZCube",
+      "Brand": "Unknown",
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema Mod",
@@ -577,13 +577,14 @@
     },
     {
       "Name": "1x3x3",
-      "Brand": "MoFang JiaoShi",
+      "Brand": "Yong Jun",
       "Group": "1x3x3",
       "Shape": "Cuboid",
       "Color": "Western Schema",
       "Base": "Black",
       "Stickers": "Yes",
-      "Date": "6 Jan, 2023"
+      "Date": "6 Jan, 2023",
+      "Decommissioned":true
     },
     {
       "Name": "Master Skewb",
@@ -657,6 +658,7 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Udon",
+      "Texture": "Udon",
       "Date": "01 May, 2023",
       "Description":"https://enuchi.com/11071/midorinotanuki-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
     },
@@ -666,8 +668,80 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Udon",
+      "Texture": "Udon",
       "Date": "01 May, 2023",
       "Description": "https://enuchi.com/11799/akaikitsuneudon-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
+    },
+    {
+      "Name": "1x3x3",
+      "Brand": "Qiyi",
+      "Group": "1x3x3",
+      "Shape": "Cuboid",
+      "Color": "Western Schema",
+      "Stickers":"Yes",
+      "Base": "Black",
+      "Date": "01 Jul, 2023"
+    },
+    {
+      "Name": "1x2x3",
+      "Brand": "Qiyi",
+      "Group": "1x2x3",
+      "Shape": "Cuboid",
+      "Color": "Western Schema",
+      "Stickers":"Yes",
+      "Base": "Black",
+      "Date": "01 Jul, 2023"
+    },
+    {
+      "Name": "2x2x3",
+      "Brand": "Qiyi",
+      "Group": "2x2x3",
+      "Shape": "Cuboid",
+      "Color": "Western Schema",
+      "Stickers":"Yes",
+      "Base": "Black",
+      "Date": "01 Jul, 2023"
+    },
+    {
+      "Name": "2x3x3",
+      "Brand": "Qiyi",
+      "Group": "2x3x3",
+      "Shape": "Cuboid",
+      "Color": "Western Schema",
+      "Stickers":"Yes",
+      "Base": "Black",
+      "Date": "01 Jul, 2023"
+    },
+    {
+      "Name": "Romboedron DDR",
+      "Brand": "LanLan",
+      "Group": "3x3x3",
+      "Shape": "Cuboid",
+      "Color": "Western Schema",
+      "Stickers":"Yes",
+      "Base": "Black",
+      "Date": "01 Jul, 2023"
+    },
+    {
+      "Name": "Blind",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Texture": "Geometric forms",
+      "Base": "Black",
+      "Date": "01 Jul, 2023"
+    },
+    {
+      "Name": "Prototype V3",
+      "Brand": "PuzzLEGO",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Date": "01 Jul, 2023",
+      "Description": "https://www.youtube.com/@puzzLEGO,https://ideas.lego.com/projects/8dc04b37-6d3a-4593-95c2-604c5087e03e,https://rebrickable.com/mocs/MOC-91837/puzzLEGO/working-lego-rubiks-cube-new-revised/#details",
+      "Tags": ["Prototype"]
     }
   ],
   "Filters": {
@@ -691,7 +765,12 @@
     "Stickers": {
       "Icon": "fa-sticky-note",
       "Color": "black",
-      "Default": "None"
+      "Default": "No"
+    },
+    "Texture": {
+      "Icon": "fa-align-center",
+      "Color": "peach",
+      "Default": "No"
     },
     "View360": {
       "Icon": "fa-cube",
