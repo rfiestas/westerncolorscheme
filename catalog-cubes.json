@@ -94,7 +94,8 @@
       "Base": "White",
       "Texture": "Bricks",
       "Date": "21 Nov, 2021",
-      "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks."
+      "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks.",
+      "Decommissioned":true
     },
     {
       "Name": "Lemon",
@@ -742,6 +743,58 @@
       "Date": "01 Jul, 2023",
       "Description": "https://www.youtube.com/@puzzLEGO,https://ideas.lego.com/projects/8dc04b37-6d3a-4593-95c2-604c5087e03e,https://rebrickable.com/mocs/MOC-91837/puzzLEGO/working-lego-rubiks-cube-new-revised/#details",
       "Tags": ["Prototype"]
+    },
+    {
+      "Name": "Carat Diamond",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "No",
+      "Texture": "Diamonds",
+      "Date": "1 Jul, 2023"
+    },
+    {
+      "Name": "Spades",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "No",
+      "Texture": "Spades",
+      "Date": "1 Jul, 2023"
+    },
+    {
+      "Name": "Basketball",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Shape": "Sphere",
+      "Color": "Orange",
+      "Stickers": "No",
+      "Date": "1 Jul, 2023"
+    },
+    {
+      "Name": "Geo Cube B",
+      "Brand": "Moyu",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "1 Jul, 2023",
+      "Tags": ["Transparent"]
+    },
+    {
+      "Name": "Div Block",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Texture": "Bricks",
+      "Date": "1 Jul, 2023",
+      "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks."
     }
   ],
   "Filters": {
