@@ -7,7 +7,7 @@
       "Shape": "Cube",
       "Color": "Western Schema",
       "Base": "Black",
-      "Stickers": "Yes",
+      "Stickers": "Iridescent Titles",
       "View360": "Yes",
       "Date": "14 May, 2022",
       "Description": "The <b>Rubik's Impossible</b> is a 3x3x3 Rubik's puzzle cube with a very high challenge level. It is just like the classic Rubik’s Cube, but it changes colors depending on the angle. The traditional stickers have been replaced with plastic tiles that change color when viewed from different angles."
@@ -658,7 +658,7 @@
       "Brand": "Rubik",
       "Group": "3x3x3",
       "Shape": "Cube",
-      "Color": "Udon",
+      "Color": "Yellow",
       "Texture": "Udon",
       "Date": "01 May, 2023",
       "Description":"https://enuchi.com/11071/midorinotanuki-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
@@ -668,7 +668,7 @@
       "Brand": "Rubik",
       "Group": "3x3x3",
       "Shape": "Cube",
-      "Color": "Udon",
+      "Color": "Yellow",
       "Texture": "Udon",
       "Date": "01 May, 2023",
       "Description": "https://enuchi.com/11799/akaikitsuneudon-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
@@ -797,7 +797,7 @@
       "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks."
     }
   ],
-  "Filters": {
+  "Categories": {
     "Brand": {
       "Icon": "fa-flag",
       "Color": "blue"

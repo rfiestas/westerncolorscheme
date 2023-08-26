@@ -1,0 +1,30 @@
+{{range $cube := .}}
+<div class="col-sm-6 col-lg-3 mb-3" data-brand="{{$cube.Brand}}" data-group="{{$cube.Group}}" data-color="{{$cube.Color}}" data-base="{{$cube.Base}}" data-stickers="{{$cube.Stickers}}" data-texture="{{$cube.Texture}}" data-view360="{{$cube.View360}}" data-tags="{{ range $idx, $tag :=$cube.Tags}}{{if $idx}},{{end}}{{ $tag }}{{end}}">
+    <div class="cube-list cube-grid">
+        <div class="cube-list-image">
+            {{template "index-catalog-element-image.tmpl" $cube}}
+        </div>
+        <div class="cube-list-details">
+            <div class="cube-list-info">
+                <div class="cube-list-title">
+                    <h5>{{ if not (eq $cube.Brand "Unknown") }}{{$cube.Brand}} {{ end }}{{$cube.Name}}</h5>
+                </div>
+                <div class="d-flex flex-row justify-content-center cube-area">
+                    {{ template "index-catalog-element-colors.tmpl" $cube }}
+                </div>
+                <div class="cube-list-option badges-list pt-2">
+                    {{template "index-catalog-element-badges.tmpl" $cube}}
+                </div>
+            </div>
+            <div class="cube-list-favourite-time">
+                {{ if eq $cube.View360 "Yes" }}
+                <a class="cube-list-favourite order-2" href="#View360/{{ $cube.Brand }}-{{ $cube.Name }}" title="{{ $cube.Brand }}-{{ $cube.Name }} 360 view" onclick="openView360('{{ $cube.Brand }}', '{{ $cube.Name }}')">
+                    <i class="fas {{ getCategoryDataKey "View360" "Icon" }} text-{{ getCategoryDataKey "View360" "Color" }}"></i>
+                </a>
+                {{ end }}
+                <span class="$cube-list-time order-1"><i class="far fa-clock pr-1"></i> {{$cube.Date}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
