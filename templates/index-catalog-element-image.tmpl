@@ -1,0 +1,3 @@
+{{ if eq .View360 "Yes" }}<a href="#View360/{{.Brand}}-{{.Name}}" title="{{.Brand}}-{{.Name}} 360 view" onclick="openView360('{{.Brand}}', '{{.Name}}')">{{ end }}
+    <img class="img-fluid lazy-load" data-src="images/cubes/square-336/{{.Brand}}-{{.Name}}.webp" alt="{{.Brand}}-{{.Name}}">
+{{ if eq .View360 "Yes" }}</a>{{ end }}
