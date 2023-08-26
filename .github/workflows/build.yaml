@@ -19,7 +19,7 @@ jobs:
         go-version: 1.18
 
     - name: Build Run
-      run: go run cmd\commandline\main.go > www\index.html
+      run: go run cmd/commandline/main.go > www/index.html
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
