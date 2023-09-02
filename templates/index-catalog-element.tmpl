@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {{- range $cube := .}}
+=======
+{{range $cube := .}}
+>>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
 <div class="col-sm-6 col-lg-3 mb-3" data-brand="{{$cube.Brand}}" data-group="{{$cube.Group}}" data-color="{{$cube.Color}}" data-base="{{$cube.Base}}" data-stickers="{{$cube.Stickers}}" data-texture="{{$cube.Texture}}" data-view360="{{$cube.View360}}" data-tags="{{ range $idx, $tag :=$cube.Tags}}{{if $idx}},{{end}}{{ $tag }}{{end}}">
     <div class="cube-list cube-grid">
         <div class="cube-list-image">
@@ -27,4 +31,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 {{- end }}
+=======
+{{ end }}
+>>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+<<<<<<< HEAD
 	"io"
 	"os"
 
@@ -40,10 +41,21 @@ func main() {
 		FullTimestamp:    false,
 	})
 	level, err := logrus.ParseLevel(cli.Globals.LogLevel)
+=======
+	"io/ioutil"
+	"os"
+	"rubik/internal/catalog"
+)
+
+func main() {
+
+	jsonData, err := ioutil.ReadFile("catalog-cubes.json") // just pass the file name
+>>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
 	if err != nil {
 		fmt.Print(err)
 		os.Exit(2)
 	}
+<<<<<<< HEAD
 	logrus.SetLevel(level)
 
 	err = ctx.Run(&cli.Globals)
@@ -67,4 +79,21 @@ func generateOutput(file string, reader io.Reader) error {
 	}
 
 	return nil
+=======
+
+	app, err := catalog.NewCatalogEngine(catalog.CatalogEngineCfg{
+		JsonData: jsonData,
+	})
+	if err != nil {
+		fmt.Print(err)
+		os.Exit(2)
+	}
+
+	err = app.Index(os.Stdout)
+	if err != nil {
+		fmt.Print(err)
+		os.Exit(2)
+	}
+
+>>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
 }
