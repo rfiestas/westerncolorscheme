@@ -1,41 +1,50 @@
 
-{{ range $idx, $color := .ColorSchema }}
+{{- range $idx, $color := .ColorSchema }}
     {{ if not (eq $.Stickers "No") }}
-        {{ if eq $.Base "Same as color" }}
+        {{- if eq $.Base "Same as color" -}}
 {{ if eq $idx 0 }}<!-- Stickers + base same color (1), 4x4x4, 5x5x5,...-->{{ end }}
 <div class="piece-with-stickers color-{{ toCss $color }}" title="Base color: {{ $color }}">
     <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $.Stickers }} sticker.">
         <span class=""></span>
     </div>
 </div>
-        {{ else }}
-{{ if eq $idx 0 }}<!-- Stickers + colored base (2), 2x2x2, 3x3x3,... -->{{ end }}
+        {{- else -}}
+{{- if eq $idx 0 -}}<!-- Stickers + colored base (2), 2x2x2, 3x3x3,... -->{{- end -}}
 <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
     <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $color }} {{if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }}sticker.">
         <span class=""></span>
     </div>
 </div>
-        {{ end }}
-    {{ else if not (eq $.Texture "No") }}
-{{ if eq $idx 0 }}<!-- Textured (3), Udon, Spades,... -->{{ end }}
+        {{- end -}}
+    {{- else if not (eq $.Texture "No") -}}
+        {{- if eq $.Base "Same as color" -}}
+{{- if eq $idx 0 -}}<!-- Textured + base same color (3), DNA, Udon, ...-->{{- end -}}
+<div class="piece" title="Base color: {{ $color }}">
+    <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" title="{{ $.Texture }} texture in {{ $color }} color.">
+        <span class=""></span>
+    </div>
+</div>
+        {{- else -}}  
+{{- if eq $idx 0 -}}<!-- Textured (4), Spades, Diamonds,... -->{{- end -}}
 <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
     <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" title="{{ $.Texture }} texture in {{ $color }} color.">
         <span class=""></span>
     </div>
 </div>
-    {{ else if eq $.Base "Same as color" }}
-{{ if eq $idx 0 }}<!-- Without stickers + and base same color(4), GoCube, Geo cube,... -->{{ end }}
+        {{- end -}}
+    {{- else if eq $.Base "Same as color" -}}
+{{- if eq $idx 0 -}}<!-- Without stickers + and base same color(5), GoCube, Geo cube,... -->{{- end -}}
 <div class="piece" title="">
     <div class="sticker color-{{ toCss $color }}" title="{{ $color }} color.">
         <span class=""></span>
     </div>
 </div>
-    {{ else }}
-{{ if eq $idx 0 }}<!-- Without stickers + colored base(5) , Maze, PuzzLego,... -->{{ end }}
+    {{- else -}}
+{{- if eq $idx 0 -}}<!-- Without stickers + colored base(6) , Maze, PuzzLego,... -->{{- end -}}
 <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
     <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $color }} without sticker.">
         <span class=""></span>
     </div>
 </div> 
-    {{ end }}
-{{ end }}
+    {{- end -}}
+{{- end }}

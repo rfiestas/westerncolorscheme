@@ -1,6 +1,7 @@
 package catalog
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -8,13 +9,20 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+
+	"github.com/tdewolff/minify/v2"
+	"github.com/tdewolff/minify/v2/css"
+	"github.com/tdewolff/minify/v2/html"
+	"github.com/tdewolff/minify/v2/js"
 )
 
 type CatalogEngineCfg struct {
 	JsonData []byte
+	Minify   bool
 }
 type CatalogEngine struct {
 	catalog catalog
+	minify  bool
 }
 
 func NewCatalogEngine(cfg CatalogEngineCfg) (*CatalogEngine, error) {
@@ -36,6 +44,7 @@ func NewCatalogEngine(cfg CatalogEngineCfg) (*CatalogEngine, error) {
 
 	return &CatalogEngine{
 		catalog: data,
+		minify:  cfg.Minify,
 	}, nil
 }
 
@@ -145,7 +154,31 @@ func (c *catalog) precalculateCatalog() error {
 	return nil
 }
 
-func (c CatalogEngine) Index(w io.Writer) (err error) {
+func MinifyContent(reader io.Reader, minifyType string) (io.Reader, error) {
+	var buffer bytes.Buffer
+	writer := &buffer
+
+	m := minify.New()
+	switch minifyType {
+	case "html":
+		m.AddFunc("html", html.Minify)
+	case "javascript":
+		m.AddFunc("javascript", js.Minify)
+	case "css":
+		m.AddFunc("css", css.Minify)
+	default:
+		return nil, fmt.Errorf("type not supported: %s", minifyType)
+	}
+
+	if err := m.Minify(minifyType, writer, reader); err != nil {
+		return nil, err
+	}
+	return writer, nil
+}
+
+func (c CatalogEngine) Index() (io.Reader, error) {
+	var buffer bytes.Buffer
+	writer := &buffer
 
 	tmpl, err := template.New("index").Funcs(template.FuncMap{
 		"getCategoryDataKey": c.catalog.getCategoryDataKey,
@@ -159,16 +192,23 @@ func (c CatalogEngine) Index(w io.Writer) (err error) {
 		"./templates/index-filters.tmpl",
 	)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	err = tmpl.ExecuteTemplate(w, "index.tmpl", c.catalog)
-	// Capture any error
+	err = tmpl.ExecuteTemplate(writer, "index.tmpl", c.catalog)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
-	return nil
+	if c.minify {
+		writerMinify, err := MinifyContent(writer, "html")
+		if err != nil {
+			return nil, err
+		}
+		return writerMinify, nil
+	}
+
+	return writer, nil
 }
 
 func (c catalog) getCategoryDataKey(key string, property string) string {

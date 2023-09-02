@@ -1,70 +1,70 @@
 <div class="row">
     <div class="col-sm-12 col-md">
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Brand" "Icon" }} text-{{ getCategoryDataKey "Brand" "Color" }} pr-1"></i>&nbsp;&nbsp;Brand</h6>
-        {{ range $item := index . "Brand" }}
+        {{- range $item := index . "Brand" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Brand#{{ $item }}" value="Brand#{{ $item }}">
             <label class="custom-control-label label" for="Brand#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Group" "Icon" }} text-{{ getCategoryDataKey "Group" "Color" }} pr-1"></i>&nbsp;&nbsp;Group</h6>
-        {{ range $item := index . "Group" }}
+        {{- range $item := index . "Group" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Group#{{ $item }}" value="Group#{{ $item }}">
             <label class="custom-control-label label" for="Group#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Color" "Icon" }} text-{{ getCategoryDataKey "Color" "Color" }} pr-1"></i>&nbsp;&nbsp;Color</h6>
-        {{ range $item := index . "Color" }}
+        {{- range $item := index . "Color" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Color#{{ $item }}" value="Color#{{ $item }}">
             <label class="custom-control-label label" for="Color#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
         </br>
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Base" "Icon" }} text-{{ getCategoryDataKey "Base" "Color" }} pr-1"></i>&nbsp;&nbsp;Base</h6>
-        {{ range $item := index . "Base" }}
+        {{- range $item := index . "Base" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Base#{{ $item }}" value="Base#{{ $item }}">
             <label class="custom-control-label label" for="Base#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Stickers" "Icon" }} text-{{ getCategoryDataKey "Stickers" "Color" }} pr-1"></i>&nbsp;&nbsp;Stickers</h6>
-        {{ range $item := index . "Stickers" }}
+        {{- range $item := index . "Stickers" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Stickers#{{ $item }}" value="Stickers#{{ $item }}">
             <label class="custom-control-label label" for="Stickers#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
         </br>
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Texture" "Icon" }} text-{{ getCategoryDataKey "Texture" "Color" }} pr-1"></i>&nbsp;&nbsp;Texture</h6>
-        {{ range $item := index . "Texture" }}
+        {{- range $item := index . "Texture" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Texture#{{ $item }}" value="Texture#{{ $item }}">
             <label class="custom-control-label label" for="Texture#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
         <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "View360" "Icon" }} text-{{ getCategoryDataKey "View360" "Color" }} pr-1"></i>&nbsp;&nbsp;View360</h6>
-        {{ range $item := index . "View360" }}
+        {{- range $item := index . "View360" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="View360#{{ $item }}" value="View360#{{ $item }}">
             <label class="custom-control-label label" for="View360#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
         </br><h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Tags" "Icon" }} text-{{ getCategoryDataKey "Tags" "Color" }} pr-1"></i>&nbsp;&nbsp;Tags</h6>
-        {{ range $item := index . "Tags" }}
+        {{- range $item := index . "Tags" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Tags#{{ $item }}" value="Tags#{{ $item }}">
             <label class="custom-control-label label" for="Tags#{{ $item }}">{{ $item }}</label>
         </div>
-        {{ end }}
+        {{- end }}
     </div>
 </div>

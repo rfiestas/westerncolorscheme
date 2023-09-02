@@ -795,6 +795,106 @@
       "Texture": "Bricks",
       "Date": "1 Jul, 2023",
       "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks."
+    },
+    {
+      "Name": "3x3 Transparent",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Transparent",
+      "Stickers": "No",
+      "Date": "28 Aug, 2023",
+      "Tags": ["Transparent"]
+    },
+    {
+      "Name": "Mirror",
+      "Brand": "SengSo",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Dark Grey",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "Troy Truncated 3D Star",
+      "Brand": "Calvin's",
+      "Group": "3x3x3",
+      "Shape": "Gem",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "Troy 3D Star Cube",
+      "Brand": "Calvin's",
+      "Group": "3x3x3",
+      "Shape": "Gem",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "House",
+      "Brand": "CubeTwist",
+      "Group": "3x3x3",
+      "Shape": "House",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "White House",
+      "Brand": "CubeTwist",
+      "Group": "3x3x3",
+      "Shape": "House",
+      "Color": "White",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "Green Gradient",
+      "Brand": "Unknown",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Green",
+      "Schema": [
+        "Green 01",
+        "Green 02",
+        "Green 03",
+        "Green 04",
+        "Green 05",
+        "Green 06"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "DNA",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Texture": "DNA",
+      "Date": "28 Aug, 2023"
     }
   ],
   "Categories": {

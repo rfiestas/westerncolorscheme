@@ -19,11 +19,17 @@ jobs:
         go-version: 1.18
 
     - name: Build Run
-      run: go run cmd/commandline/main.go > www/index.html
+      run: |
+        go run .\cmd\commandline\. render-index-page &&
+        go run .\cmd\commandline\. render-css-file-cmd &&
+        go run .\cmd\commandline\. render-javascript-file-cmd
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./www
+<<<<<<< HEAD
+=======
         keep_files: true
+>>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
