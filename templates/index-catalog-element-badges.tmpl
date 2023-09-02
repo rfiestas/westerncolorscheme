@@ -2,7 +2,6 @@
     <li title="Brand: {{ .Brand }} "><span"><i class="fas {{ getCategoryDataKey "Brand" "Icon" }} pr-1 text-{{ getCategoryDataKey "Brand" "Color"}}"></i> {{ .Brand}}</span></li>
     <li title="Color: {{ .Color }} "><span"><i class="fas {{ getCategoryDataKey "Color" "Icon" }} pr-1 text-{{ getCategoryDataKey "Color" "Color"}}"></i> {{ .Color}}</span></li>
     <li title="Stickers: {{ .Stickers }} "><span"><i class="fas {{ getCategoryDataKey "Stickers" "Icon" }} pr-1 text-{{ getCategoryDataKey "Stickers" "Color"}}"></i> {{ .Stickers}}</span></li>
-<<<<<<< HEAD
     {{- if not ( eq .Texture "No" ) -}}
     <li title="Texture: {{ .Texture }} "><span"><i class="fas {{ getCategoryDataKey "Texture" "Icon" }} pr-1 text-{{ getCategoryDataKey "Texture" "Color"}}"></i> {{ .Texture}}</span></li>
     {{- end -}}
@@ -10,13 +9,4 @@
     {{- range $tag := .Tags }}
         <li title="Tag: {{ $tag }} "><span"><i class="fas {{ getCategoryDataKey "Tags" "Icon" }} pr-1 text-{{ getCategoryDataKey "Tags" "Color"}}"></i> {{ $tag }}</span></li>
     {{- end }}
-=======
-    {{ if not ( eq .Texture "No" ) }}
-    <li title="Texture: {{ .Texture }} "><span"><i class="fas {{ getCategoryDataKey "Texture" "Icon" }} pr-1 text-{{ getCategoryDataKey "Texture" "Color"}}"></i> {{ .Texture}}</span></li>
-    {{ end }}
-    <li title="Shape: {{ .Shape }} "><span"><i class="fas {{ getCategoryDataKey "Shape" "Icon" }} pr-1 text-{{ getCategoryDataKey "Shape" "Color"}}"></i> {{ .Shape}}</span></li>
-    {{ range $tag := .Tags }}
-        <li title="Tag: {{ $tag }} "><span"><i class="fas {{ getCategoryDataKey "Tags" "Icon" }} pr-1 text-{{ getCategoryDataKey "Tags" "Color"}}"></i> {{ $tag }}</span></li>
-    {{ end }}
->>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
 </ul>

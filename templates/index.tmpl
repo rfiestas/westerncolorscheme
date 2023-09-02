@@ -17,12 +17,7 @@
         <script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/3.0.3/js-cloudimage-360-view.min.js"></script>
         <!-- custom -->
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<<<<<<< HEAD
         <link rel="stylesheet" href="catalog-style.css" type="text/css">
-=======
-        <link rel="stylesheet" href="custom-style.css" type="text/css">
-        <link rel="stylesheet" href="cubes-style.css" type="text/css">
->>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
     </head>
 
     <body class="background">
@@ -116,57 +111,5 @@
         
         <!-- custom scripts -->
         <script src="catalog-engine.js"></script>
-<<<<<<< HEAD
-=======
-
-        <!-- lazy load -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                let lazyloadImages;
-                if("IntersectionObserver" in window) {
-                lazyloadImages = document.querySelectorAll(".lazy-load");
-                let imageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                    if(entry.isIntersecting) {
-                        let image = entry.target;
-                        image.src = image.dataset.src;
-                        image.classList.remove("lazy-load");
-                        imageObserver.unobserve(image);
-                    }
-                    });
-                });
-                lazyloadImages.forEach(function(image) {
-                    imageObserver.observe(image);
-                });
-                } else {
-                let lazyloadThrottleTimeout;
-                lazyloadImages = document.querySelectorAll(".lazy-load");
-
-                function lazyload() {
-                    if(lazyloadThrottleTimeout) {
-                    clearTimeout(lazyloadThrottleTimeout);
-                    }
-                    lazyloadThrottleTimeout = setTimeout(function() {
-                    let scrollTop = window.pageYOffset;
-                    lazyloadImages.forEach(function(img) {
-                        if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy-load');
-                        }
-                    });
-                    if(lazyloadImages.length == 0) {
-                        document.removeEventListener("scroll", lazyload);
-                        window.removeEventListener("resize", lazyload);
-                        window.removeEventListener("orientationChange", lazyload);
-                    }
-                    }, 20);
-                }
-                document.addEventListener("scroll", lazyload);
-                window.addEventListener("resize", lazyload);
-                window.addEventListener("orientationChange", lazyload);
-                }
-            })
-        </script>
->>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
     </body>
 </html>
