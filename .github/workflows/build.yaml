@@ -3,11 +3,7 @@ name: Go Build and Publish
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - goTask
-=======
       - main
->>>>>>> 12b6e18e8c7f6e511f84ae131e26f597b3de285c
 
 jobs:
   build:
@@ -23,7 +19,10 @@ jobs:
         go-version: 1.18
 
     - name: Build Run
-      run: go run cmd/commandline/main.go > www/index.html
+      run: |
+        go run .\cmd\commandline\. render-index-page &&
+        go run .\cmd\commandline\. render-css-file-cmd &&
+        go run .\cmd\commandline\. render-javascript-file-cmd
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
