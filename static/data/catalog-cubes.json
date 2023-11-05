@@ -420,7 +420,7 @@
     },
     {
       "Name": "Penrose",
-      "Brand": "Unknown",
+      "Brand": "Ale Hop",
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema Mod",
@@ -895,6 +895,76 @@
       "Color": "Western Schema",
       "Texture": "DNA",
       "Date": "28 Aug, 2023"
+    },
+    {
+      "Name": "Dots",
+      "Brand": "Ale Hop",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "No",
+      "Texture": "Dots",
+      "Date": "1 Nov, 2023"
+    },
+    {
+      "Name": "Squares",
+      "Brand": "Ale Hop",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "No",
+      "Texture": "Squares",
+      "Date": "1 Nov, 2023"
+    },
+    {
+      "Name": "Petal Column",
+      "Brand": "Ale Hop",
+      "Group": "Petal",
+      "Shape": "Cylinder",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Grey",
+        "Purple"
+      ],
+      "Stickers": "No",
+      "Date": "1 Nov, 2023"
+    },
+    {
+      "Name": "Gear",
+      "Brand": "Ale Hop",
+      "Group": "Gear",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "1 Nov, 2023"
+    },
+    {
+      "Name": "Disney 100",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Grey",
+      "Stickers": "Yes",
+      "Date": "1 Nov, 2023"
+    },
+    {
+      "Name": "Blanker",
+      "Brand": "Unknown",
+      "Group": "2x2x2",
+      "Shape": "Cube",
+      "Color": "White",
+      "Stickers": "Yes",
+      "Date": "1 Nov, 2023"
     }
   ],
   "Categories": {
