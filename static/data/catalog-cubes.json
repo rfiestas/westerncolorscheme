@@ -963,8 +963,79 @@
       "Group": "2x2x2",
       "Shape": "Cube",
       "Color": "White",
+      "Base": "Black",
       "Stickers": "Yes",
       "Date": "1 Nov, 2023"
+    },
+    {
+      "Name": "Pyraminx 2",
+      "Brand": "DianSheng",
+      "Group": "2x2x2",
+      "Shape": "Cube",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Green",
+        "Red",
+        "Blue",
+        "Yellow"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "2 Feb, 2024"
+    },
+    {
+      "Name": "Star Cube",
+      "Brand": "CubeTwist",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "2 Feb, 2024"
+    },
+    {
+      "Name": "Barrel Cube 1",
+      "Brand": "CubeTwist",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "2 Feb, 2024"
+    },
+    {
+      "Name": "3D Maze",
+      "Brand": "Etastra",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Maze",
+      "Schema": [
+        "White",
+        "Grey"
+      ],
+      "Stickers": "No",
+      "Date": "2 Feb, 2024"
+    },
+    {
+      "Name": "Mole Cube",
+      "Brand": "Mefferts",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Grey",
+        "Purple",
+        "Black",
+        "Dark Blue"
+      ],
+      "Stickers": "No",
+      "Date": "2 Feb, 2024"
     }
   ],
   "Categories": {
