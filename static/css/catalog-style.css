@@ -385,6 +385,9 @@ body{
 .color-purple {
     background-color:rgb(109, 38, 101);
 }
+.color-dark-blue {
+    background-color:rgb(0, 0, 139);
+}
 
 /* Special colors */
 .color-phantom-white,.color-phantom-red,.color-phantom-blue,.color-phantom-orange,.color-phantom-green,.color-phantom-yellow {
