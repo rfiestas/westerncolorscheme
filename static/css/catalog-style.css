@@ -388,6 +388,42 @@ body{
 .color-dark-blue {
     background-color:rgb(0, 0, 139);
 }
+.color-pink {
+    background-color:rgb(255, 192, 203);
+}
+.color-light-blue {
+    background-color: rgb(100, 210, 255);
+}
+.color-lime {
+    background-color: rgb(50, 255, 50);
+}
+.color-brown {
+    background-color: rgb(139, 69, 19);
+}
+.color-gray {
+    background-color: rgb(128, 128, 128);
+}
+.color-turquoise {
+    background-color: rgb(48, 213, 200);
+}
+.color-gold {
+    background-color: rgb(255, 215, 0);
+}
+.color-silver {
+    background-color: rgb(192, 192, 192);
+}
+.color-magenta {
+    background-color: rgb(255, 0, 255);
+}
+.color-dark-green {
+    background-color: rgb(0, 80, 0);
+}
+.color-navy-blue {
+    background-color: rgb(0, 0, 128);
+}
+.color-beige {
+    background-color: rgb(245, 245, 220);
+}
 
 /* Special colors */
 .color-phantom-white,.color-phantom-red,.color-phantom-blue,.color-phantom-orange,.color-phantom-green,.color-phantom-yellow {
@@ -411,9 +447,6 @@ body{
 }
 .color-phantom-yellow:hover {
     background-color:rgb(255, 213, 0);
-}
-.color-maze {
-    background-image: url("images/stickers/maze.png");
 }
 
 .color-green-01 {
@@ -459,11 +492,30 @@ body{
 .pattern-diamonds {
     background-image: url("images/stickers/diamonds.png");
 }
-
 .pattern-iridescent-titles:hover {
     animation: color-change 4s infinite;
 }
+.pattern-dna {
+    background-image: url("images/stickers/dna.png");
+    background-size: contain;
+    background-position-y: center;
+}
 
+
+/*Color Custom Face, example: <div class="color-face" style="--face-image: url('images/stickers/cara1.png');"></div> */
+.color-custom-face {
+    background-image: var(--face-image);
+    background-size: 100% 100%;
+    top: 0px;
+    left: 0px;
+}
+.color-custom-face:hover {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    left: -50px;
+    z-index: 100;
+}
 @keyframes color-change {
     0% {
         background-color:white;
@@ -488,8 +540,3 @@ body{
     }
   }
 
-.pattern-dna {
-    background-image: url("images/stickers/dna.png");
-    background-size: contain;
-    background-position-y: center;
-}
