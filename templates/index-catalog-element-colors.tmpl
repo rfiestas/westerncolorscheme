@@ -11,7 +11,7 @@
         {{- else -}}
 {{- if eq $idx 0 -}}<!-- Stickers + colored base (2), 2x2x2, 3x3x3,... -->{{- end -}}
 <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
-    <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $color }} {{if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }}sticker.">
+    <div class="sticker pattern-{{ toCss $.Stickers }} {{ if $.ZoomFace }}color-custom-face " style="--face-image: url('images/stickers/{{ toCss $color }}.jpg');"{{ else }}color-{{ toCss $color }}"{{ end }} title="{{ $color }} {{if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
         <span class=""></span>
     </div>
 </div>
@@ -35,7 +35,7 @@
     {{- else if eq $.Base "Same as color" -}}
 {{- if eq $idx 0 -}}<!-- Without stickers + and base same color(5), GoCube, Geo cube,... -->{{- end -}}
 <div class="piece" title="">
-    <div class="sticker color-{{ toCss $color }}" title="{{ $color }} color.">
+    <div class="sticker {{ if $.ZoomFace }} color-custom-face " style="--face-image: url('images/stickers/{{ toCss $color }}.jpg');"{{ else }}color-{{ toCss $color }}"{{ end }} title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
         <span class=""></span>
     </div>
 </div>

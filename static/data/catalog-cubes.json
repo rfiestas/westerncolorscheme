@@ -29,6 +29,14 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "White",
+      "Schema": [
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White"
+      ],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "3 Sep, 2022",
@@ -384,6 +392,14 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Black",
+      "Schema": [
+        "Black",
+        "Black",
+        "Black",
+        "Black",
+        "Black",
+        "Black"
+      ],
       "Base": "White",
       "Stickers": "Carbon Fiber",
       "Date": "13 Oct, 2020"
@@ -424,7 +440,7 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema Mod",
-      "Schema": ["Red","Blue","White"],
+      "Schema": ["Red","Red","Blue","Blue","White","White"],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "27 Sep, 2020"
@@ -486,6 +502,14 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "White",
+        "Schema": [
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White"
+      ],
       "Base": "Black",
       "Stickers": "Yes",
       "View360": "Yes",
@@ -633,8 +657,15 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Black",
-      "Schema": ["Maze"],
-      "Base": "White",
+      "Schema": [
+        "Maze 01",
+        "Maze 02",
+        "Maze 03",
+        "Maze 04",
+        "Maze 05",
+        "Maze 06"
+      ],
+      "ZoomFace": true,
       "Date": "14 Mar, 2023"
     },
     {
@@ -813,6 +844,14 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Dark Grey",
+      "Schema": [
+        "Dark Grey",
+        "Dark Grey",
+        "Dark Grey",
+        "Dark Grey",
+        "Dark Grey",
+        "Dark Grey"
+      ],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "28 Aug, 2023"
@@ -865,6 +904,14 @@
       "Group": "3x3x3",
       "Shape": "House",
       "Color": "White",
+        "Schema": [
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White"
+      ],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "28 Aug, 2023"
@@ -953,8 +1000,17 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema",
+      "Schema": [
+        "Disney 100",
+        "Woody",
+        "Mickey Mouse",
+        "Simba",
+        "Alice",
+        "Snow White"
+      ],
       "Base": "Grey",
       "Stickers": "Yes",
+      "ZoomFace": true,
       "Date": "1 Nov, 2023"
     },
     {
@@ -963,6 +1019,14 @@
       "Group": "2x2x2",
       "Shape": "Cube",
       "Color": "White",
+      "Schema": [
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White"
+      ],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "1 Nov, 2023"
@@ -1036,6 +1100,273 @@
       ],
       "Stickers": "No",
       "Date": "2 Feb, 2024"
+    },
+    {
+      "Name": "Little Ball",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "11 May, 2024"
+    },
+        {
+      "Name": "Centrosphere",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "11 May, 2024"
+    },
+    {
+      "Name": "Tori Cube",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "11 May, 2024"
+    },
+    {
+      "Name": "Star",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Star",
+      "Color": "Red",
+      "Stickers": "No",
+      "Date": "11 May, 2024"
+    },
+     {
+      "Name": "Heart",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "heart",
+      "Color": "Pink",
+      "Stickers": "No",
+      "Date": "11 May, 2024"
+    },
+    {
+      "Name": "Megaminx ball V1.0 D5",
+      "Brand": "Verypuzzle",
+      "Group": "3x3x3",
+      "Shape": "Ball",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow",
+        "White",
+        "Black",
+        "Orange",
+        "Pink",
+        "Purple",
+        "Light Blue",
+        "Lime",
+        "Brown",
+        "Gray",
+        "Turquoise",
+        "Gold",
+        "Silver",
+        "Magenta",
+        "Dark Green",
+        "Navy Blue",
+        "Beige"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "15 April, 2024"
+    },
+    {
+      "Name": "Braille",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Black",
+      "Schema": [
+        "Braille 1",
+        "Braille 2",
+        "Braille 3",
+        "Braille 4",
+        "Braille 5",
+        "Braille 6"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "11 May, 2024"
+    },
+    {
+      "Name": "Dollar",
+      "Brand": "Warina",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Dollar 01",
+        "Dollar 02",
+        "Dollar 03",
+        "Dollar 01",
+        "Dollar 02",
+        "Dollar 03"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "11 May, 2024"
+    },
+    {
+      "Name": "Graffiti",
+      "Brand": "Unknown",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Graffiti 01",
+        "Graffiti 02",
+        "Graffiti 03",
+        "Graffiti 04",
+        "Graffiti 05",
+        "Graffiti 06"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "11 May, 2024"
+    },
+    {
+      "Name": "Lustrous Cube",
+      "Brand": "SengSo",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "30 May, 2024",
+      "Tags": ["Lights"]
+    },
+    {
+      "Name": "Klotski",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "4 Sep, 2024"
+    },
+    {
+      "Name": "Constellation",
+      "Brand": "Unknown",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Dark Blue",
+      "Schema": [
+        "Constellation Taurus Aries",
+        "Constellation Gemini Cancer",
+        "Constellation Scorpion Libra",
+        "Constellation Virgo Leo",
+        "Constellation Capricorn Sagitarius",
+        "Constellation Piscis Aquarius"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "9 Jan, 2025"
+    },
+    {
+      "Name": "Varied",
+      "Brand": "Flying Tiger",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Black Moustaches",
+        "Colored Circles",
+        "Colored Hearts",
+        "Colored Moustaches",
+        "Colored Squares",
+        "Pink Circles"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "9 Jan, 2025"
+    },
+    {
+      "Name": "Yen",
+      "Brand": "Unknown",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Yen 10000 1",
+        "Yen 10000 2",
+        "Yen 5000 1",
+        "Yen 5000 2",
+        "Yen 1000 1",
+        "Yen 1000 2"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "17 Apr, 2025"
+    },
+    {
+      "Name": "Traditional Japanese Art",
+      "Brand": "Shunkoen",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Kanagawa",
+        "Red Fuji",
+        "Nihonbashi",
+        "Shin Ohashi",
+        "Edobei",
+        "Poppen"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "17 Apr, 2025"
+    },
+    {
+      "Name": "Sensorial",
+      "Brand": "Flying Tiger",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Popcorn",
+        "Alien",
+        "Controller",
+        "Star",
+        "Dona",
+        "Banana"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "22 Jul, 2025"
+    },
+    {
+      "Name": "Alien",
+      "Brand": "Flying Tiger",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Blue",
+      "Stickers": "No",
+      "Date": "22 Jul, 2025"
+    },
+    {
+      "Name": "Lucy the Hedghog",
+      "Brand": "Mine",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Lucy working from home",
+        "Lucy exploring",
+        "Lucy friends",
+        "Lucy gift",
+        "Lucy posing",
+        "Lucy present"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "22 Jul, 2025"
     }
   ],
   "Categories": {

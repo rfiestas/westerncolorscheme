@@ -243,6 +243,7 @@ type cubes struct {
 	Base           string   `json:"Base,omitempty"`
 	Stickers       string   `json:"Stickers,omitempty"` // PrecalculatedWhenEmpty
 	View360        string   `json:"View360,omitempty"`
+	ZoomFace       bool     `json:"ZoomFace,omitempty"`
 	Date           string   `json:"Date"`
 	Description    string   `json:"Description,omitempty"`
 	Decommissioned bool     `json:"Decommissioned,omitempty"`
