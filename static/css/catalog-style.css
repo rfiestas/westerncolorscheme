@@ -255,6 +255,10 @@ body{
 .background {
     background-image:url("images/backgroundV2.png");
 }
+.background-form {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+        url("images/backgroundV2.png");
+}
 
 /* Used on title and summary*/
 .shadows {
@@ -468,6 +472,47 @@ body{
     background-color: #b7e4c7;
 }
 
+.color-grey-01 {
+    background-color: #6c706e;
+}
+.color-grey-02 {
+    background-color: #989e9b;
+}
+.color-grey-03 {
+    background-color: #b4bdb9;
+}
+.color-grey-04 {
+    background-color: #c2cbc7;
+}
+.color-grey-05 {
+    background-color: #d2d9d5;
+}
+.color-grey-06 {
+    background-color: #dde3df;
+}
+
+.color-metallic-white,.color-metallic-red,.color-metallic-blue,.color-metallic-orange,.color-metallic-green,.color-metallic-yellow {
+    background-color: #d2d9d5;
+    transition: background-color 2s;
+}
+.color-metallic-white:hover {
+    background-color:white;
+}
+.color-metallic-red:hover {
+    background-color:rgb(183, 18, 52);
+}      
+.color-metallic-blue:hover {
+    background-color:rgb(0, 70, 173);
+}
+.color-metallic-orange:hover {
+    background-color:rgb(255, 88, 0);
+}
+.color-metallic-green:hover {
+    background-color:rgb(0, 155, 72);
+}
+.color-metallic-yellow:hover {
+    background-color:rgb(255, 213, 0);
+}
 .color-transparent {
     background-color: #f5f4f4d9;
 }
@@ -499,6 +544,12 @@ body{
     background-image: url("images/stickers/dna.png");
     background-size: contain;
     background-position-y: center;
+}
+.pattern-crystals {
+    background-image: url("images/stickers/crystals.png");
+    background-size: contain;
+    background-position-y: center;
+    background-size: 6px 6px;
 }
 
 
@@ -540,3 +591,41 @@ body{
     }
   }
 
+
+  .title-word {
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #fe0000;
+  --color-2: #0a79e9;
+  --color-3: #c4510e;
+}
+
+.title-word-2 {
+  --color-1: #64f43d;
+  --color-2: #ebf20a;
+  --color-3: #000000;
+}
+
+.title-word-3 {
+  --color-1: #e6a10c;
+  --color-2: #11b40e;
+  --color-3: #1b6be3;
+}
+
+.title-word-4 {
+  --color-1: #e1d015;
+  --color-2: #030202;
+  --color-3: #eb8d0b;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
