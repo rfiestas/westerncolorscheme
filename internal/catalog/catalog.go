@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 	"text/template"
@@ -58,12 +59,60 @@ func loadCatalog(data []byte) (catalog, error) {
 }
 func validateCatalog(c catalog) error {
 	for _, cube := range c.Cubes {
-		file := fmt.Sprintf("./www/images/cubes/square-336/%s-%s.webp", cube.Brand, cube.Name)
-		if _, err := os.Stat(file); err != nil {
-			return fmt.Errorf("file %s not exist", file)
+		if !cube.Decommissioned {
+			file := fmt.Sprintf("./www/images/cubes/square-400/%s.webp", imageNameNormalize(cube.Brand, cube.Name))
+			if _, err := os.Stat(file); err != nil {
+				copyFile("./www/images/cubes/square-400/not-found.webp", file)
+				fmt.Printf("Warning: Image not found for cube %s - %s. Created placeholder: %s.\n", cube.Brand, cube.Name, file)
+			}
+			if cube.Color == "Custom Face" && len(cube.Schema) != 0 {
+				for _, face := range cube.Schema {
+					schemaFile := fmt.Sprintf("./www/images/stickers/%s.webp", imageNameNormalize(imageNameNormalize(cube.Brand, cube.Name), face))
+					if _, err := os.Stat(schemaFile); err != nil {
+						copyFile("./www/images/cubes/square-400/not-found.webp", schemaFile)
+						fmt.Printf("Warning: Image not found for cube %s - %s face %s. Created placeholder: %s.\n", cube.Brand, cube.Name, face, schemaFile)
+					}
+				}
+			}
 		}
 	}
 	return nil
+}
+
+func copyFile(src, dst string) error {
+	in, err := os.Open(src)
+	if err != nil {
+		return err
+	}
+	defer in.Close()
+
+	// ensure destination directory exists
+	if err := os.MkdirAll(filepath.Dir(dst), 0755); err != nil {
+		return err
+	}
+
+	out, err := os.Create(dst)
+	if err != nil {
+		return err
+	}
+	defer out.Close()
+
+	if _, err := io.Copy(out, in); err != nil {
+		return err
+	}
+
+	// try to preserve mode from source
+	if fi, err := in.Stat(); err == nil {
+		_ = out.Chmod(fi.Mode())
+	}
+
+	return nil
+}
+
+func imageNameNormalize(brand string, name string) string {
+	resp := strings.ToLower(fmt.Sprintf("%s--%s", brand, name))
+	resp = strings.ReplaceAll(resp, " ", "-")
+	return resp
 }
 
 func filter(data []cubes, f func(cubes) bool) []cubes {
@@ -85,10 +134,16 @@ func (c *catalog) precalculateCatalog() error {
 		return !u.Decommissioned
 	})
 
-	// Sort by group + brand
-	sort.Slice(c.Cubes, func(i, j int) bool { return c.Cubes[i].Group+c.Cubes[i].Brand < c.Cubes[j].Group+c.Cubes[j].Brand })
+	// Sort by group + brand + name
+	sort.Slice(c.Cubes, func(i, j int) bool {
+		return c.Cubes[i].Group+c.Cubes[i].Brand+c.Cubes[i].Name < c.Cubes[j].Group+c.Cubes[j].Brand+c.Cubes[j].Name
+	})
 
 	for idx, cube := range c.Cubes {
+
+		// Add image path
+		c.Cubes[idx].Image = imageNameNormalize(cube.Brand, cube.Name)
+
 		// ColorSchema, full precalculated
 		if len(cube.Schema) > 0 {
 			c.Cubes[idx].ColorSchema = cube.Schema
@@ -248,6 +303,7 @@ type cubes struct {
 	Description    string   `json:"Description,omitempty"`
 	Decommissioned bool     `json:"Decommissioned,omitempty"`
 	Tags           []string `json:"Tags,omitempty"`
+	Image          string   `json:"Image"`
 }
 
 func removeDuplicateStr(strSlice []string) []string {

@@ -103,7 +103,7 @@
       "Texture": "Bricks",
       "Date": "21 Nov, 2021",
       "Description": "The <b>FanXin Color Div Block</b> is a 3x3x3 provides an interesting texture similar to that of colorful bricks.",
-      "Decommissioned":true
+      "Decommissioned": true
     },
     {
       "Name": "Lemon",
@@ -440,7 +440,14 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Western Schema Mod",
-      "Schema": ["Red","Red","Blue","Blue","White","White"],
+      "Schema": [
+        "Red",
+        "Red",
+        "Blue",
+        "Blue",
+        "White",
+        "White"
+      ],
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "27 Sep, 2020"
@@ -465,7 +472,7 @@
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "24 Dec, 2020",
-      "Description":"Pocket_Cube"
+      "Description": "Pocket_Cube"
     },
     {
       "Name": "3x3x3",
@@ -502,7 +509,7 @@
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "White",
-        "Schema": [
+      "Schema": [
         "White",
         "White",
         "White",
@@ -609,7 +616,7 @@
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "6 Jan, 2023",
-      "Decommissioned":true
+      "Decommissioned": true
     },
     {
       "Name": "Master Skewb",
@@ -620,6 +627,16 @@
       "Base": "Black",
       "Stickers": "Yes",
       "Date": "6 Jan, 2023"
+    },
+    {
+      "Name": "1x1x1",
+      "Brand": "ZCube",
+      "Group": "1x1x1",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "28 Jan, 2023"
     },
     {
       "Name": "1x2x2",
@@ -692,7 +709,7 @@
       "Color": "Yellow",
       "Texture": "Udon",
       "Date": "01 May, 2023",
-      "Description":"https://enuchi.com/11071/midorinotanuki-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
+      "Description": "https://enuchi.com/11071/midorinotanuki-rubiks-cube;https://www.youtube.com/watch?v=eQuH6Hw-mYU;https://www.megahouse.co.jp/megatoy/contents/midori_cube/"
     },
     {
       "Name": "Akai Kitsune",
@@ -710,7 +727,7 @@
       "Group": "1x3x3",
       "Shape": "Cuboid",
       "Color": "Western Schema",
-      "Stickers":"Yes",
+      "Stickers": "Yes",
       "Base": "Black",
       "Date": "01 Jul, 2023"
     },
@@ -720,7 +737,7 @@
       "Group": "1x2x3",
       "Shape": "Cuboid",
       "Color": "Western Schema",
-      "Stickers":"Yes",
+      "Stickers": "Yes",
       "Base": "Black",
       "Date": "01 Jul, 2023"
     },
@@ -730,7 +747,7 @@
       "Group": "2x2x3",
       "Shape": "Cuboid",
       "Color": "Western Schema",
-      "Stickers":"Yes",
+      "Stickers": "Yes",
       "Base": "Black",
       "Date": "01 Jul, 2023"
     },
@@ -740,7 +757,7 @@
       "Group": "2x3x3",
       "Shape": "Cuboid",
       "Color": "Western Schema",
-      "Stickers":"Yes",
+      "Stickers": "Yes",
       "Base": "Black",
       "Date": "01 Jul, 2023"
     },
@@ -750,7 +767,7 @@
       "Group": "3x3x3",
       "Shape": "Cuboid",
       "Color": "Western Schema",
-      "Stickers":"Yes",
+      "Stickers": "Yes",
       "Base": "Black",
       "Date": "01 Jul, 2023"
     },
@@ -773,7 +790,9 @@
       "Base": "Black",
       "Date": "01 Jul, 2023",
       "Description": "https://www.youtube.com/@puzzLEGO,https://ideas.lego.com/projects/8dc04b37-6d3a-4593-95c2-604c5087e03e,https://rebrickable.com/mocs/MOC-91837/puzzLEGO/working-lego-rubiks-cube-new-revised/#details",
-      "Tags": ["Prototype"]
+      "Tags": [
+        "Prototype"
+      ]
     },
     {
       "Name": "Carat Diamond",
@@ -814,7 +833,9 @@
       "Color": "Western Schema",
       "Stickers": "No",
       "Date": "1 Jul, 2023",
-      "Tags": ["Transparent"]
+      "Tags": [
+        "Transparent"
+      ]
     },
     {
       "Name": "Div Block",
@@ -836,7 +857,9 @@
       "Base": "Transparent",
       "Stickers": "No",
       "Date": "28 Aug, 2023",
-      "Tags": ["Transparent"]
+      "Tags": [
+        "Transparent"
+      ]
     },
     {
       "Name": "Mirror",
@@ -904,7 +927,7 @@
       "Group": "3x3x3",
       "Shape": "House",
       "Color": "White",
-        "Schema": [
+      "Schema": [
         "White",
         "White",
         "White",
@@ -1005,8 +1028,8 @@
         "Woody",
         "Mickey Mouse",
         "Simba",
-        "Alice",
-        "Snow White"
+        "Snow White",
+        "Elsa"
       ],
       "Base": "Grey",
       "Stickers": "Yes",
@@ -1015,7 +1038,7 @@
     },
     {
       "Name": "Blanker",
-      "Brand": "Unknown",
+      "Brand": "ZE Puzzles",
       "Group": "2x2x2",
       "Shape": "Cube",
       "Color": "White",
@@ -1078,7 +1101,8 @@
         "Grey"
       ],
       "Stickers": "No",
-      "Date": "2 Feb, 2024"
+      "Date": "2 Feb, 2024",
+      "Decommissioned": true
     },
     {
       "Name": "Mole Cube",
@@ -1110,7 +1134,7 @@
       "Stickers": "No",
       "Date": "11 May, 2024"
     },
-        {
+    {
       "Name": "Centrosphere",
       "Brand": "FanXin",
       "Group": "3x3x3",
@@ -1137,7 +1161,7 @@
       "Stickers": "No",
       "Date": "11 May, 2024"
     },
-     {
+    {
       "Name": "Heart",
       "Brand": "Yong Jun",
       "Group": "3x3x3",
@@ -1173,6 +1197,30 @@
         "Dark Green",
         "Navy Blue",
         "Beige"
+      ],
+      "Base": "Black",
+      "Stickers": "Yes",
+      "Date": "15 April, 2024"
+    },
+    {
+      "Name": "Megaminx 3x3x3",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Shape": "Dodecahedron",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow",
+        "White",
+        "Black",
+        "Orange",
+        "Pink",
+        "Purple",
+        "Light Blue",
+        "Lime",
+        "Brown"
       ],
       "Base": "Black",
       "Stickers": "Yes",
@@ -1240,7 +1288,9 @@
       "Color": "Western Schema",
       "Stickers": "No",
       "Date": "30 May, 2024",
-      "Tags": ["Lights"]
+      "Tags": [
+        "Lights"
+      ]
     },
     {
       "Name": "Klotski",
@@ -1249,11 +1299,12 @@
       "Shape": "Cube",
       "Color": "Western Schema",
       "Stickers": "No",
-      "Date": "4 Sep, 2024"
+      "Date": "4 Sep, 2024",
+      "Decommissioned": true
     },
     {
       "Name": "Constellation",
-      "Brand": "Unknown",
+      "Brand": "Casa",
       "Group": "3x3x3",
       "Shape": "Cube",
       "Color": "Dark Blue",
@@ -1348,7 +1399,10 @@
       "Shape": "Animal",
       "Color": "Blue",
       "Stickers": "No",
-      "Date": "22 Jul, 2025"
+      "Date": "22 Jul, 2025",
+      "Tags": [
+        "Animal"
+      ]
     },
     {
       "Name": "Lucy the Hedghog",
@@ -1367,6 +1421,326 @@
       "Stickers": "No",
       "ZoomFace": true,
       "Date": "22 Jul, 2025"
+    },
+    {
+      "Name": "Void",
+      "Brand": "Qiyi",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "1 Aug, 2025"
+    },
+    {
+      "Name": "QianJi",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Western Schema",
+      "Stickers": "No",
+      "Date": "1 Aug, 2025"
+    },
+    {
+      "Name": "Slim Piraminx",
+      "Brand": "ZE Puzzles",
+      "Group": "1x1x3",
+      "Shape": "Triangle",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow"
+      ],
+      "Stickers": "Yes",
+      "Date": "1 Aug, 2025"
+    },
+    {
+      "Name": "Animal Cube Dog",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Brown",
+      "Date": "1 Aug, 2025",
+      "Tags": [
+        "Animal"
+      ]
+    },
+    {
+      "Name": "Animal Cube Donkey",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Grey",
+      "Date": "1 Aug, 2025",
+      "Tags": [
+        "Animal"
+      ]
+    },
+    {
+      "Name": "Animal Cube Hippo",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Blue",
+      "Date": "1 Aug, 2025",
+      "Tags": [
+        "Animal"
+      ]
+    },
+    {
+      "Name": "Animal Cube Kitten",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Pink",
+      "Date": "1 Aug, 2025",
+      "Tags": [
+        "Animal"
+      ]
+    },
+    {
+      "Name": "Animal Cube Lion",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Yellow",
+      "Date": "1 Aug, 2025",
+      "Tags": [
+        "Animal"
+      ]
+    },
+    {
+      "Name": "Animal Cube Piggy",
+      "Brand": "ZCube",
+      "Group": "3x3x3",
+      "Shape": "Animal",
+      "Color": "Pink",
+      "Date": "1 Aug, 2025",
+      "Tags": [
+        "Animal"
+      ]
+    },
+    {
+      "Name": "World Map",
+      "Brand": "Nature",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Antartica",
+        "Africa",
+        "Australia",
+        "South America",
+        "Greenland",
+        "United States"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Crystals",
+      "Brand": "Flying Tiger",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Texture": "Crystals",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Black"
+      ],
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Marvel Avengers",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Thor",
+        "Black Widow",
+        "American Captain",
+        "Hulk",
+        "Iron Man",
+        "Spiderman"
+      ],
+      "Stickers": "Yes",
+      "ZoomFace": true,
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Monster Head",
+      "Brand": "Flying Tiger",
+      "Group": "2x2x2",
+      "Shape": "Head",
+      "Color": "White",
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Canary Islands",
+      "Brand": "Unknown",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Islas Canarias",
+        "Tenerife",
+        "La Palma",
+        "Lanzarote",
+        "Fuerteventura",
+        "Gran Canaria"
+      ],
+      "ZoomFace": true,
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Christmas",
+      "Brand": "Flying Tiger",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "White",
+      "Color": "Custom Face",
+      "Schema": [
+        "Santa Claus",
+        "Gingerbread Man",
+        "Rudolph",
+        "Penguin",
+        "Nutcracker",
+        "Snowman"
+      ],
+      "Stickers": "Yes",
+      "ZoomFace": true,
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Christmas Tree",
+      "Brand": "Flying Tiger",
+      "Group": "1x2x3",
+      "Shape": "Tree",
+      "Base": "Green",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Pink"
+      ],
+      "Stickers": "Yes",
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Wednesday",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Grey 01",
+        "Grey 02",
+        "Grey 03",
+        "Grey 04",
+        "Grey 05",
+        "Grey 06"
+      ],
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Squished Write",
+      "Brand": "ZE Puzzles",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "White",
+      "Schema": [
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White"
+      ],
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Octahedron",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Shape": "Octahedron",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Hexagonal",
+      "Brand": "FanXin",
+      "Group": "3x3x3",
+      "Shape": "Hexagonal Prism",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Apple",
+      "Brand": "Yong Jun",
+      "Group": "3x3x3",
+      "Shape": "Apple",
+      "Color": "Green",
+      "Tags": [
+        "Fruit series"
+      ],
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "500 Euros",
+      "Brand": "Puzzle Cubes",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "500 Euros Left",
+        "500 Euros Right",
+        "500 Euros Left",
+        "500 Euros Right",
+        "500 Euros Left",
+        "500 Euros Right"
+      ],
+      "ZoomFace": true,
+      "Date": "1 Oct, 2025"
+    },
+    {
+      "Name": "Pulse Cube",
+      "Brand": "Rubik",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Metallic",
+      "Schema": [
+        "Metallic Orange",
+        "Metallic Green",
+        "Metallic Red",
+        "Metallic Blue",
+        "Metallic White",
+        "Metallic Yellow"
+      ],
+      "Stickers": "Yes",
+      "Date": "1 Oct, 2025",
+      "Tags": [
+        "Metallic",
+        "Lights"
+      ]
     }
   ],
   "Categories": {
@@ -1402,7 +1776,7 @@
       "Color": "red",
       "Default": "No"
     },
-    "Shape":{
+    "Shape": {
       "Icon": "fa-object-ungroup",
       "Color": "purple"
     },
