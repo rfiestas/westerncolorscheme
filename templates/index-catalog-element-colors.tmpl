@@ -1,58 +1,59 @@
+{{/* Simplified color-piece rendering: stickers, textures, zoom-face, base color handling. */}}
 
 {{- range $idx, $color := .ColorSchema }}
-    {{ if not (eq $.Stickers "No") }}
-        {{- if eq $.Base "Same as color" -}}
-{{ if eq $idx 0 }}<!-- Stickers + base same color (1), 4x4x4, 5x5x5,...-->{{ end }}
-<div class="piece-with-stickers color-{{ toCss $color }}" title="Base color: {{ $color }}">
-    <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $.Stickers }} sticker.">
-        <span class=""></span>
-    </div>
-</div>
-        {{- else -}}
-{{- if eq $idx 0 -}}<!-- Stickers + colored base (2), 2x2x2, 3x3x3,... -->{{- end -}}
-<div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
-    {{ if $.ZoomFace }}
-    <img class="sticker pattern-{{ toCss $.Stickers }} color-custom-face " loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" title="{{ $color }} {{if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
-    {{ else }}
-    <div class="sticker pattern-{{ toCss $.Stickers }} color-{{ toCss $color }}" title="{{ $color }} {{if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
-        <span class=""></span>
-    </div>
-    {{ end }}
-</div>
-        {{- end -}}
-    {{- else if not (eq $.Texture "No") -}}
-        {{- if eq $.Base "Same as color" -}}
-{{- if eq $idx 0 -}}<!-- Textured + base same color (3), DNA, Udon, ...-->{{- end -}}
-<div class="piece" title="Base color: {{ $color }}">
-    <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" data-bg="images/stickers/{{ toCss $.Texture }}.png" title="{{ $.Texture }} texture in {{ $color }} color.">
-        <span class=""></span>
-    </div>
-</div>
-        {{- else -}}  
-{{- if eq $idx 0 -}}<!-- Textured (4), Spades, Diamonds,... -->{{- end -}}
-<div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
-    <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" data-bg="images/stickers/{{ toCss $.Texture }}.png" title="{{ $.Texture }} texture in {{ $color }} color.">
-        <span class=""></span>
-    </div>
-</div>
-        {{- end -}}
-    {{- else if eq $.Base "Same as color" -}}
-{{- if eq $idx 0 -}}<!-- Without stickers + and base same color(5), GoCube, Geo cube,... -->{{- end -}}
-<div class="piece" title="">
-    {{ if $.ZoomFace }}
-    <img class="sticker color-custom-face " loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
-    {{- else -}}
-    <div class="sticker color-{{ toCss $color }}" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
-        <span class=""></span>
-    </div>
-    {{- end -}}
-</div>
-    {{- else -}}
-{{- if eq $idx 0 -}}<!-- Without stickers + colored base(6) , Maze, PuzzLego,... -->{{- end -}}
-<div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
-    <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $color }} without sticker.">
-        <span class=""></span>
-    </div>
-</div> 
-    {{- end -}}
+    {{ $baseSame := eq $.Base "Same as color" }}
+    {{ $hasStickers := not (eq $.Stickers "No") }}
+    {{ $hasTexture := not (eq $.Texture "No") }}
+
+    {{- if $hasStickers }}
+        <div class="piece-with-stickers color-{{ if $baseSame }}{{ toCss $color }}{{ else }}{{ toCss $.Base }}{{ end }}" title="Base color: {{ if $baseSame }}{{ $color }}{{ else }}{{ $.Base }}{{ end }}">
+            {{- if (and (not $baseSame) $.ZoomFace) }}
+                <img class="sticker pattern-{{ toCss $.Stickers }} color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+            {{- else }}
+                {{- if $.CustomStickers }}
+                <div class="sticker pattern-{{ toCss $.Stickers }} color-{{ toCss $color }}" data-bg="images/stickers/{{ toCss $.Stickers }}.png" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+                    <span></span>
+                </div>
+                {{- else }}
+                <div class="sticker pattern-{{ toCss $.Stickers }} color-{{ toCss $color }}" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+                    <span></span>
+                </div>
+                {{- end }}
+            {{- end }}
+        </div>
+
+    {{- else if $hasTexture }}
+        {{- if $baseSame }}
+            <div class="piece" title="Base color: {{ $color }}">
+                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" data-bg="images/stickers/{{ toCss $.Texture }}.png" title="{{ $.Texture }} texture in {{ $color }} color.">
+                    <span></span>
+                </div>
+            </div>
+        {{- else }}
+            <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
+                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" data-bg="images/stickers/{{ toCss $.Texture }}.png" title="{{ $.Texture }} texture in {{ $color }} color.">
+                    <span></span>
+                </div>
+            </div>
+        {{- end }}
+
+    {{- else }}
+        {{- if $baseSame }}
+            <div class="piece" title="">
+                {{- if $.ZoomFace }}
+                    <img class="sticker color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
+                {{- else }}
+                    <div class="sticker color-{{ toCss $color }}" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
+                        <span></span>
+                    </div>
+                {{- end }}
+            </div>
+        {{- else }}
+            <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
+                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $color }} without sticker.">
+                    <span></span>
+                </div>
+            </div>
+        {{- end }}
+    {{- end }}
 {{- end }}
