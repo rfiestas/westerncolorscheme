@@ -20,6 +20,7 @@ type CLI struct {
 	RenderIndexPage         renderIndexPageCmd      `cmd:"" help:"Render the index page."`
 	RenderCssFileCmd        renderCssFileCmd        `cmd:"" help:"Render the css content."`
 	RenderJavascriptFileCmd renderJavascriptFileCmd `cmd:"" help:"Render the javascript content."`
+	WebServer               webServerCmd            `cmd:"" help:"Run a local web server on port 8080 serving the www/ folder."`
 }
 
 func main() {
