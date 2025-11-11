@@ -101,49 +101,69 @@ function view360Template(print, brand, name) {
     return ``;
 }
 
-// Lazy Load
-document.addEventListener("DOMContentLoaded", function() {
-    let lazyloadImages;
-    if("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".lazy-load");
-    let imageObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-        if(entry.isIntersecting) {
-            let image = entry.target;
-            image.src = image.dataset.src;
-            image.classList.remove("lazy-load");
-            imageObserver.unobserve(image);
-        }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyPatterns = document.querySelectorAll('[data-bg]');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const bg = el.getAttribute('data-bg');
+        el.style.backgroundImage = `url(${bg})`;
+        el.removeAttribute('data-bg');
+        observer.unobserve(el);
+      }
     });
-    lazyloadImages.forEach(function(image) {
-        imageObserver.observe(image);
-    });
-    } else {
-    let lazyloadThrottleTimeout;
-    lazyloadImages = document.querySelectorAll(".lazy-load");
+  }, {
+    rootMargin: '200px 0px' // precarga un poco antes de aparecer
+  });
 
-    function lazyload() {
-        if(lazyloadThrottleTimeout) {
-        clearTimeout(lazyloadThrottleTimeout);
-        }
-        lazyloadThrottleTimeout = setTimeout(function() {
-        let scrollTop = window.pageYOffset;
-        lazyloadImages.forEach(function(img) {
-            if(img.offsetTop < (window.innerHeight + scrollTop)) {
-            img.src = img.dataset.src;
-            img.classList.remove('lazy-load');
-            }
-        });
-        if(lazyloadImages.length == 0) {
-            document.removeEventListener("scroll", lazyload);
-            window.removeEventListener("resize", lazyload);
-            window.removeEventListener("orientationChange", lazyload);
-        }
-        }, 20);
-    }
-    document.addEventListener("scroll", lazyload);
-    window.addEventListener("resize", lazyload);
-    window.addEventListener("orientationChange", lazyload);
-    }
-})
+  lazyPatterns.forEach(el => observer.observe(el));
+});
+
+// Lazy Load
+// document.addEventListener("DOMContentLoaded", function() {
+//     let lazyloadImages;
+//     if("IntersectionObserver" in window) {
+//     lazyloadImages = document.querySelectorAll(".lazy-load");
+//     let imageObserver = new IntersectionObserver(function(entries, observer) {
+//         entries.forEach(function(entry) {
+//         if(entry.isIntersecting) {
+//             let image = entry.target;
+//             image.src = image.dataset.src;
+//             image.classList.remove("lazy-load");
+//             imageObserver.unobserve(image);
+//         }
+//         });
+//     });
+//     lazyloadImages.forEach(function(image) {
+//         imageObserver.observe(image);
+//     });
+//     } else {
+//     let lazyloadThrottleTimeout;
+//     lazyloadImages = document.querySelectorAll(".lazy-load");
+
+//     // function lazyload() {
+//     //     if(lazyloadThrottleTimeout) {
+//     //     clearTimeout(lazyloadThrottleTimeout);
+//     //     }
+//     //     lazyloadThrottleTimeout = setTimeout(function() {
+//     //     let scrollTop = window.pageYOffset;
+//     //     lazyloadImages.forEach(function(img) {
+//     //         if(img.offsetTop < (window.innerHeight + scrollTop)) {
+//     //         img.src = img.dataset.src;
+//     //         img.classList.remove('lazy-load');
+//     //         }
+//     //     });
+//     //     if(lazyloadImages.length == 0) {
+//     //         document.removeEventListener("scroll", lazyload);
+//     //         window.removeEventListener("resize", lazyload);
+//     //         window.removeEventListener("orientationChange", lazyload);
+//     //     }
+//     //     }, 20);
+//     // }
+//     // document.addEventListener("scroll", lazyload);
+//     // window.addEventListener("resize", lazyload);
+//     // window.addEventListener("orientationChange", lazyload);
+//     }
+// })
