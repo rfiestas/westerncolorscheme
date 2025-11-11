@@ -522,43 +522,28 @@ body{
 .pattern-iridescent-titles:hover {
     animation: color-change 4s infinite;
 }
-.pattern-udon {
-    /*background-image: url("images/stickers/udon.png");*/
-}
 .pattern-carbon-fiber {
     background-color: black;
-    /*background-image: url("images/stickers/carbonfiber.png");*/
 }
 .pattern-bricks {
-    /*background-image: url("images/stickers/bricks.png");*/
     background-size: 15px 15px;
 }
-.pattern-spades {
-    /*background-image: url("images/stickers/spades1.png");*/
+.pattern-spades,.pattern-squares, .pattern-dots {
     background-size: contain;
     background-position-y: center;
 }
-.pattern-diamonds {
-    /*background-image: url("images/stickers/diamonds.png");*/
-}
-
 .pattern-dna {
-    /*background-image: url("images/stickers/dna.png");*/
     background-size: contain;
     background-position-y: center;
 }
 .pattern-crystals {
-    /*background-image: url("images/stickers/crystals.png");*/
     background-size: contain;
     background-position-y: center;
     background-size: 6px 6px;
 }
 
-
-/*Color Custom Face, example: <div class="color-face" style="--face-image: url('images/stickers/cara1.png');"></div> */
+/*Color Custom Face, example: <div class="color-face"></div> */
 .color-custom-face {
-    background-image: var(--face-image);
-    background-size: 100% 100%;
     top: 0px;
     left: 0px;
 }

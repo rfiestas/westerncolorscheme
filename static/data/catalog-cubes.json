@@ -402,6 +402,7 @@
       ],
       "Base": "White",
       "Stickers": "Carbon Fiber",
+      "CustomStickers": true,
       "Date": "13 Oct, 2020"
     },
     {
@@ -492,6 +493,7 @@
       "Shape": "Cube",
       "Color": "Western Schema",
       "Stickers": "Carbon Fiber",
+      "CustomStickers": true,
       "Date": "1 Mar, 2020"
     },
     {
@@ -501,6 +503,7 @@
       "Shape": "Cube",
       "Color": "Western Schema",
       "Stickers": "Carbon Fiber",
+      "CustomStickers": true,
       "Date": "26 Nov, 2020"
     },
     {
