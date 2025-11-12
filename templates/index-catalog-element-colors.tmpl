@@ -8,7 +8,7 @@
     {{- if $hasStickers }}
         <div class="piece-with-stickers color-{{ if $baseSame }}{{ toCss $color }}{{ else }}{{ toCss $.Base }}{{ end }}" title="Base color: {{ if $baseSame }}{{ $color }}{{ else }}{{ $.Base }}{{ end }}">
             {{- if (and (not $baseSame) $.ZoomFace) }}
-                <img class="sticker pattern-{{ toCss $.Stickers }} color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+                <img class="sticker pattern-{{ toCss $.Stickers }} color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
             {{- else }}
                 {{- if $.CustomStickers }}
                 <div class="sticker pattern-{{ toCss $.Stickers }} color-{{ toCss $color }}" data-bg="images/stickers/{{ toCss $.Stickers }}.png" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
@@ -41,7 +41,7 @@
         {{- if $baseSame }}
             <div class="piece" title="">
                 {{- if $.ZoomFace }}
-                    <img class="sticker color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
+                    <img class="sticker color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
                 {{- else }}
                     <div class="sticker color-{{ toCss $color }}" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
                         <span></span>
