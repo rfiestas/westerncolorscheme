@@ -1212,18 +1212,18 @@
       "Shape": "Dodecahedron",
       "Color": "Western Schema Mod",
       "Schema": [
-        "Red",
-        "Green",
-        "Blue",
-        "Yellow",
-        "White",
-        "Black",
         "Orange",
-        "Pink",
+        "Green",
+        "Red", 
+        "Blue",
+        "White",
+        "Yellow",
+        "Grey",
         "Purple",
+        "Pink",
         "Light Blue",
         "Lime",
-        "Brown"
+        "Light Yellow"
       ],
       "Base": "Black",
       "Stickers": "Yes",
@@ -1683,6 +1683,16 @@
       "Shape": "Octahedron",
       "Base": "Black",
       "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Pink",
+        "Purple"
+      ],
       "Date": "1 Oct, 2025"
     },
     {
@@ -1692,6 +1702,16 @@
       "Shape": "Hexagonal Prism",
       "Base": "Black",
       "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Pink",
+        "Purple"
+      ],
       "Date": "1 Oct, 2025"
     },
     {

@@ -404,6 +404,9 @@ body{
 .color-dark-blue {
     background-color:rgb(0, 0, 139);
 }
+.color-light-yellow{
+    background-color:rgb(255, 255, 169);
+}
 .color-pink {
     background-color:rgb(255, 192, 203);
 }
