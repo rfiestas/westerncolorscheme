@@ -1,13 +1,13 @@
 <ul class="list-unstyled">
-    <li title="Brand: {{ .Brand }} "><span"><i class="fas {{ getCategoryDataKey "Brand" "Icon" }} pr-1 text-{{ getCategoryDataKey "Brand" "Color"}}"></i> {{ .Brand}}</span></li>
-    <li title="Group: {{ .Group }} "><span"><i class="fas {{ getCategoryDataKey "Group" "Icon" }} pr-1 text-{{ getCategoryDataKey "Group" "Color"}}"></i> {{ .Group}}</span></li>
-    <li title="Shape: {{ .Shape }} "><span"><i class="fas {{ getCategoryDataKey "Shape" "Icon" }} pr-1 text-{{ getCategoryDataKey "Shape" "Color"}}"></i> {{ .Shape}}</span></li>
-    <li title="Color: {{ .Color }} "><span"><i class="fas {{ getCategoryDataKey "Color" "Icon" }} pr-1 text-{{ getCategoryDataKey "Color" "Color"}}"></i> {{ .Color}}</span></li>
-    <li title="Stickers: {{ .Stickers }} "><span"><i class="fas {{ getCategoryDataKey "Stickers" "Icon" }} pr-1 text-{{ getCategoryDataKey "Stickers" "Color"}}"></i> {{ .Stickers}}</span></li>
+    <li title="Brand: {{ .Brand }} "><span"><svg class="icon text-{{ getCategoryDataKey "Brand" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Brand" "Icon" }}"></use></svg> {{ .Brand}}</span></li>
+    <li title="Group: {{ .Group }} "><span"><svg class="icon text-{{ getCategoryDataKey "Group" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Group" "Icon" }}"></use></svg> {{ .Group}}</span></li>
+    <li title="Shape: {{ .Shape }} "><span"><svg class="icon text-{{ getCategoryDataKey "Shape" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Shape" "Icon" }}"></use></svg> {{ .Shape}}</span></li>
+    <li title="Color: {{ .Color }} "><span"><svg class="icon text-{{ getCategoryDataKey "Color" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Color" "Icon" }}"></use></svg> {{ .Color}}</span></li>
+    <li title="Stickers: {{ .Stickers }} "><span"><svg class="icon text-{{ getCategoryDataKey "Stickers" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Stickers" "Icon" }}"></use></svg> {{ .Stickers}}</span></li>
     {{- if not ( eq .Texture "No" ) -}}
-    <li title="Texture: {{ .Texture }} "><span"><i class="fas {{ getCategoryDataKey "Texture" "Icon" }} pr-1 text-{{ getCategoryDataKey "Texture" "Color"}}"></i> {{ .Texture}}</span></li>
+    <li title="Texture: {{ .Texture }} "><span"><svg class="icon text-{{ getCategoryDataKey "Texture" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Texture" "Icon" }}"></use></svg> {{ .Texture}}</span></li>
     {{- end -}}
     {{- range $tag := .Tags }}
-        <li title="Tag: {{ $tag }} "><span"><i class="fas {{ getCategoryDataKey "Tags" "Icon" }} pr-1 text-{{ getCategoryDataKey "Tags" "Color"}}"></i> {{ $tag }}</span></li>
+        <li title="Tag: {{ $tag }} "><span"><svg class="icon text-{{ getCategoryDataKey "Tags" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Tags" "Icon" }}"></use></svg> {{ $tag }}</span></li>
     {{- end }}
 </ul>

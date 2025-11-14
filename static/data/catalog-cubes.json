@@ -1747,48 +1747,48 @@
   ],
   "Categories": {
     "Brand": {
-      "Icon": "fa-flag",
-      "Color": "blue"
+      "Icon": "brand",
+      "Color": "orange"
     },
     "Group": {
-      "Icon": "fa-shapes",
+      "Icon": "group",
       "Color": "green"
     },
     "Color": {
-      "Icon": "fa-palette",
-      "Color": "yellow"
+      "Icon": "color",
+      "Color": "red"
     },
     "Base": {
-      "Icon": "fa-border-all",
-      "Color": "orange",
+      "Icon": "base",
+      "Color": "blue",
       "Default": "Same as color"
     },
     "Stickers": {
-      "Icon": "fa-sticky-note",
-      "Color": "black",
+      "Icon": "stickers",
+      "Color": "yellow",
       "Default": "No"
     },
     "Texture": {
-      "Icon": "fa-align-center",
+      "Icon": "texture",
       "Color": "peach",
       "Default": "No"
     },
     "View360": {
-      "Icon": "fa-cube",
-      "Color": "red",
+      "Icon": "view360",
+      "Color": "purple",
       "Default": "No"
     },
     "Shape": {
-      "Icon": "fa-object-ungroup",
-      "Color": "purple"
+      "Icon": "shape",
+      "Color": "grey"
     },
     "Tags": {
-      "Icon": "fa-tags",
-      "Color": "grey",
+      "Icon": "tags",
+      "Color": "black",
       "Default": "Nil"
     },
     "Default": {
-      "Icon": "fa-backspace",
+      "Icon": "default",
       "Color": "muted",
       "Default": "No"
     }

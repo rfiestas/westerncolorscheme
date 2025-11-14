@@ -19,7 +19,7 @@
             <div class="cube-list-favourite-time">
                 {{ if eq $cube.View360 "Yes" }}
                 <a class="cube-list-favourite order-2" href="#View360/{{ $cube.Brand }}-{{ $cube.Name }}" title="{{ $cube.Brand }}-{{ $cube.Name }} 360 view" onclick="openView360('{{ $cube.Brand }}', '{{ $cube.Name }}')">
-                    <i class="fas {{ getCategoryDataKey "View360" "Icon" }} text-{{ getCategoryDataKey "View360" "Color" }}"></i>
+                    <svg class="view360 text-{{ getCategoryDataKey "View360" "Color" }}"><use href="/icons.svg#{{ getCategoryDataKey "View360" "Icon" }}"></use></svg>
                 </a>
                 {{ end }}
                 <span class="$cube-list-time order-1"><i class="far fa-clock pr-1"></i> {{$cube.Date}}</span>

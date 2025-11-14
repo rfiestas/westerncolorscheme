@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12 col-md">
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Brand" "Icon" }} text-{{ getCategoryDataKey "Brand" "Color" }} pr-1"></i>&nbsp;&nbsp;Brand</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Brand" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Brand" "Icon" }}"></use></svg>&nbsp;&nbsp;Brand</h6>
         {{- range $item := index . "Brand" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Brand#{{ $item }}" value="Brand#{{ $item }}">
@@ -9,7 +9,7 @@
         {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Group" "Icon" }} text-{{ getCategoryDataKey "Group" "Color" }} pr-1"></i>&nbsp;&nbsp;Group</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Group" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Group" "Icon" }}"></use></svg>&nbsp;&nbsp;Group</h6>
         {{- range $item := index . "Group" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Group#{{ $item }}" value="Group#{{ $item }}">
@@ -18,7 +18,7 @@
         {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Color" "Icon" }} text-{{ getCategoryDataKey "Color" "Color" }} pr-1"></i>&nbsp;&nbsp;Color</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Color" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Color" "Icon" }}"></use></svg>&nbsp;&nbsp;Color</h6>
         {{- range $item := index . "Color" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Color#{{ $item }}" value="Color#{{ $item }}">
@@ -26,7 +26,7 @@
         </div>
         {{- end }}
         </br>
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Base" "Icon" }} text-{{ getCategoryDataKey "Base" "Color" }} pr-1"></i>&nbsp;&nbsp;Base</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Base" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Base" "Icon" }}"></use></svg>&nbsp;&nbsp;Base</h6>
         {{- range $item := index . "Base" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Base#{{ $item }}" value="Base#{{ $item }}">
@@ -35,7 +35,7 @@
         {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Stickers" "Icon" }} text-{{ getCategoryDataKey "Stickers" "Color" }} pr-1"></i>&nbsp;&nbsp;Stickers</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Stickers" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Stickers" "Icon" }}"></use></svg>&nbsp;&nbsp;Stickers</h6>
         {{- range $item := index . "Stickers" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Stickers#{{ $item }}" value="Stickers#{{ $item }}">
@@ -43,7 +43,7 @@
         </div>
         {{- end }}
         </br>
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Texture" "Icon" }} text-{{ getCategoryDataKey "Texture" "Color" }} pr-1"></i>&nbsp;&nbsp;Texture</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Texture" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Texture" "Icon" }}"></use></svg>&nbsp;&nbsp;Texture</h6>
         {{- range $item := index . "Texture" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Texture#{{ $item }}" value="Texture#{{ $item }}">
@@ -52,14 +52,14 @@
         {{- end }}
     </div>
     <div class="col-sm-12 col-md"><br class="d-md-none">
-        <h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "View360" "Icon" }} text-{{ getCategoryDataKey "View360" "Color" }} pr-1"></i>&nbsp;&nbsp;View360</h6>
+        <h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "View360" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "View360" "Icon" }}"></use></svg>&nbsp;&nbsp;View360</h6>
         {{- range $item := index . "View360" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="View360#{{ $item }}" value="View360#{{ $item }}">
             <label class="custom-control-label label" for="View360#{{ $item }}">{{ $item }}</label>
         </div>
         {{- end }}
-        </br><h6 class="border-bottom pb-1"><i class="fas {{ getCategoryDataKey "Tags" "Icon" }} text-{{ getCategoryDataKey "Tags" "Color" }} pr-1"></i>&nbsp;&nbsp;Tags</h6>
+        </br><h6 class="border-bottom pb-1"><svg class="icon text-{{ getCategoryDataKey "Tags" "Color"}}"><use href="/icons.svg#{{ getCategoryDataKey "Tags" "Icon" }}"></use></svg>&nbsp;&nbsp;Tags</h6>
         {{- range $item := index . "Tags" }}
         <div class="custom-control custom-checkbox inputPreview">
             <input type="checkbox" class="custom-control-input css-checkbox" id="Tags#{{ $item }}" value="Tags#{{ $item }}">

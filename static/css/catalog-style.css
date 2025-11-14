@@ -253,11 +253,23 @@ body{
 
 /*Used on the body and the filter modal form*/
 .background {
-    background-image:url("images/backgroundV2.png");
+    background-image:url("images/backgroundV2.webp");
 }
 .background-form {
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-        url("images/backgroundV2.png");
+        url("images/backgroundV2.webp");
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.view360 {
+  width: 20px;
+  height: 20px;
+  margin-top: -6px;
 }
 
 /* Used on title and summary*/
@@ -304,7 +316,7 @@ body{
     color: #FFF;
 }
 .text-yellow{
-    color: rgb(255, 213, 0);
+    color: rgb(230, 196, 28);
 }
 .text-green{
     color: rgb(0, 155, 72);
