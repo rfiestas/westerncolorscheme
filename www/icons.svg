@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="brand" viewBox="0 0 26 26">
+<path d="M8 3v2m0 16v-8m0-6h12l-2 4 2 4H8V5Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
+</symbol>
+<symbol id="group" viewBox="0 0 26 26">
+<path d="M8 10 12 3l4 7H8ZM10 17.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0ZM14 14h7v7h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
+</symbol>
+<symbol id="color" viewBox="-4 0 28 28">
+<path d="M5.3 11.214A6.791 6.791 0 0 0 10.792 22h2.416A6.791 6.791 0 0 0 18.7 11.214L12 2Zm5.946 8.036a5.24 5.24 0 0 1-4.631-2.779 1 1 0 1 1 1.766-.942 3.239 3.239 0 0 0 2.865 1.721 1 1 0 0 1 0 2Z" fill="currentColor"/>
+</symbol>
+<symbol id="base" viewBox="0 0 24 24">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 9.3V6a2 2 0 0 0-2-2h-3.3M20 9.3h-5.3m5.3 0v5.4M4 9.3V6a2 2 0 0 1 2-2h3.3M4 9.3h5.3M4 9.3v5.4m10.7-5.4H9.3m5.4 0V4m0 5.3v5.4M9.3 9.3V4m0 5.3v5.4m10.7 0V18a2 2 0 0 1-2 2h-3.3M20 14.7h-5.3M4 14.7V18a2 2 0 0 0 2 2h3.3M4 14.7h5.3m5.4 0H9.3m5.4 0V20m-5.4-5.3V20m0-16h5.4M9.3 20h5.4"/>
+</symbol>
+<symbol id="stickers" viewBox="-4 0 30 30">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 3.5v2.7c0 1.7 0 2.5.3 3.2a3 3 0 0 0 1.3 1.3C15.3 11 16.1 11 17.8 11h2.7m.5 2v2.2c0 1.7 0 2.5-.3 3.2a3 3 0 0 1-1.3 1.3C18.7 21 17.9 21 16.2 21H7.8c-1.7 0-2.5 0-3.2-.3a3 3 0 0 1-1.3-1.3C3 18.7 3 17.9 3 16.2V7.8c0-1.7 0-2.5.3-3.2a3 3 0 0 1 1.3-1.3C5.3 3 6.1 3 7.8 3h3.2c.7 0 1.1 0 1.4.1.3.1.6.2.9.4.3.2.6.4 1.1.9l5.2 5.2c.5.5.8.8 1 1.1.2.3.3.6.4.9.1.3.1.7.1 1.4Z" fill="currentColor"/>
+</symbol>
+<symbol id="texture" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 8.1a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM18 3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V3Zm2-1v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2ZM6 8.1a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm2 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" stroke="currentColor"/>
+</symbol>
+<symbol id="view360" viewBox="0 0 24 24">
+<path d="M22.91 6.66v11.88L13 23.5V11.62l9.91-4.96zM12 9.88l9.88-4.94L12 0 2.12 4.94 12 9.88zm-1 1.74L1.09 6.66v11.88L11 23.5V11.62z" stroke="currentColor" fill="currentColor"/>
+</symbol>
+<symbol id="shape" viewBox="0 0 100 100">
+<path d="M33 11c-7 0-13 6-13 13 0 4 2 7 5 9L15 54a12 12 0 0 0-3 0C6 54 0 60 0 67c0 6 6 12 13 12 5 0 9-3 11-8l51 8c1 6 7 10 13 10s12-5 12-12a4 4 0 0 0 0-1c0-7-6-12-12-12h-1l-7-21c4-2 6-6 6-10a4 4 0 0 0 0-1c0-7-6-12-12-12s-10 3-12 7l-17-4c0-7-6-12-12-12zm0 7c3 0 5 2 5 5 0 4-2 6-6 6-3 0-5-2-5-5 0-4 2-6 5-6zm41 9c3 0 5 2 5 5 0 4-2 6-6 6-3 0-5-2-5-6 0-3 2-5 6-5zm-31 3 18 4c1 6 6 11 13 11l6 21a13 13 0 0 0-4 6l-51-7a13 13 0 0 0-4-8l10-21h2c4 0 8-3 10-6zM13 61c3 0 5 2 5 6s-2 5-5 5c-4 0-6-2-6-5 0-4 2-6 6-6zm75 10c3 0 5 2 5 6s-2 5-6 5c-3 0-5-2-5-5 0-4 2-6 6-6z" fill="currentColor"/>
+</symbol>
+<symbol id="tags" viewBox="-4 -2 26 26">
+<path fill-rule="evenodd" d="M3.978 5.02a1.044 1.044 0 1 1 2.087 0 1.044 1.044 0 0 1-2.087 0Zm7.297 12.156L2.24 8.141a.521.521 0 0 1-.153-.37V3.13c0-.577.467-1.045 1.044-1.045h4.64c.14 0 .272.056.37.154l9.035 9.035a1.044 1.044 0 0 1 0 1.476l-4.426 4.426a1.044 1.044 0 0 1-1.475 0Zm4.659-10.094L9.158.305A1.046 1.046 0 0 0 8.421 0H2.087A2.087 2.087 0 0 0 0 2.085V8.42c0 .277.11.542.306.738l10.231 10.23a2.086 2.086 0 0 0 2.95 0l5.902-5.9a2.086 2.086 0 0 0 0-2.951l-3.455-3.455Z"/>
+</symbol>
+<symbol id="default" viewBox="0 0 24 24">
+<path d="M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2zM4 5v14h16V7h-8.414l-2-2H4zm7 11h2v2h-2v-2zm-2.433-5.187A3.501 3.501 0 1 1 12 15h-1v-2h1a1.5 1.5 0 1 0-1.471-1.794l-1.962-.393z"/>
+</symbol>
+</svg>

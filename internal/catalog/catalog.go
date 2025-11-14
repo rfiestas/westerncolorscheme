@@ -297,6 +297,7 @@ type cubes struct {
 	Texture        string   `json:"Texture,omitempty"`
 	Base           string   `json:"Base,omitempty"`
 	Stickers       string   `json:"Stickers,omitempty"` // PrecalculatedWhenEmpty
+	CustomStickers bool     `json:"CustomStickers,omitempty"`
 	View360        string   `json:"View360,omitempty"`
 	ZoomFace       bool     `json:"ZoomFace,omitempty"`
 	Date           string   `json:"Date"`
