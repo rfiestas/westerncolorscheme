@@ -254,6 +254,7 @@ body{
 /*Used on the body and the filter modal form*/
 .background {
     background-image:url("images/backgroundV2.webp");
+    background-position: center;
 }
 .background-form {
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
