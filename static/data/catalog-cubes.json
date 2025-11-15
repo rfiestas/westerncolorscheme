@@ -402,6 +402,7 @@
       ],
       "Base": "White",
       "Stickers": "Carbon Fiber",
+      "CustomStickers": true,
       "Date": "13 Oct, 2020"
     },
     {
@@ -492,6 +493,7 @@
       "Shape": "Cube",
       "Color": "Western Schema",
       "Stickers": "Carbon Fiber",
+      "CustomStickers": true,
       "Date": "1 Mar, 2020"
     },
     {
@@ -501,6 +503,7 @@
       "Shape": "Cube",
       "Color": "Western Schema",
       "Stickers": "Carbon Fiber",
+      "CustomStickers": true,
       "Date": "26 Nov, 2020"
     },
     {
@@ -1209,18 +1212,18 @@
       "Shape": "Dodecahedron",
       "Color": "Western Schema Mod",
       "Schema": [
-        "Red",
-        "Green",
-        "Blue",
-        "Yellow",
-        "White",
-        "Black",
         "Orange",
-        "Pink",
+        "Green",
+        "Red", 
+        "Blue",
+        "White",
+        "Yellow",
+        "Grey",
         "Purple",
+        "Pink",
         "Light Blue",
         "Lime",
-        "Brown"
+        "Light Yellow"
       ],
       "Base": "Black",
       "Stickers": "Yes",
@@ -1669,7 +1672,6 @@
         "White",
         "White",
         "White",
-        "White",
         "White"
       ],
       "Date": "1 Oct, 2025"
@@ -1681,6 +1683,16 @@
       "Shape": "Octahedron",
       "Base": "Black",
       "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Pink",
+        "Purple"
+      ],
       "Date": "1 Oct, 2025"
     },
     {
@@ -1690,6 +1702,16 @@
       "Shape": "Hexagonal Prism",
       "Base": "Black",
       "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Pink",
+        "Purple"
+      ],
       "Date": "1 Oct, 2025"
     },
     {
@@ -1745,48 +1767,48 @@
   ],
   "Categories": {
     "Brand": {
-      "Icon": "fa-flag",
-      "Color": "blue"
+      "Icon": "brand",
+      "Color": "orange"
     },
     "Group": {
-      "Icon": "fa-shapes",
+      "Icon": "group",
       "Color": "green"
     },
     "Color": {
-      "Icon": "fa-palette",
-      "Color": "yellow"
+      "Icon": "color",
+      "Color": "red"
     },
     "Base": {
-      "Icon": "fa-border-all",
-      "Color": "orange",
+      "Icon": "base",
+      "Color": "blue",
       "Default": "Same as color"
     },
     "Stickers": {
-      "Icon": "fa-sticky-note",
-      "Color": "black",
+      "Icon": "stickers",
+      "Color": "yellow",
       "Default": "No"
     },
     "Texture": {
-      "Icon": "fa-align-center",
+      "Icon": "texture",
       "Color": "peach",
       "Default": "No"
     },
     "View360": {
-      "Icon": "fa-cube",
-      "Color": "red",
+      "Icon": "view360",
+      "Color": "purple",
       "Default": "No"
     },
     "Shape": {
-      "Icon": "fa-object-ungroup",
-      "Color": "purple"
+      "Icon": "shape",
+      "Color": "grey"
     },
     "Tags": {
-      "Icon": "fa-tags",
-      "Color": "grey",
+      "Icon": "tags",
+      "Color": "black",
       "Default": "Nil"
     },
     "Default": {
-      "Icon": "fa-backspace",
+      "Icon": "default",
       "Color": "muted",
       "Default": "No"
     }

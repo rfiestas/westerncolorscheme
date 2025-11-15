@@ -253,11 +253,23 @@ body{
 
 /*Used on the body and the filter modal form*/
 .background {
-    background-image:url("images/backgroundV2.png");
+    background-image:url("images/backgroundV2.webp");
 }
 .background-form {
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-        url("images/backgroundV2.png");
+        url("images/backgroundV2.webp");
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.view360 {
+  width: 20px;
+  height: 20px;
+  margin-top: -6px;
 }
 
 /* Used on title and summary*/
@@ -304,7 +316,7 @@ body{
     color: #FFF;
 }
 .text-yellow{
-    color: rgb(255, 213, 0);
+    color: rgb(230, 196, 28);
 }
 .text-green{
     color: rgb(0, 155, 72);
@@ -391,6 +403,9 @@ body{
 }
 .color-dark-blue {
     background-color:rgb(0, 0, 139);
+}
+.color-light-yellow{
+    background-color:rgb(255, 255, 169);
 }
 .color-pink {
     background-color:rgb(255, 192, 203);
@@ -517,46 +532,33 @@ body{
     background-color: #f5f4f4d9;
 }
 
+
 /* Patterns */
-.pattern-udon {
-    background-image: url("images/stickers/udon.png");
-}
-.pattern-carbon-fiber {
-    background-color: black;
-    background-image: url("images/stickers/carbonfiber.png");
-}
-.pattern-bricks {
-    background-image: url("images/stickers/bricks.png");
-    background-size: 15px 15px;
-}
-.pattern-spades {
-    background-image: url("images/stickers/spades1.png");
-    background-size: contain;
-    background-position-y: center;
-}
-.pattern-diamonds {
-    background-image: url("images/stickers/diamonds.png");
-}
 .pattern-iridescent-titles:hover {
     animation: color-change 4s infinite;
 }
+.pattern-carbon-fiber {
+    background-color: black;
+}
+.pattern-bricks {
+    background-size: 15px 15px;
+}
+.pattern-spades,.pattern-squares, .pattern-dots {
+    background-size: contain;
+    background-position-y: center;
+}
 .pattern-dna {
-    background-image: url("images/stickers/dna.png");
     background-size: contain;
     background-position-y: center;
 }
 .pattern-crystals {
-    background-image: url("images/stickers/crystals.png");
     background-size: contain;
     background-position-y: center;
     background-size: 6px 6px;
 }
 
-
-/*Color Custom Face, example: <div class="color-face" style="--face-image: url('images/stickers/cara1.png');"></div> */
+/*Color Custom Face, example: <div class="color-face"></div> */
 .color-custom-face {
-    background-image: var(--face-image);
-    background-size: 100% 100%;
     top: 0px;
     left: 0px;
 }
