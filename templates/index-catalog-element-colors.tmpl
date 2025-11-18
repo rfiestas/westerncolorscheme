@@ -10,7 +10,7 @@
     {{- if $hasStickers }}
         <div class="piece-with-stickers color-{{ if $baseSame }}{{ toCss $color }}{{ else }}{{ toCss $cube.Base }}{{ end }}" title="Base color: {{ if $baseSame }}{{ $color }}{{ else }}{{ $cube.Base }}{{ end }}">
             {{- if (and (not $baseSame) $cube.ZoomFace) }}
-                <img class="sticker pattern-{{ toCss $cube.Stickers }} color-custom-face" loading="lazy" src="{{ $cdn }}images/stickers/{{$cube.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if not (eq $cube.Stickers "Yes") }}{{$cube.Stickers}} {{ end }} sticker.">
+                <img class="sticker pattern-{{ toCss $cube.Stickers }} color-custom-face" loading="lazy" data-cdn src="{{ $cdn }}images/stickers/{{$cube.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if not (eq $cube.Stickers "Yes") }}{{$cube.Stickers}} {{ end }} sticker.">
             {{- else }}
                 {{- if $cube.CustomStickers }}
                 <div class="sticker pattern-{{ toCss $cube.Stickers }} color-{{ toCss $color }}" data-bg="{{ $cdn }}images/stickers/{{ toCss $cube.Stickers }}.png" title="{{ $color }} {{ if not (eq $cube.Stickers "Yes") }}{{$cube.Stickers}} {{ end }} sticker.">
@@ -43,7 +43,7 @@
         {{- if $baseSame }}
             <div class="piece" title="">
                 {{- if $cube.ZoomFace }}
-                    <img class="sticker color-custom-face" loading="lazy" src="images/stickers/{{$cube.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if $cube.ZoomFace }}pattern{{else}}color{{ end }}.">
+                    <img class="sticker color-custom-face" loading="lazy" data-cdn src="images/stickers/{{$cube.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if $cube.ZoomFace }}pattern{{else}}color{{ end }}.">
                 {{- else }}
                     <div class="sticker color-{{ toCss $color }}" title="{{ $color }} {{ if $cube.ZoomFace }}pattern{{else}}color{{ end }}.">
                         <span></span>

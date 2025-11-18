@@ -110,19 +110,32 @@ function view360Template(print, brand, name) {
     return ``;
 }
 
-// Lazy load background patterns
+// Lazy load background patterns and CDN fallback
 document.addEventListener("DOMContentLoaded", () => {
     const lazyPatterns = document.querySelectorAll('[data-bg]');
-
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const bg = el.getAttribute('data-bg');
-                el.style.backgroundImage = `url(${bg})`;
-                el.removeAttribute('data-bg');
-                observer.unobserve(el);
-            }
+            if (!entry.isIntersecting) return;
+
+            const el = entry.target;
+            const cdnUrl = el.getAttribute('data-bg');
+            const testImg = new Image();
+
+            testImg.onload = () => {
+                el.style.backgroundImage = `url(${cdnUrl})`;
+            };
+
+            testImg.onerror = () => {
+                const idx = cdnUrl.indexOf("/images/");
+                if (idx !== -1) {
+                    const localUrl = cdnUrl.substring(idx);
+                    el.style.backgroundImage = `url(${localUrl})`;
+                }
+            };
+
+            testImg.src = cdnUrl;
+            el.removeAttribute('data-bg');
+            observer.unobserve(el);
         });
     }, {
         rootMargin: '200px 0px'

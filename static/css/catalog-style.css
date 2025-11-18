@@ -547,6 +547,7 @@ body{
 .pattern-spades,.pattern-squares, .pattern-dots {
     background-size: contain;
     background-position-y: center;
+    background-size: cover;
 }
 .pattern-dna {
     background-size: contain;
