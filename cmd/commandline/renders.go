@@ -29,8 +29,9 @@ func (r *renderIndexPageCmd) Run(globals *Globals) error {
 	}
 
 	app, err := catalog.NewCatalogEngine(catalog.CatalogEngineCfg{
-		JsonData: jsonData,
-		Minify:   globals.Minify,
+		JsonData:   jsonData,
+		Minify:     globals.Minify,
+		CDNBaseURL: globals.CDNBaseURL,
 	})
 	if err != nil {
 		logrus.Error(err)

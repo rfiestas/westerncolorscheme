@@ -110,6 +110,7 @@ function view360Template(print, brand, name) {
     return ``;
 }
 
+// Lazy load background patterns
 document.addEventListener("DOMContentLoaded", () => {
     const lazyPatterns = document.querySelectorAll('[data-bg]');
 
@@ -128,4 +129,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     lazyPatterns.forEach(el => observer.observe(el));
+});
+
+// Fallback for CDN images
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img[data-cdn]").forEach(img => {
+    img.onerror = () => {
+      if (img.dataset.fallbackTried) return;
+
+      img.dataset.fallbackTried = "1";
+
+      const src = img.getAttribute("src");
+      const idx = src.indexOf("/images/");
+      if (idx !== -1) {
+        img.src = src.substring(idx);
+      }
+    };
+  });
 });

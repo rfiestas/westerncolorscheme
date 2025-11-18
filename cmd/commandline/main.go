@@ -10,7 +10,8 @@ import (
 )
 
 type Globals struct {
-	Minify bool `help:"Force removal." default:"true"`
+	Minify     bool   `help:"Force removal." default:"true"`
+	CDNBaseURL string `help:"Set the CDN base URL for static assets. Empty for local." default:"https://cdn.jsdelivr.net/gh/rfiestas/westerncolorscheme/www/"` // Or empty for local
 
 	LogLevel string `help:"Set the log level." default:"info" enum:"trace,debug,info,warning,error,fatal"`
 }
