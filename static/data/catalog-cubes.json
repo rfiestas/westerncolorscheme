@@ -1763,6 +1763,45 @@
         "Metallic",
         "Lights"
       ]
+    },
+    {
+      "Name": "Painting Mask",
+      "Brand": "LanLan",
+      "Group": "3x3x3",
+      "Shape": "Gem",
+      "Base": "Black",
+      "Color": "Western Schema Mod",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow",
+        "Black"
+      ],
+      "Stickers": "Yes",
+      "Date": "01 Dic, 2025"
+    },
+    {
+      "Name": "Spiral",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Western Schema",
+      "Stickers": "Yes",
+      "Date": "01 Dic, 2025"
+    },
+    {
+      "Name": "Ball",
+      "Brand": "DianSheng",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Western Schema",
+      "Stickers": "Yes",
+      "Date": "01 Dic, 2025"
     }
   ],
   "Categories": {
