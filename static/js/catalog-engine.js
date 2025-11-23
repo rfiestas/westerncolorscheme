@@ -1,26 +1,52 @@
 var filtersData = {};
 var colorSchemaData = {};
 
+// Update badge count for each filter category
+function updateFilterBadges() {
+    const filtersCkb = document.querySelectorAll(".form-check-input");
+    const badges = document.querySelectorAll(".filter-badge");
+    
+    // Count checked items per category
+    const categoryCounts = {};
+    filtersCkb.forEach(input => {
+        if (input.checked) {
+            const category = input.value.split('#')[0];
+            categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+        }
+    });
+    
+    // Update each badge
+    badges.forEach(badge => {
+        const category = badge.getAttribute("data-filter-key");
+        const count = categoryCounts[category] || 0;
+        badge.textContent = count;
+        badge.style.display = count > 0 ? "inline-block" : "none";
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     // Filter reset button
     const resetBtn = document.getElementById("reset");
     if (resetBtn) {
         resetBtn.addEventListener("click", function () {
-            const filterInputs = document.querySelectorAll(".custom-control-input");
+            const filterInputs = document.querySelectorAll(".form-check-input");
             filterInputs.forEach(input => {
                 input.checked = false;
                 input.dispatchEvent(new Event("change"));
             });
+            updateFilterBadges();
         });
     }
 
     // Filter checkbox logic
-    const filtersCkb = document.querySelectorAll(".custom-control-input");
+    const filtersCkb = document.querySelectorAll(".form-check-input");
     filtersCkb.forEach(input => {
         input.addEventListener("change", function () {
             const key = this.value.split('#')[0]; // Get category
             const items = document.querySelectorAll(`[data-${key}]`); // Get items with the same category
+
+            // Update badge count for this category
+            updateFilterBadges();
 
             // List of checked filters
             const checkedFilter = Array.from(filtersCkb).filter(el => el.checked).map(el => el.value);
