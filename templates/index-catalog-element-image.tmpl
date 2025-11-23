@@ -1,3 +1,3 @@
-{{ if eq .View360 "Yes" }}<a href="#View360/{{.Brand}}-{{.Name}}" title="{{.Brand}}-{{.Name}} 360 view" onclick="openView360('{{.Brand}}', '{{.Name}}')">{{ end }}
-    <img class="img-fluid" loading="lazy" src="images/cubes/square-400/{{.Image}}.webp" alt="{{.Brand}}-{{.Name}}">
-{{ if eq .View360 "Yes" }}</a>{{ end }}
+{{ if eq .cube.View360 "Yes" }}<a href="#View360/{{.cube.Brand}}-{{.cube.Name}}" title="{{.cube.Brand}}-{{.cube.Name}} 360 view" onclick="openView360('{{.cube.Brand}}', '{{.cube.Name}}')">{{ end }}
+    <img class="img-fluid" loading="lazy" data-cdn src="{{ .CDNBaseURL }}images/cubes/square-400/{{.cube.Image}}.webp" alt="{{.cube.Brand}}-{{.cube.Name}}">
+{{ if eq .cube.View360 "Yes" }}</a>{{ end }}

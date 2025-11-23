@@ -1,21 +1,23 @@
 {{/* Simplified color-piece rendering: stickers, textures, zoom-face, base color handling. */}}
 
-{{- range $idx, $color := .ColorSchema }}
-    {{ $baseSame := eq $.Base "Same as color" }}
-    {{ $hasStickers := not (eq $.Stickers "No") }}
-    {{ $hasTexture := not (eq $.Texture "No") }}
+{{- $cube := .cube -}}
+{{- $cdn := .CDNBaseURL -}}
+{{- range $idx, $color := $cube.ColorSchema }}
+    {{ $baseSame := eq $cube.Base "Same as color" }}
+    {{ $hasStickers := not (eq $cube.Stickers "No") }}
+    {{ $hasTexture := not (eq $cube.Texture "No") }}
 
     {{- if $hasStickers }}
-        <div class="piece-with-stickers color-{{ if $baseSame }}{{ toCss $color }}{{ else }}{{ toCss $.Base }}{{ end }}" title="Base color: {{ if $baseSame }}{{ $color }}{{ else }}{{ $.Base }}{{ end }}">
-            {{- if (and (not $baseSame) $.ZoomFace) }}
-                <img class="sticker pattern-{{ toCss $.Stickers }} color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+        <div class="piece-with-stickers color-{{ if $baseSame }}{{ toCss $color }}{{ else }}{{ toCss $cube.Base }}{{ end }}" title="Base color: {{ if $baseSame }}{{ $color }}{{ else }}{{ $cube.Base }}{{ end }}">
+            {{- if (and (not $baseSame) $cube.ZoomFace) }}
+                <img class="sticker pattern-{{ toCss $cube.Stickers }} color-custom-face" loading="lazy" data-cdn src="{{ $cdn }}images/stickers/{{$cube.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if not (eq $cube.Stickers "Yes") }}{{$cube.Stickers}} {{ end }} sticker.">
             {{- else }}
-                {{- if $.CustomStickers }}
-                <div class="sticker pattern-{{ toCss $.Stickers }} color-{{ toCss $color }}" data-bg="images/stickers/{{ toCss $.Stickers }}.png" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+                {{- if $cube.CustomStickers }}
+                <div class="sticker pattern-{{ toCss $cube.Stickers }} color-{{ toCss $color }}" data-bg="{{ $cdn }}images/stickers/{{ toCss $cube.Stickers }}.png" title="{{ $color }} {{ if not (eq $cube.Stickers "Yes") }}{{$cube.Stickers}} {{ end }} sticker.">
                     <span></span>
                 </div>
                 {{- else }}
-                <div class="sticker pattern-{{ toCss $.Stickers }} color-{{ toCss $color }}" title="{{ $color }} {{ if not (eq $.Stickers "Yes") }}{{$.Stickers}} {{ end }} sticker.">
+                <div class="sticker pattern-{{ toCss $cube.Stickers }} color-{{ toCss $color }}" title="{{ $color }} {{ if not (eq $cube.Stickers "Yes") }}{{$cube.Stickers}} {{ end }} sticker.">
                     <span></span>
                 </div>
                 {{- end }}
@@ -25,13 +27,13 @@
     {{- else if $hasTexture }}
         {{- if $baseSame }}
             <div class="piece" title="Base color: {{ $color }}">
-                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" data-bg="images/stickers/{{ toCss $.Texture }}.png" title="{{ $.Texture }} texture in {{ $color }} color.">
+                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $cube.Texture }}" data-bg="{{ $cdn }}images/stickers/{{ toCss $cube.Texture }}.png" title="{{ $cube.Texture }} texture in {{ $color }} color.">
                     <span></span>
                 </div>
             </div>
         {{- else }}
-            <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
-                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Texture }}" data-bg="images/stickers/{{ toCss $.Texture }}.png" title="{{ $.Texture }} texture in {{ $color }} color.">
+            <div class="piece-with-stickers color-{{ toCss $cube.Base }}" title="Base color: {{ $cube.Base }}">
+                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $cube.Texture }}" data-bg="{{ $cdn }}images/stickers/{{ toCss $cube.Texture }}.png" title="{{ $cube.Texture }} texture in {{ $color }} color.">
                     <span></span>
                 </div>
             </div>
@@ -40,17 +42,17 @@
     {{- else }}
         {{- if $baseSame }}
             <div class="piece" title="">
-                {{- if $.ZoomFace }}
-                    <img class="sticker color-custom-face" loading="lazy" src="images/stickers/{{$.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
+                {{- if $cube.ZoomFace }}
+                    <img class="sticker color-custom-face" loading="lazy" data-cdn src="images/stickers/{{$cube.Image}}--{{ toCss $color }}.webp" alt="{{ $color }} {{ if $cube.ZoomFace }}pattern{{else}}color{{ end }}.">
                 {{- else }}
-                    <div class="sticker color-{{ toCss $color }}" title="{{ $color }} {{ if $.ZoomFace }}pattern{{else}}color{{ end }}.">
+                    <div class="sticker color-{{ toCss $color }}" title="{{ $color }} {{ if $cube.ZoomFace }}pattern{{else}}color{{ end }}.">
                         <span></span>
                     </div>
                 {{- end }}
             </div>
         {{- else }}
-            <div class="piece-with-stickers color-{{ toCss $.Base }}" title="Base color: {{ $.Base }}">
-                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $.Stickers }}" title="{{ $color }} without sticker.">
+            <div class="piece-with-stickers color-{{ toCss $cube.Base }}" title="Base color: {{ $cube.Base }}">
+                <div class="sticker color-{{ toCss $color }} pattern-{{ toCss $cube.Stickers }}" title="{{ $color }} without sticker.">
                     <span></span>
                 </div>
             </div>

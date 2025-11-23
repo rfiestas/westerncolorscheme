@@ -18,12 +18,14 @@ import (
 )
 
 type CatalogEngineCfg struct {
-	JsonData []byte
-	Minify   bool
+	JsonData   []byte
+	Minify     bool
+	CDNBaseURL string
 }
 type CatalogEngine struct {
-	catalog catalog
-	minify  bool
+	catalog    catalog
+	minify     bool
+	cdnBaseURL string
 }
 
 func NewCatalogEngine(cfg CatalogEngineCfg) (*CatalogEngine, error) {
@@ -44,8 +46,9 @@ func NewCatalogEngine(cfg CatalogEngineCfg) (*CatalogEngine, error) {
 	}
 
 	return &CatalogEngine{
-		catalog: data,
-		minify:  cfg.Minify,
+		catalog:    data,
+		minify:     cfg.Minify,
+		cdnBaseURL: cfg.CDNBaseURL,
 	}, nil
 }
 
@@ -231,6 +234,21 @@ func MinifyContent(reader io.Reader, minifyType string) (io.Reader, error) {
 	return writer, nil
 }
 
+func dict(values ...interface{}) (map[string]interface{}, error) {
+	if len(values)%2 != 0 {
+		return nil, fmt.Errorf("dict requires an even number of arguments")
+	}
+	d := make(map[string]interface{}, len(values)/2)
+	for i := 0; i < len(values); i += 2 {
+		key, ok := values[i].(string)
+		if !ok {
+			return nil, fmt.Errorf("dict keys must be strings")
+		}
+		d[key] = values[i+1]
+	}
+	return d, nil
+}
+
 func (c CatalogEngine) Index() (io.Reader, error) {
 	var buffer bytes.Buffer
 	writer := &buffer
@@ -238,6 +256,7 @@ func (c CatalogEngine) Index() (io.Reader, error) {
 	tmpl, err := template.New("index").Funcs(template.FuncMap{
 		"getCategoryDataKey": c.catalog.getCategoryDataKey,
 		"toCss":              toCss,
+		"dict":               dict,
 	}).ParseFiles(
 		"./templates/index.tmpl",
 		"./templates/index-catalog-element.tmpl",
@@ -250,7 +269,10 @@ func (c CatalogEngine) Index() (io.Reader, error) {
 		return nil, err
 	}
 
-	err = tmpl.ExecuteTemplate(writer, "index.tmpl", c.catalog)
+	err = tmpl.ExecuteTemplate(writer, "index.tmpl", map[string]interface{}{
+		"Catalog":    c.catalog,
+		"CDNBaseURL": c.cdnBaseURL,
+	})
 	if err != nil {
 		return nil, err
 	}
