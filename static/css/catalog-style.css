@@ -1,3 +1,6 @@
+html * {
+     font-weight: 300 !important;
+}
 body{
     background:#F5F5F5;
     padding-top:20px;
@@ -56,24 +59,19 @@ body{
   margin-left: auto;
   text-align: center;
   font-size: 13px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 90px;
-          flex: 0 0 90px; }
+ }
   .cube-list .cube-list-favourite-time span {
     display: block;
     margin: 0 auto; }
   .cube-list .cube-list-favourite-time .cube-list-favourite {
     display: inline-block;
     position: relative;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
     border: 1px solid #eeeeee;
     border-radius: 100%;
     text-align: center;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-size: 16px;
     color: #646f79;
     }
@@ -125,7 +123,7 @@ body{
     display: flex;
     border-top: 1px solid #eeeeee;
     margin-top: 10px;
-    padding: 10px 0;
+    padding: 10px 0px;
 }
 .cube-grid .cube-list-favourite-time a {
     margin-bottom: 0;
@@ -136,6 +134,7 @@ body{
     margin: 0;
     -ms-flex-item-align: center;
     align-self: center;
+    vertical-align: text-bottom;
 }
 
 .cube-list.cube-grid .cube-list-favourite-time .cube-list-favourite {
@@ -241,30 +240,117 @@ body{
 }
 
 .cube-list-favourite-time {
-    min-height: 60px;
+    min-height: 23px;
 }
 
 /* Used by buttons */
 .btn.btn-transparent {
-    border-width: 3px;
-    border-color: #000;
-    color: #000;
+    color: rgb(33, 37, 41);
 }
 
 /*Used on the body and the filter modal form*/
-.background {
-    background-image:url("images/backgroundV2.webp");
-    background-position: center;
-}
-.background-form {
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-        url("images/backgroundV2.webp");
+.background,.background-form{
+    background:
+    rgba(255, 255, 255, 0.7) url("images/backgroundV2.webp");
+  background-position: top center;
+  background-blend-mode: lighten;
 }
 
 .icon {
   width: 16px;
   height: 16px;
   color: #333;
+}
+
+.iconBig {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgb(33, 37, 41);
+  display: inline-block;
+  animation:  bounceOnce 350ms cubic-bezier(.3,1.5,.5,1);
+}
+
+@keyframes jump {
+  0%   { transform: translateY(0) scale(1); }
+  30%  { transform: translateY(-18px) scale(1.03); } /* subida */
+  60%  { transform: translateY(0)   scale(0.99); }   /* aterrizaje */
+  100% { transform: translateY(0)   scale(1); }      /* reposo */
+}
+
+.iconBig:hover {
+  transform: scale(1.12);
+}
+
+@keyframes bounceOnce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.22); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1.13); }
+}
+
+/*
+.button-apply {
+    color: #fff;
+    background: #3e64ff !important;
+    border-color: #3e64ff !important;
+    padding: 5px 18px;
+    cursor: pointer;
+    border-width: 2px;
+    border-radius: 4px;
+    font-weight: bolder !important;
+}
+
+.button-apply:hover {
+    transform: scale(1.12);
+}
+
+.button-reset {
+    color: #fff;
+    background: #c4c4c2 !important;
+    border-color: #c4c4c2 !important;
+    padding: 5px 18px;
+    cursor: pointer;
+    border-width: 2px;
+    border-radius: 4px;
+    font-weight: bolder !important;
+ }
+.button-reset:hover {
+    transform: scale(1.12);
+}
+
+*/
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px;
+}
+
+/* Base button style */
+.filter-btn {
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #d3d3d3;
+  background: #f7f7f7;
+  color: #444;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #eeeeee;
+}
+
+.filter-btn-apply {
+  background: #4c7df0;     /* azul suave, no tan saturado */
+  border-color: #4c7df0;
+  color: white;
+}
+
+.filter-btn-apply:hover {
+  background: #3b6bd8;
 }
 
 .view360 {
@@ -606,30 +692,141 @@ body{
   --color-3: #c4510e;
 }
 
-.title-word-2 {
-  --color-1: #64f43d;
-  --color-2: #ebf20a;
-  --color-3: #000000;
+/* Compact grid: reduce images and details on all screens */
+#catalog.grid-compact .col-sm-6.col-lg-3 {
+    /* padding-left: 0 !important;
+    padding-right: 0 !important;*/
+    padding: 3px !important;
+    margin-bottom: 0 !important;
+
 }
 
-.title-word-3 {
-  --color-1: #e6a10c;
-  --color-2: #11b40e;
-  --color-3: #1b6be3;
+#catalog.grid-compact .cube-grid .cube-list-image img {
+    height: 160px !important; /* smaller thumbnails */
+    width: 100% !important;
+    object-fit: cover !important;
+}
+#catalog.grid-compact .cube-grid .cube-list-details {
+    padding: 8px 8px 0px 8px;
 }
 
-.title-word-4 {
-  --color-1: #e1d015;
-  --color-2: #030202;
-  --color-3: #eb8d0b;
+/* Compact grid: show more columns on different screen sizes */
+/* Mobile: 3 columns */
+@media (max-width: 575px) {
+    #catalog.grid-compact .col-sm-6 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+    }
 }
 
-@keyframes color-animation {
-  0%    {color: var(--color-1)}
-  32%   {color: var(--color-1)}
-  33%   {color: var(--color-2)}
-  65%   {color: var(--color-2)}
-  66%   {color: var(--color-3)}
-  99%   {color: var(--color-3)}
-  100%  {color: var(--color-1)}
+/* Tablet: 4 columns */
+@media (min-width: 576px) and (max-width: 991px) {
+    #catalog.grid-compact .col-sm-6 {
+        flex: 0 0 25% !important;
+        max-width: 25% !important;
+    }
+}
+
+/* Desktop: 8 columns */
+@media (min-width: 992px) {
+    #catalog.grid-compact .col-sm-6.col-lg-3 {
+        flex: 0 0 12.5% !important;
+        max-width: 12.5% !important;
+    }
+}
+
+/* Form-check fixed width for filters */
+.collapse .form-check {
+  width: 150px;
+}
+
+/* Collapse container styling */
+.collapse {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 0;
+}
+
+.collapse > div {
+  padding: 1rem;
+}
+
+/* Filter collapse header/chevron styles (no JS required):
+   - SVG defaults to 180deg (closed). When the header has aria-expanded="true",
+     the SVG rotates to 0deg (open). */
+.filter-collapse {
+    position: relative;
+}
+.filter-collapse .filter-header {
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    color: #000;
+}
+.filter-collapse .filter-header:hover {
+    background-color: rgba(0,0,0,0.03);
+}
+.filter-collapse .filter-header .filter-title{
+    display:inline-flex;align-items:center;gap:8px;
+}
+.filter-collapse .chevron-wrap{
+    display:flex;align-items:center;justify-content:center;min-width:28px;
+}
+.filter-collapse .chevron-wrap svg{
+    transition: transform 420ms cubic-bezier(.25,.8,.4,1);
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+    display: inline-block;
+}
+.filter-collapse .filter-header[aria-expanded="true"] .chevron-wrap svg{
+    transform: rotate(0deg);
+}
+.filter-collapse .toggle-icon{
+    font-size:1rem;color:#6c757d;transition: transform 0.25s ease;
+}
+.filter-collapse .filter-header[aria-expanded="true"] .toggle-icon{
+    transform: scaleY(-1);
+}
+.filter-collapse .bi-chevron-down{
+    transition: transform 0.25s ease;font-size:1.05rem;
+}
+
+/* small animation when dropdown opens */
+.filter-collapse .collapse.show{
+    animation: pop 160ms ease-out;
+}
+@keyframes pop{
+    0%{transform: scaleY(0.98);opacity:0}
+    100%{transform: scaleY(1);opacity:1}
+}
+
+.modal-header {
+  display: flex;
+  align-items: baseline!important;
+}
+
+#navbarTop {
+    padding: 0;
+    margin: 10px 0px 10px 0px;
+}
+
+#view-controls .btn.active {
+    border: none !important;
+    border-bottom: 3px solid #000 !important; 
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    height: 2.4rem !important;
+    box-shadow: none !important;
+    transform: translateY(0) !important;
+}
+
+#view-controls .btn.active .icon,
+#view-controls .btn.active .iconBig {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+}
+
+#view-controls .btn.active:hover {
+    box-shadow: none !important;
+    transform: translateY(0) !important;
 }

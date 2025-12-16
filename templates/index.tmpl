@@ -20,26 +20,37 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12 text-center">
-                        <h1 class="fw-light shadows"><img src="images/WesternColorSchemeLogo.webp" alt="Western Color Scheme Logo" title="Western Color Scheme Logo" width="64px" height="64px"> Western Color Scheme</h1>
-                        <p class="lead shadows">A great starter layout for my rubik's cube collection page.</p>
+                        <h1 class="fw-light"><img src="images/WesternColorSchemeLogo.webp" alt="Western Color Scheme Logo" title="Western Color Scheme Logo" width="64px" height="64px"> Western Color Scheme</h1>
+                        <p class="lead">A dedicated space to share my collection of twisty puzzles from many different brands,</br> collected over years of curiosity and passion.</p>
                     </div>
                 </div>
             </div>
         </header>
         <div class="container-lg">
             <div class="row">
-                <nav class="navbar navbar-expand-sm">
+                <nav class="navbar navbar-expand-sm" id="navbarTop">
                     <div class="container-fluid">
                         <div>
-                            <h2 class="app-title" style="display: inline-block;" id="cube-total">{{ len .Catalog.Cubes }} Cubes</h2> <small id="cube-summary" class="text-muted"></small>
+                            <h2 id="cube-total" class="d-inline">{{ len .Catalog.Cubes }} Cubes</h2> <small id="cube-summary" class="text-muted"></small>
                         </div>
                         <div class="navbar" id="navbarScroll">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#filter">
-                                <i class="bi bi-filter"></i> Filters
+                            <div class="d-inline-flex align-items-center me-2" id="view-controls">
+                                <button id="btn-view-mode" class="btn" title="Detailed view" aria-label="Detailed view">
+                                    <svg class="iconBig"><use href="icons.svg#view-mode"></use></svg>
+                                </button>
+                                <button id="btn-toggle-details" class="btn" title="Image view" aria-label="Image view">
+                                    <svg class="iconBig"><use href="icons.svg#toggle-details"></use></svg>
+                                </button>
+                                <button id="btn-compact-grid" class="btn" title="Compact grid" aria-label="Compact grid">
+                                    <svg class="iconBig"><use href="icons.svg#compact-grid"></use></svg>
+                                </button>
+                            </div>
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#filter" aria-label="Open Filters" title="Open Filters">
+                                <svg class="iconBig"><use href="icons.svg#filters"></use></svg>
                             </button>
                         </div>
                     </div>
@@ -86,7 +97,7 @@
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content" style="background: #F5F5F5;">
                     <div class="modal-header">
-                        <i class="bi bi-filter"></i><h5 class="modal-title">Filters</h5>&nbsp;&nbsp;<div id="modal-cube-total">{{ len .Catalog.Cubes }} Cubes </div><small id="modal-cube-summary" class="text-muted"></small>
+                        <h5 class="modal-title"><svg class="iconBig"><use href="icons.svg#filters"></use></svg>&nbsp;Filters</h5>&nbsp;&nbsp;<div id="modal-cube-total">{{ len .Catalog.Cubes }} Cubes </div><small id="modal-cube-summary" class="text-muted"></small>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <!-- Filters-->
@@ -94,8 +105,8 @@
                         {{template "index-filters.tmpl" .Catalog.Filters}}
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" id="reset" class="btn bg-grey btn-transparent">Reset Filters</button>
-                        <button type="button" class="btn btn-transparent" data-bs-dismiss="modal">View Results</button>
+                        <button type="reset" id="reset" class="filter-btn filter-btn-reset">Reset Filters</button>&nbsp;&nbsp;
+                        <button type="button" class="filter-btn filter-btn-apply" data-bs-dismiss="modal">View Results</button>
                     </div>
                 </div>
             </div>

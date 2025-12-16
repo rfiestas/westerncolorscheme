@@ -338,5 +338,6 @@ func removeDuplicateStr(strSlice []string) []string {
 			list = append(list, item)
 		}
 	}
+	sort.Strings(list)
 	return list
 }
