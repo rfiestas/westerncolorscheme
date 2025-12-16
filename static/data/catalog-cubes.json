@@ -1802,6 +1802,41 @@
       "Color": "Western Schema",
       "Stickers": "Yes",
       "Date": "01 Dic, 2025"
+    },
+    {
+      "Name": "Squished Colored",
+      "Brand": "ZE Puzzles",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Base": "Black",
+      "Color": "Western Schema",
+      "Schema": [
+        "Orange",
+        "Green",
+        "Red",
+        "Blue",
+        "White",
+        "Yellow"
+      ],
+      "Date": "10 Dic, 2025"
+    },
+    {
+      "Name": "World Cities",
+      "Brand": "Nature",
+      "Group": "3x3x3",
+      "Shape": "Cube",
+      "Color": "Custom Face",
+      "Schema": [
+        "Roma",
+        "Madrid",
+        "Ibiza",
+        "Mallorca",
+        "Milan",
+        "Barcelona"
+      ],
+      "Stickers": "No",
+      "ZoomFace": true,
+      "Date": "10 Dic, 2025"
     }
   ],
   "Categories": {

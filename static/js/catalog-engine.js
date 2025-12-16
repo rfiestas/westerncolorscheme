@@ -186,3 +186,65 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 });
+
+// View controls (button group: only one active at a time)
+document.addEventListener("DOMContentLoaded", function () {
+    const catalog = document.getElementById('catalog');
+    const btnView = document.getElementById('btn-view-mode');
+    const btnDetails = document.getElementById('btn-toggle-details');
+    const btnCompact = document.getElementById('btn-compact-grid');
+
+    if (!catalog || !btnView || !btnDetails || !btnCompact) return;
+
+    // Helper: reset all details and compact
+    function resetAllViews() {
+        // show details
+        document.querySelectorAll('.cube-list-details').forEach(function(el) {
+            el.classList.remove('d-none');
+        });
+        // remove compact grid
+        catalog.classList.remove('grid-compact');
+        // NOTE: Preserve filtered state (do not unhide `.visually-hidden` items here).
+        // Filters are controlled by the filter checkbox handlers and the Reset Filters button.
+    }
+
+    // Helper: deactivate all buttons
+    function deactivateAllButtons() {
+        btnView.classList.remove('active');
+        btnDetails.classList.remove('active');
+        btnCompact.classList.remove('active');
+    }
+
+    // Button 1: Reset (normal view)
+    btnView.addEventListener('click', function () {
+        resetAllViews();
+        deactivateAllButtons();
+        btnView.classList.add('active');
+    });
+
+    // Button 2: Toggle Details (hide details only)
+    btnDetails.addEventListener('click', function () {
+        resetAllViews();
+        deactivateAllButtons();
+        btnDetails.classList.add('active');
+        // hide details
+        document.querySelectorAll('.cube-list-details').forEach(function(el) {
+            el.classList.add('d-none');
+        });
+    });
+
+    // Button 3: Compact Grid (8 per row, hide details)
+    btnCompact.addEventListener('click', function () {
+        resetAllViews();
+        deactivateAllButtons();
+        btnCompact.classList.add('active');
+        // enable compact grid
+        catalog.classList.add('grid-compact');
+        // hide details
+        document.querySelectorAll('.cube-list-details').forEach(function(el) {
+            el.classList.add('d-none');
+        });
+    });
+
+    btnView.classList.add('active');
+});
